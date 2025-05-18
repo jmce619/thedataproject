@@ -3,17 +3,18 @@
 import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
+import type { MapContainerProps } from 'react-leaflet'
 
-// Leaflet client-only, explicitly typed for correct deployment
+// Explicitly define prop type correctly with React.ComponentType
 const MapContainer = dynamic(
   () => import('react-leaflet').then((mod) => mod.MapContainer),
   { ssr: false }
-) as React.ComponentType<React.ComponentProps<typeof import('react-leaflet').MapContainer>>
+) as React.ComponentType<MapContainerProps>
 
 const GeoJSON = dynamic(
   () => import('react-leaflet').then((mod) => mod.GeoJSON),
   { ssr: false }
-) as React.ComponentType<React.ComponentProps<typeof import('react-leaflet').GeoJSON>>
+)
 
 export default function DistrictResultsPage() {
   const [houseData, setHouseData] = useState<FeatureCollection | null>(null)
@@ -99,6 +100,7 @@ export default function DistrictResultsPage() {
           zoom={4}
           attributionControl={false}
           className="leaflet-container"
+          style={{ width: '100%', height: '500px' }}
         >
           <GeoJSON data={currentData} style={currentStyle} />
         </MapContainer>
