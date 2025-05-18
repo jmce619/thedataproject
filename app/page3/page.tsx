@@ -4,23 +4,22 @@ import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
 
-// Leaflet client-only
+// Leaflet client-only, explicitly typed for correct deployment
 const MapContainer = dynamic(
   () => import('react-leaflet').then((mod) => mod.MapContainer),
   { ssr: false }
-)
+) as React.ComponentType<React.ComponentProps<typeof import('react-leaflet').MapContainer>>
+
 const GeoJSON = dynamic(
   () => import('react-leaflet').then((mod) => mod.GeoJSON),
   { ssr: false }
-)
+) as React.ComponentType<React.ComponentProps<typeof import('react-leaflet').GeoJSON>>
 
 export default function DistrictResultsPage() {
-  // Data stores
   const [houseData, setHouseData] = useState<FeatureCollection | null>(null)
   const [senateData, setSenateData] = useState<FeatureCollection | null>(null)
   const [selectedMap, setSelectedMap] = useState<'house' | 'senate'>('house')
 
-  // Load and merge House…
   useEffect(() => {
     Promise.all([
       fetch('/data/congress.geojson').then((r) => r.json()),
@@ -51,14 +50,12 @@ export default function DistrictResultsPage() {
     })
   }, [])
 
-  // Load pre-merged Senate…
   useEffect(() => {
     fetch('/data/us_states_senate_merged.geojson')
       .then((r) => r.json())
       .then((geojson: FeatureCollection) => setSenateData(geojson))
   }, [])
 
-  // Style callbacks
   const styleHouse = (feature: Feature) => {
     const { winnerParty: p, winnerPct: pct } = feature.properties as any
     let fillColor = '#ccc'
@@ -77,7 +74,6 @@ export default function DistrictResultsPage() {
     return { fillColor, fillOpacity: pct / 100, color: '#222', weight: 0.5 }
   }
 
-  // Pick the right data & style
   const currentData = selectedMap === 'house' ? houseData : senateData
   const currentStyle = selectedMap === 'house' ? styleHouse : styleSenate
   const loadingText =
@@ -85,7 +81,6 @@ export default function DistrictResultsPage() {
 
   return (
     <div className="page3 flex flex-col items-start space-y-4 w-full">
-      {/* Dropdown */}
       <select
         value={selectedMap}
         onChange={(e: ChangeEvent<HTMLSelectElement>) =>
@@ -97,14 +92,12 @@ export default function DistrictResultsPage() {
         <option value="senate">US Senate Results</option>
       </select>
 
-      {/* Map */}
       {currentData ? (
         <MapContainer
           key={selectedMap}
           center={[37.8, -96]}
           zoom={4}
           attributionControl={false}
-
           className="leaflet-container"
         >
           <GeoJSON data={currentData} style={currentStyle} />
