@@ -1,0 +1,417 @@
+/* app/global.css */
+
+/* -------------------- */
+/* Nav Bar & Dropdown  */
+/* -------------------- */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  z-index: 10;
+}
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.pipe {
+  margin: 0 0.75rem;
+  color: #555;
+  font-size: 1.25rem;
+}
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.dropdown a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+}
+.dropdown a:hover {
+  background: #f5f5f5;
+}
+
+/* --------- */
+/* Base      */
+/* --------- */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 56px);
+  text-align: center;
+}
+
+/* ------------- */
+/* Home Page     */
+/* ------------- */
+.options {
+  display: flex;
+  gap: 24px;
+}
+.option-card {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #d8b4fe;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(216,180,254,0.4);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.option-card:hover {
+  box-shadow: 0 8px 16px rgba(216,180,254,0.6);
+  transform: translateY(-2px);
+}
+.option-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.all-captions {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ---------------- */
+/* Dashboard Styles */
+/* ---------------- */
+.dashboard {
+  padding: 0 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.dashboard-form input,
+.dashboard-form select {
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.dashboard-form button {
+  padding: 8px 16px;
+  border: none;
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.dashboard-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.error {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+.overview {
+  text-align: left;
+  width: 100%;      /* Ensure it spans the available width */
+  align-self: flex-start; /* Align to the left side explicitly */
+}
+
+.overview h2 {
+  margin-bottom: 8px;
+}
+.overview p {
+  margin: 4px 0;
+}
+.stats-grid {
+  align-self: flex-start; /* Align to the left side explicitly */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 12px; /* gap between grid items */
+  text-align: left; /* Align text left */
+  width: 40%; /* Ensure full available width */
+}
+
+.stat-item {
+  background: #f5f3ff;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+}
+
+
+.description {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ------------------------- */
+/* Shot Chart & Tooltip      */
+/* ------------------------- */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 560px; /* match SVG viewBox */
+}
+.shot-chart {
+  width: 100%;
+  height: 100%;
+}
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #1f2937;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+/* ------------------------- */
+/* Sports Dashboard Layout   */
+/* ------------------------- */
+.sports-dashboard {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+.player-sidebar {
+  flex: 0 0 260px;
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.player-sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #111827;
+}
+.stats-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 0.5rem;
+  column-gap: 1rem;
+}
+.stats-list dt {
+  font-weight: 600;
+  color: #374151;
+}
+.stats-list dd {
+  margin: 0;
+  color: #1f2937;
+}
+
+/* ------------------------- */
+/* Main Content (Chart + Games) */
+/* ------------------------- */
+.main-content {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+}
+/* Chart column centered */
+.chart-column {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* keeps shot chart centered */
+}
+.sports-selector {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.sports-selector label {
+  margin-right: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+.sports-selector select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+/* ------------------------- */
+/* Upcoming Games Panel      */
+/* ------------------------- */
+.upcoming-games {
+  flex: 3;
+  text-align: left;
+}
+.upcoming-games h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+.games-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.game-card {
+  background: #fff;
+  border: 2px solid #d8b4fe;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(216,180,254,0.4);
+  padding: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.game-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(216,180,254,0.6);
+}
+.game-date {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #555;
+}
+.game-time {
+  font-weight: normal;
+  color: #777;
+}
+.game-teams {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.team {
+  font-size: 1.1rem;
+}
+.vs {
+  font-size: 0.9rem;
+  color: #777;
+}
+.game-records small {
+  color: #666;
+  font-size: 0.8rem;
+}
+/* Page3 container override to left-align and not stretch full height */
+.page3.container {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+/* Make Leaflet background transparent (no grey) */
+.leaflet-container {
+  background: transparent !important;
+}
+
+/* Inline, smaller company logo next to the name */
+.overview-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;          /* small space between logo and text */
+}
+
+.company-logo {
+  width: 24px;          /* shrink down from 40px */
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+  transform: translateY(5px);
+}
+.team-logo {
+  /* lower it by 3px – tweak the value until it looks right */
+  transform: translateY(4px);
+  /* keep your existing rules */
+  border-radius: 4px;
+}
+/* -------------------------- */
+/* Page3 (app/stock/page.tsx) */
+/* -------------------------- */
+
+/* Use only the .page3 class (drop the generic .container) */
+.page3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* left-align children */
+  justify-content: flex-start;
+  gap: 1rem;                  /* space between dropdown & map */
+  padding: 2rem;
+  width: 100%;
+  margin: 0;                  /* no auto-centering */
+}
+
+/* Style the dropdown */
+.page3 select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Force the map to take up half the viewport width, left side */
+.page3 .leaflet-container {
+  width: 50vw !important;
+  height: 50vh !important;
+  background: transparent !important;
+}
+
+/* Place the financials chart to the right of the information */
+.info-financials-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 16px; /* Slightly reduced horizontal gap */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px; /* Minimizes space below financial section */
+}
+.info-section {
+  flex: 1; /* Takes available space */
+  text-align: left;
+}
+
+.financials-chart {
+  flex: 1; /* Takes available space, equal width */
+  max-width: 50%; /* Optional: limits financial chart width */
+  display: flex;
+  justify-content: center; /* Center chart horizontally */
+  align-items: flex-start; /* Align top vertically */
+}
+
+/* Adjust the stats grid width to nicely fit its container */
+.stats-grid {
+  width: 100%; /* Use full width of info-section */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Ensure proper sizing and spacing of charts */
+.chart {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
