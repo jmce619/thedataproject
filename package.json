@@ -25,6 +25,7 @@
     "styled-components": "^6.1.17"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/jquery": "^3.5.32",
     "@types/node": "20.4.2",
     "@types/react": "18.0.28",
