@@ -7,6 +7,9 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
+  const BarsIcon = FaBars as React.ElementType;
+  const TimesIcon = FaTimes as React.ElementType;
+
   return (
     <nav className="navbar">
       <button
@@ -14,7 +17,7 @@ export default function Navbar() {
         onClick={() => setOpen(!open)}
         aria-label="Toggle menu"
       >
-        {open ? <FaTimes /> : <FaBars />}
+        {open ? <TimesIcon /> : <BarsIcon />}
       </button>
       <span className="pipe">|</span>
       <span className="title">The Data Project</span>
