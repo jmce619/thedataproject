@@ -5,11 +5,9 @@ import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
 import type { MapContainerProps } from 'react-leaflet'
 
-// Explicitly define prop type correctly with React.ComponentType
-const MapContainer = dynamic(
-  () => import('react-leaflet').then((mod) => mod.MapContainer),
-  { ssr: false }
-) as React.ComponentType<MapContainerProps>
+const MapContainer = dynamic(() => import('../../components/ClientMapContainer'), {
+  ssr: false,
+})
 
 const GeoJSON = dynamic(
   () => import('react-leaflet').then((mod) => mod.GeoJSON),
