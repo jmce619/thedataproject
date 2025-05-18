@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
 import type { MapContainerProps } from 'react-leaflet'
 
-const MapContainer = dynamic(() => import('../../components/ClientMapContainer'), {
+const MapContainer = dynamic(() => import('../components/ClientMapContainer'), {
   ssr: false,
 })
 
