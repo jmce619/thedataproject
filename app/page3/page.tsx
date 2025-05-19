@@ -126,8 +126,6 @@ export default function DistrictResultsPage() {
       {currentData ? (
         <MapContainer
           key={selectedMap}
-          zoom={zoomLevel}
-          attributionControl={false}
           className="leaflet-container"
         >
           <SetView coords={centerCoords} zoom={zoomLevel} />
