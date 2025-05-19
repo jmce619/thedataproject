@@ -4,7 +4,7 @@ import { useState, useEffect, ChangeEvent } from 'react'
 import { MapContainer, GeoJSON, useMap } from 'react-leaflet'
 import type { FeatureCollection, Feature } from 'geojson'
 import 'leaflet/dist/leaflet.css'
-
+//
 // Helper to set view since we omit `center` prop
 function SetView({ coords, zoom }: { coords: [number, number]; zoom: number }) {
   const map = useMap()
