@@ -129,7 +129,7 @@ export default function DistrictResultsPage() {
           className="leaflet-container"
         >
           <SetView coords={centerCoords} zoom={zoomLevel} />
-          <GeoJSON data={currentData} style={currentStyle} />
+          <GeoJSON data={currentData}/>
         </MapContainer>
       ) : (
         <p className="text-gray-500">{loadingText}</p>
