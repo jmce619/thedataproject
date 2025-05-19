@@ -3,11 +3,11 @@
 import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
-import type { MapContainerProps } from 'react-leaflet'
 
-const MapContainer = dynamic(() => import('../../components/ClientMapContainer'), {
-  ssr: false,
-})
+const MapContainer = dynamic(
+  () => import('../../components/ClientMapContainer').then((mod) => mod.default),
+  { ssr: false }
+)
 
 const GeoJSON = dynamic(
   () => import('react-leaflet').then((mod) => mod.GeoJSON),
