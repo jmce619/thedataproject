@@ -4,13 +4,20 @@ import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
 
-// Leaflet (client-only imports)
-const MapContainer = dynamic(
-  () => import('react-leaflet').then((mod) => mod.MapContainer),
+// Import for typing
+import {
+  MapContainer as LeafletMapContainer,
+  GeoJSON as LeafletGeoJSON,
+} from 'react-leaflet'
+import type { MapContainerProps, GeoJSONProps } from 'react-leaflet'
+
+// Wrap the already-imported components so TS preserves their props:
+const MapContainer = dynamic<typeof LeafletMapContainer>(
+  () => Promise.resolve(LeafletMapContainer),
   { ssr: false }
 )
-const GeoJSON = dynamic(
-  () => import('react-leaflet').then((mod) => mod.GeoJSON),
+const GeoJSON = dynamic<typeof LeafletGeoJSON>(
+  () => Promise.resolve(LeafletGeoJSON),
   { ssr: false }
 )
 
@@ -20,21 +27,16 @@ export default function DistrictResultsPage() {
   const [selectedMap, setSelectedMap] = useState<'house' | 'senate'>('house')
   const [error, setError] = useState<string | null>(null)
 
-  // Load House data
   useEffect(() => {
-    async function fetchHouseData() {
+    async function fetchHouse() {
       try {
-        const [districtRes, resultsRes] = await Promise.all([
+        const [dRes, rRes] = await Promise.all([
           fetch('/data/congress.geojson'),
           fetch('/data/election_results.json'),
         ])
-
-        if (!districtRes.ok || !resultsRes.ok) {
-          throw new Error('Failed to load House data.')
-        }
-
-        const districts: FeatureCollection = await districtRes.json()
-        const results: any[] = await resultsRes.json()
+        if (!dRes.ok || !rRes.ok) throw new Error('House data load failed')
+        const districts = (await dRes.json()) as FeatureCollection
+        const results = (await rRes.json()) as any[]
 
         const winners: Record<string, any> = {}
         results.forEach((rec) => {
@@ -43,7 +45,7 @@ export default function DistrictResultsPage() {
           }
         })
 
-        const features = districts.features.map((feat: Feature) => {
+        const features = districts.features.map((feat) => {
           const props = feat.properties as any
           const gid = props.GEOID || props.geoid || props.GEOID20
           const win = winners[gid] || {}
@@ -62,27 +64,22 @@ export default function DistrictResultsPage() {
         setError(err.message)
       }
     }
-
-    fetchHouseData()
+    fetchHouse()
   }, [])
 
-  // Load Senate data
   useEffect(() => {
-    async function fetchSenateData() {
+    async function fetchSenate() {
       try {
         const res = await fetch('/data/us_states_senate_merged.geojson')
-        if (!res.ok) throw new Error('Failed to load Senate data.')
-        const geojson: FeatureCollection = await res.json()
-        setSenateData(geojson)
+        if (!res.ok) throw new Error('Senate data load failed')
+        setSenateData((await res.json()) as FeatureCollection)
       } catch (err: any) {
         setError(err.message)
       }
     }
-
-    fetchSenateData()
+    fetchSenate()
   }, [])
 
-  // Styling functions
   const styleHouse = (feature: Feature) => {
     const { winnerParty: p, winnerPct: pct } = feature.properties as any
     return {
@@ -105,12 +102,10 @@ export default function DistrictResultsPage() {
 
   const currentData = selectedMap === 'house' ? houseData : senateData
   const currentStyle = selectedMap === 'house' ? styleHouse : styleSenate
-  const loadingText =
-    selectedMap === 'house' ? 'Loading House map…' : 'Loading Senate map…'
+  const loadingText = selectedMap === 'house' ? 'Loading House map…' : 'Loading Senate map…'
 
   return (
     <div className="flex flex-col items-start space-y-4 w-full px-4 py-6">
-      {/* Map Selection Dropdown */}
       <select
         value={selectedMap}
         onChange={(e: ChangeEvent<HTMLSelectElement>) =>
@@ -122,14 +117,12 @@ export default function DistrictResultsPage() {
         <option value="senate">US Senate Results</option>
       </select>
 
-      {/* Error Handling */}
       {error && <div className="text-red-500">{error}</div>}
 
-      {/* Map Container */}
       {!error && currentData ? (
         <MapContainer
           key={selectedMap}
-          center={[37.8, -96] as [number, number]}
+          center={[37.8, -96]}
           zoom={4}
           className="leaflet-container"
           attributionControl={false}
