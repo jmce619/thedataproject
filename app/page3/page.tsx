@@ -16,7 +16,7 @@ const GeoJSON = dynamic(
   () => import('react-leaflet').then((m) => m.GeoJSON),
   { ssr: false }
 )
-
+//
 export default function DistrictResultsPage() {
   // ─── State ─────────────────────────────────────────────────────────────
   const [houseData, setHouseData] = useState<FeatureCollection | null>(null)
@@ -80,7 +80,6 @@ export default function DistrictResultsPage() {
     fetchSenate()
   }, [])
 
-  // ─── Styling callbacks ────────────────────────────────────────────────
   const styleHouse = (feature: Feature) => ({
     fillColor:
       (feature.properties as any).winnerParty === 'R'
