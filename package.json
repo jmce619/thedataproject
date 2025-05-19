@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "git lfs install && git lfs pull"
   },
   "dependencies": {
     "apexcharts": "^4.7.0",
