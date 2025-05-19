@@ -3,21 +3,15 @@
 import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
+import 'leaflet/dist/leaflet.css'
 
-// Static imports for typing
-import {
-  MapContainer as LeafletMapContainer,
-  GeoJSON as LeafletGeoJSON,
-} from 'react-leaflet'
-import type { MapContainerProps, GeoJSONProps } from 'react-leaflet'
-
-// Dynamic wrappers with correct generics
-const MapContainer = dynamic<MapContainerProps>(
-  () => Promise.resolve({ default: LeafletMapContainer }),
+// dynamic imports typed as any
+const MapContainer: React.ComponentType<any> = dynamic(
+  () => import('react-leaflet').then((mod) => mod.MapContainer),
   { ssr: false }
 )
-const GeoJSON = dynamic<GeoJSONProps>(
-  () => Promise.resolve({ default: LeafletGeoJSON }),
+const GeoJSON: React.ComponentType<any> = dynamic(
+  () => import('react-leaflet').then((mod) => mod.GeoJSON),
   { ssr: false }
 )
 
@@ -27,6 +21,7 @@ export default function DistrictResultsPage() {
   const [selectedMap, setSelectedMap] = useState<'house' | 'senate'>('house')
   const [error, setError] = useState<string | null>(null)
 
+  // Fetch & merge House data
   useEffect(() => {
     async function fetchHouse() {
       try {
@@ -35,7 +30,6 @@ export default function DistrictResultsPage() {
           fetch('/data/election_results.json'),
         ])
         if (!dRes.ok || !rRes.ok) throw new Error('House data load failed')
-
         const districts = (await dRes.json()) as FeatureCollection
         const results = (await rRes.json()) as any[]
 
@@ -68,6 +62,7 @@ export default function DistrictResultsPage() {
     fetchHouse()
   }, [])
 
+  // Fetch Senate data
   useEffect(() => {
     async function fetchSenate() {
       try {
@@ -81,6 +76,7 @@ export default function DistrictResultsPage() {
     fetchSenate()
   }, [])
 
+  // Styling functions
   const styleHouse = (feature: Feature) => {
     const { winnerParty: p, winnerPct: pct } = feature.properties as any
     return {
@@ -90,7 +86,6 @@ export default function DistrictResultsPage() {
       weight: 0.5,
     }
   }
-
   const styleSenate = (feature: Feature) => {
     const { party_simplified: p, vote_pct: pct } = feature.properties as any
     return {
