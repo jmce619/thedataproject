@@ -1,9 +1,19 @@
+// app/(your-folder)/page.tsx or components/DistrictResultsPage.tsx
 'use client'
 
-import { useState, useEffect, ChangeEvent } from 'react'
-import { MapContainer, GeoJSON } from 'react-leaflet'
+import { useState, useEffect, ChangeEvent, ReactNode } from 'react'
+import { MapContainer, GeoJSON, useMap } from 'react-leaflet'
 import type { FeatureCollection, Feature } from 'geojson'
 import 'leaflet/dist/leaflet.css'
+
+// Helper component to imperatively set the map view
+function SetView({ coords, zoom }: { coords: [number, number]; zoom: number }) {
+  const map = useMap()
+  useEffect(() => {
+    map.setView(coords, zoom)
+  }, [map, coords, zoom])
+  return null
+}
 
 export default function DistrictResultsPage() {
   const [houseData, setHouseData] = useState<FeatureCollection | null>(null)
@@ -11,6 +21,7 @@ export default function DistrictResultsPage() {
   const [selectedMap, setSelectedMap] = useState<'house' | 'senate'>('house')
   const [error, setError] = useState<string | null>(null)
 
+  // Fetch + merge House results
   useEffect(() => {
     async function fetchHouse() {
       try {
@@ -18,17 +29,17 @@ export default function DistrictResultsPage() {
           fetch('/data/congress.geojson'),
           fetch('/data/election_results.json'),
         ])
-        if (!dRes.ok || !rRes.ok) throw new Error('House data load failed')
+        if (!dRes.ok || !rRes.ok) throw new Error('Failed to load House data')
 
         const districts = (await dRes.json()) as FeatureCollection
         const results = (await rRes.json()) as any[]
 
         const winners: Record<string, any> = {}
-        for (const rec of results) {
+        results.forEach((rec) => {
           if (!winners[rec.GeoID] || winners[rec.GeoID]['%'] < rec['%']) {
             winners[rec.GeoID] = rec
           }
-        }
+        })
 
         const features = districts.features.map((feat) => {
           const props = feat.properties as any
@@ -52,11 +63,12 @@ export default function DistrictResultsPage() {
     fetchHouse()
   }, [])
 
+  // Fetch Senate results
   useEffect(() => {
     async function fetchSenate() {
       try {
         const res = await fetch('/data/us_states_senate_merged.geojson')
-        if (!res.ok) throw new Error('Senate data load failed')
+        if (!res.ok) throw new Error('Failed to load Senate data')
         setSenateData((await res.json()) as FeatureCollection)
       } catch (e: any) {
         setError(e.message)
@@ -65,6 +77,7 @@ export default function DistrictResultsPage() {
     fetchSenate()
   }, [])
 
+  // Styling callbacks
   const styleHouse = (feature: Feature) => {
     const { winnerParty: p, winnerPct: pct } = feature.properties as any
     return {
@@ -89,9 +102,11 @@ export default function DistrictResultsPage() {
   const currentData = selectedMap === 'house' ? houseData : senateData
   const currentStyle = selectedMap === 'house' ? styleHouse : styleSenate
   const loadingText = selectedMap === 'house' ? 'Loading House map…' : 'Loading Senate map…'
+  const centerCoords: [number, number] = [37.8, -96]
+  const zoomLevel = 4
 
   return (
-    <div className="page3 flex flex-col items-start space-y-4 w-full">
+    <div className="page3 flex flex-col items-start space-y-4 w-full px-4 py-6">
       {/* Dropdown */}
       <select
         value={selectedMap}
@@ -104,23 +119,23 @@ export default function DistrictResultsPage() {
         <option value="senate">US Senate Results</option>
       </select>
 
+      {/* Error */}
       {error && <div className="text-red-500">{error}</div>}
 
+      {/* Map or Loading */}
       {currentData ? (
-  // @ts-ignore — we know these props are valid at runtime
         <MapContainer
-          center={[37.8, -96]}
-          zoom={4}
+          key={selectedMap}
+          zoom={zoomLevel}
           attributionControl={false}
           className="leaflet-container"
-          key={selectedMap}
         >
+          <SetView coords={centerCoords} zoom={zoomLevel} />
           <GeoJSON data={currentData} style={currentStyle} />
         </MapContainer>
       ) : (
-        <p>{loadingText}</p>
+        <p className="text-gray-500">{loadingText}</p>
       )}
-
     </div>
   )
 }
