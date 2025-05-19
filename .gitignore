@@ -10,7 +10,6 @@
 !.yarn/releases
 !.yarn/versions
 
-./public/data/congress.geojson
 # testing
 /coverage
 
