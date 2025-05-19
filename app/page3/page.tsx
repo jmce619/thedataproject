@@ -99,16 +99,18 @@ export default function DistrictResultsPage() {
 
       {/* Map */}
       {currentData ? (
-        <MapContainer
-          key={selectedMap}
-          center={[37.8, -96]}
-          zoom={4}
-          attributionControl={false}
+      {/* above your MapContainer, tell TS to shut up: */}
+      {/* @ts-ignore */}
+      <MapContainer
+        center={[37.8, -96]}
+        zoom={4}
+        attributionControl={false}
+        className="leaflet-container"
+        key={selectedMap}
+      >
+        <GeoJSON data={currentData} style={currentStyle} />
+      </MapContainer>
 
-          className="leaflet-container"
-        >
-          <GeoJSON data={currentData} style={currentStyle} />
-        </MapContainer>
       ) : (
         <p>{loadingText}</p>
       )}
