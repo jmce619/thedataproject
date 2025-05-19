@@ -4,19 +4,19 @@ import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
 
-// Static import for typing
+// Static imports for typing
 import {
   MapContainer as LeafletMapContainer,
   GeoJSON as LeafletGeoJSON,
 } from 'react-leaflet'
 import type { MapContainerProps, GeoJSONProps } from 'react-leaflet'
 
-// ✅ Correct dynamic imports (module shape)
-const MapContainer = dynamic<typeof LeafletMapContainer>(
+// Dynamic wrappers with correct generics
+const MapContainer = dynamic<MapContainerProps>(
   () => Promise.resolve({ default: LeafletMapContainer }),
   { ssr: false }
 )
-const GeoJSON = dynamic<typeof LeafletGeoJSON>(
+const GeoJSON = dynamic<GeoJSONProps>(
   () => Promise.resolve({ default: LeafletGeoJSON }),
   { ssr: false }
 )
@@ -27,7 +27,6 @@ export default function DistrictResultsPage() {
   const [selectedMap, setSelectedMap] = useState<'house' | 'senate'>('house')
   const [error, setError] = useState<string | null>(null)
 
-  // Fetch House results and merge
   useEffect(() => {
     async function fetchHouse() {
       try {
@@ -69,7 +68,6 @@ export default function DistrictResultsPage() {
     fetchHouse()
   }, [])
 
-  // Fetch Senate results
   useEffect(() => {
     async function fetchSenate() {
       try {
@@ -83,7 +81,6 @@ export default function DistrictResultsPage() {
     fetchSenate()
   }, [])
 
-  // Styling callbacks
   const styleHouse = (feature: Feature) => {
     const { winnerParty: p, winnerPct: pct } = feature.properties as any
     return {
