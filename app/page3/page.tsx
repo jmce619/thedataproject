@@ -4,6 +4,7 @@
 import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
+import type { MapOptions } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 // ↓ dynamic imports disable SSR for these browser-only modules
