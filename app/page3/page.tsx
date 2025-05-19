@@ -129,7 +129,7 @@ export default function DistrictResultsPage() {
       {!error && currentData ? (
         <MapContainer
           key={selectedMap}
-          center={[37.8, -96]}
+          center={[37.8, -96] as [number, number]}
           zoom={4}
           className="leaflet-container"
           attributionControl={false}
