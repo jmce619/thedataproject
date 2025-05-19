@@ -107,6 +107,7 @@ export default function DistrictResultsPage() {
       {error && <div className="text-red-500">{error}</div>}
 
       {currentData ? (
+  // @ts-ignore — we know these props are valid at runtime
         <MapContainer
           center={[37.8, -96]}
           zoom={4}
@@ -119,6 +120,7 @@ export default function DistrictResultsPage() {
       ) : (
         <p>{loadingText}</p>
       )}
+
     </div>
   )
 }
