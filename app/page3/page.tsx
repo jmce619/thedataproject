@@ -4,10 +4,10 @@
 import { useState, useEffect, ChangeEvent } from 'react'
 import dynamic from 'next/dynamic'
 import type { FeatureCollection, Feature } from 'geojson'
-import type { MapOptions } from 'leaflet'
+import type { MapOptions, Path } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
-// ↓ dynamic imports disable SSR for these browser-only modules
+// Dynamically load react‐leaflet so it only runs in the browser
 const MapContainer = dynamic(
   () => import('react-leaflet').then((m) => m.MapContainer),
   { ssr: false }
@@ -18,12 +18,13 @@ const GeoJSON = dynamic(
 )
 
 export default function DistrictResultsPage() {
+  // ─── State ─────────────────────────────────────────────────────────────
   const [houseData, setHouseData] = useState<FeatureCollection | null>(null)
   const [senateData, setSenateData] = useState<FeatureCollection | null>(null)
   const [selectedMap, setSelectedMap] = useState<'house' | 'senate'>('house')
   const [error, setError] = useState<string | null>(null)
 
-  // ——— Data fetching ———
+  // ─── Fetch House GeoJSON + results ────────────────────────────────────
   useEffect(() => {
     async function fetchHouse() {
       try {
@@ -65,6 +66,7 @@ export default function DistrictResultsPage() {
     fetchHouse()
   }, [])
 
+  // ─── Fetch Senate GeoJSON ─────────────────────────────────────────────
   useEffect(() => {
     async function fetchSenate() {
       try {
@@ -78,45 +80,47 @@ export default function DistrictResultsPage() {
     fetchSenate()
   }, [])
 
-  // ——— Styling callbacks ———
-  const styleHouse = (feature: Feature) => {
-    const { winnerParty: p, winnerPct: pct } = feature.properties as any
-    return {
-      fillColor: p === 'R' ? '#EF4444' : p === 'D' ? '#3B82F6' : '#ccc',
-      fillOpacity: pct / 100,
-      color: '#222',
-      weight: 0.5,
-    }
-  }
+  // ─── Styling callbacks ────────────────────────────────────────────────
+  const styleHouse = (feature: Feature) => ({
+    fillColor:
+      (feature.properties as any).winnerParty === 'R'
+        ? '#EF4444'
+        : (feature.properties as any).winnerParty === 'D'
+        ? '#3B82F6'
+        : '#ccc',
+    fillOpacity: ((feature.properties as any).winnerPct ?? 0) / 100,
+    color: '#222',
+    weight: 0.5,
+  })
 
-  const styleSenate = (feature: Feature) => {
-    const props = feature.properties as any
-    const p = props.party_simplified
-    const pct = props.vote_pct
-    return {
-      fillColor: p === 'REPUBLICAN' ? '#EF4444' : p === 'DEMOCRAT' ? '#3B82F6' : '#ccc',
-      fillOpacity: pct / 100,
-      color: '#222',
-      weight: 0.5,
-    }
-  }
+  const styleSenate = (feature: Feature) => ({
+    fillColor:
+      (feature.properties as any).party_simplified === 'REPUBLICAN'
+        ? '#EF4444'
+        : (feature.properties as any).party_simplified === 'DEMOCRAT'
+        ? '#3B82F6'
+        : '#ccc',
+    fillOpacity: ((feature.properties as any).vote_pct ?? 0) / 100,
+    color: '#222',
+    weight: 0.5,
+  })
 
-  // ——— Pick the right data + style ———
+  // ─── Choose data + text based on selection ───────────────────────────
   const currentData = selectedMap === 'house' ? houseData : senateData
-  const currentStyle = selectedMap === 'house' ? styleHouse : styleSenate
   const loadingText =
     selectedMap === 'house' ? 'Loading House map…' : 'Loading Senate map…'
 
-  // ——— All your Leaflet MapOptions in one place ———
+  // ─── Core Leaflet map options ────────────────────────────────────────
   const mapOptions: MapOptions = {
     center: [37.8, -96],
     zoom: 4,
-    attributionControl: false, // hide the default Leaflet credit
+    attributionControl: false,
     zoomControl: true,
   }
 
   return (
     <div className="page3 flex flex-col items-start space-y-4 w-full px-4 py-6">
+      {/* Dropdown */}
       <select
         value={selectedMap}
         onChange={(e: ChangeEvent<HTMLSelectElement>) =>
@@ -128,9 +132,10 @@ export default function DistrictResultsPage() {
         <option value="senate">US Senate Results</option>
       </select>
 
+      {/* Error */}
       {error && <div className="text-red-500">{error}</div>}
 
-
+      {/* Map or Loading */}
       {currentData ? (
         <MapContainer
           {...(mapOptions as any)}
@@ -139,13 +144,18 @@ export default function DistrictResultsPage() {
         >
           <GeoJSON
             data={currentData}
-            pathOptions={currentStyle}    // ← use pathOptions instead of style
+            onEachFeature={(feature, layer) => {
+              // cast layer to Path so TS lets us call setStyle()
+              const pathLayer = layer as Path
+              const styleFn =
+                selectedMap === 'house' ? styleHouse : styleSenate
+              pathLayer.setStyle(styleFn(feature as Feature))
+            }}
           />
         </MapContainer>
       ) : (
         <p className="text-gray-500">{loadingText}</p>
       )}
-
     </div>
   )
 }
