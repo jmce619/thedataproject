@@ -30,8 +30,16 @@ export default function HomePage() {
             height={200}
           />
         </Link>
+        <Link href="/page4" className="option-card">
+          <Image
+            src="/images/page4.png"
+            alt="HealthCare Insurance"
+            width={200}
+            height={200}
+          />
+        </Link>
       </div>
-      <p className="all-captions">Finance     –      Sports      –      Politics</p>
+      <p className="all-captions">Finance – Sports – Politics - HealthCare Insurance</p>
     </div>
   )
 }
