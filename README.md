@@ -26,13 +26,6 @@ Each domain is individually documented below.
 - [🏥 Healthcare Insurance Data Processing](#-healthcare-insurance-data-processing)
   - [Data Sources](#healthcare-data-sources)
   - [Claims and Data Extraction](#claims-and-data-extraction)
-- [📚 How to Use This Repo](#-how-to-use-this-repo)
-- [📦 Dependencies and Tools](#-dependencies-and-tools)
-- [🛠️ Monitoring and Logging](#️-monitoring-and-logging)
-- [⚠️ Important Considerations](#️-important-considerations)
-- [📞 Contact & Support](#-contact--support)
-- [🚀 Future Roadmap](#-future-roadmap)
-
 ---
 
 ## 📈 Stock Analytics and Similarity Search
@@ -59,27 +52,3 @@ flowchart TD
     
     AV --> Airflow --> Storage --> Embed --> Pinecone --> NextAPI --> Frontend
 
-
-## 🏀 Sports Data Insights
-
-This section provides in-depth analytics, visualizations, and data-driven insights into NBA player and team performance, leveraging structured data pipelines for consistency and reliability.
-
-### Sports Data Sources
-
-- **NBA Official API** (`nba_api` library)
-- ESPN and other sports analytics sources
-
-### Data Pipeline Architecture
-
-Our sports data pipeline uses Airflow, Redshift, and dbt to ensure efficient and scalable data management:
-
-```mermaid
-flowchart TD
-    NBA["🏀 NBA API (nba_api)"]
-    Airflow["🔄 Airflow Scheduler"]
-    Redshift["🗄️ AWS Redshift Data Warehouse"]
-    DBT["🔧 dbt Data Transformation"]
-    NextAPI["🚀 Next.js API Backend"]
-    Frontend["🌐 React Frontend"]
-
-    NBA --> Airflow --> Redshift --> DBT --> NextAPI --> Frontend
