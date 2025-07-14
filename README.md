@@ -51,4 +51,18 @@ flowchart TD
     Frontend["🌐 React Frontend"]
     
     AV --> Airflow --> Storage --> Embed --> Pinecone --> NextAPI --> Frontend
+```
 
+## 🏀 Sports Data Insights
+
+```mermaid
+flowchart TD
+    NBA["🏀 NBA API (nba_api)"]
+    Airflow["🔄 Airflow Scheduler"]
+    Redshift["🗄️ AWS Redshift Data Warehouse"]
+    DBT["🔧 dbt Data Transformation"]
+    NextAPI["🚀 Next.js Backend API"]
+    Frontend["🌐 React Frontend"]
+
+    NBA --> Airflow --> Redshift --> DBT --> NextAPI --> Frontend
+```
