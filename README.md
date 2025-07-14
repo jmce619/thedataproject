@@ -58,3 +58,28 @@ flowchart TD
     Frontend["🌐 React Frontend"]
     
     AV --> Airflow --> Storage --> Embed --> Pinecone --> NextAPI --> Frontend
+
+
+## 🏀 Sports Data Insights
+
+This section provides in-depth analytics, visualizations, and data-driven insights into NBA player and team performance, leveraging structured data pipelines for consistency and reliability.
+
+### Sports Data Sources
+
+- **NBA Official API** (`nba_api` library)
+- ESPN and other sports analytics sources
+
+### Data Pipeline Architecture
+
+Our sports data pipeline uses Airflow, Redshift, and dbt to ensure efficient and scalable data management:
+
+```mermaid
+flowchart TD
+    NBA["🏀 NBA API (nba_api)"]
+    Airflow["🔄 Airflow Scheduler"]
+    Redshift["🗄️ AWS Redshift Data Warehouse"]
+    DBT["🔧 dbt Data Transformation"]
+    NextAPI["🚀 Next.js API Backend"]
+    Frontend["🌐 React Frontend"]
+
+    NBA --> Airflow --> Redshift --> DBT --> NextAPI --> Frontend

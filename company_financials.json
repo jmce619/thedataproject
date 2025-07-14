@@ -6001,5 +6001,1409 @@
     "EBITDA": "None",
     "RevenueTTM": "0",
     "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-M",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-N",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-O",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-P",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-Q",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-S",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BACCU",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BACQ",
+    "MarketCap": "427652000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BACQR",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BACQU",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAER",
+    "MarketCap": "97989000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "29216000",
+    "RevenueTTM": "108752000",
+    "ProfitMargin": "-0.101"
+  },
+  {
+    "symbol": "BAERW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "29216000",
+    "RevenueTTM": "108752000",
+    "ProfitMargin": "-0.101"
+  },
+  {
+    "symbol": "BAFN",
+    "MarketCap": "59334000",
+    "PERatio": "6.11",
+    "DividendYield": "0.0229",
+    "EBITDA": "None",
+    "RevenueTTM": "80167000",
+    "ProfitMargin": "0.143"
+  },
+  {
+    "symbol": "BAH",
+    "MarketCap": "13269329000",
+    "PERatio": "14.75",
+    "DividendYield": "0.0211",
+    "EBITDA": "1414000000",
+    "RevenueTTM": "11980000000",
+    "ProfitMargin": "0.078"
+  },
+  {
+    "symbol": "BAK",
+    "MarketCap": "1455723000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "2843000000",
+    "RevenueTTM": "78950998000",
+    "ProfitMargin": "-0.117"
+  },
+  {
+    "symbol": "BALL",
+    "MarketCap": "16176243000",
+    "PERatio": "33.13",
+    "DividendYield": "0.0143",
+    "EBITDA": "1886000000",
+    "RevenueTTM": "12018000000",
+    "ProfitMargin": "0.0418"
+  },
+  {
+    "symbol": "BALY",
+    "MarketCap": "537675000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "311928000",
+    "RevenueTTM": "2421188000",
+    "ProfitMargin": "-0.17"
+  },
+  {
+    "symbol": "BAM",
+    "MarketCap": "90709000000",
+    "PERatio": "41.26",
+    "DividendYield": "0.0317",
+    "EBITDA": "2642000000",
+    "RevenueTTM": "4177000000",
+    "ProfitMargin": "0.553"
+  },
+  {
+    "symbol": "BANC",
+    "MarketCap": "2356398000",
+    "PERatio": "22.68",
+    "DividendYield": "0.0285",
+    "EBITDA": "None",
+    "RevenueTTM": "964190000",
+    "ProfitMargin": "0.155"
+  },
+  {
+    "symbol": "BANC-P-F",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAND",
+    "MarketCap": "468170000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "30442000",
+    "RevenueTTM": "751695000",
+    "ProfitMargin": "-0.0014"
+  },
+  {
+    "symbol": "BANF",
+    "MarketCap": "4285662000",
+    "PERatio": "19.53",
+    "DividendYield": "0.0149",
+    "EBITDA": "None",
+    "RevenueTTM": "638713000",
+    "ProfitMargin": "0.348"
+  },
+  {
+    "symbol": "BANFP",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "0.064",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BANL",
+    "MarketCap": "20911000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-3139108",
+    "RevenueTTM": "592518000",
+    "ProfitMargin": "-0.0063"
+  },
+  {
+    "symbol": "BANR",
+    "MarketCap": "2374954000",
+    "PERatio": "13.49",
+    "DividendYield": "0.0299",
+    "EBITDA": "None",
+    "RevenueTTM": "614045000",
+    "ProfitMargin": "0.287"
+  },
+  {
+    "symbol": "BANX",
+    "MarketCap": "149806000",
+    "PERatio": "8.94",
+    "DividendYield": "0.0862",
+    "EBITDA": "None",
+    "RevenueTTM": "29467800",
+    "ProfitMargin": "0.568"
+  },
+  {
+    "symbol": "BAOS",
+    "MarketCap": "4219800",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-26400976",
+    "RevenueTTM": "624090",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAP",
+    "MarketCap": "17652654000",
+    "PERatio": "11.1",
+    "DividendYield": "0.0493",
+    "EBITDA": "None",
+    "RevenueTTM": "18748156000",
+    "ProfitMargin": "0.308"
+  },
+  {
+    "symbol": "BARK",
+    "MarketCap": "156206000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-28426000",
+    "RevenueTTM": "484182000",
+    "ProfitMargin": "-0.0679"
+  },
+  {
+    "symbol": "BARK-WS",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BASE",
+    "MarketCap": "1332575000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-74527000",
+    "RevenueTTM": "214662000",
+    "ProfitMargin": "-0.332"
+  },
+  {
+    "symbol": "BATL",
+    "MarketCap": "21887300",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "80401000",
+    "RevenueTTM": "191498000",
+    "ProfitMargin": "0.0279"
+  },
+  {
+    "symbol": "BATRA",
+    "MarketCap": "2955898000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "26414000",
+    "RevenueTTM": "672879000",
+    "ProfitMargin": "-0.0318"
+  },
+  {
+    "symbol": "BATRK",
+    "MarketCap": "2955894000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "26414000",
+    "RevenueTTM": "672879000",
+    "ProfitMargin": "-0.0318"
+  },
+  {
+    "symbol": "BAX",
+    "MarketCap": "14728123000",
+    "PERatio": "None",
+    "DividendYield": "0.0225",
+    "EBITDA": "1955000000",
+    "RevenueTTM": "10771000000",
+    "ProfitMargin": "-0.052"
+  },
+  {
+    "symbol": "BAYA",
+    "MarketCap": "60673000",
+    "PERatio": "30.14",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAYAR",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAYAU",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BB",
+    "MarketCap": "2402884000",
+    "PERatio": "201.5",
+    "DividendYield": "None",
+    "EBITDA": "69900000",
+    "RevenueTTM": "533200000",
+    "ProfitMargin": "-0.067"
+  },
+  {
+    "symbol": "BBAI",
+    "MarketCap": "1875257000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-31782000",
+    "RevenueTTM": "159872000",
+    "ProfitMargin": "-1.437"
+  },
+  {
+    "symbol": "BBAI-WS",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BBAR",
+    "MarketCap": "3184489000",
+    "PERatio": "9.77",
+    "DividendYield": "0.104",
+    "EBITDA": "None",
+    "RevenueTTM": "2784762528000",
+    "ProfitMargin": "0.136"
+  },
+  {
+    "symbol": "BBCP",
+    "MarketCap": "357953000",
+    "PERatio": "31.27",
+    "DividendYield": "0",
+    "EBITDA": "102539000",
+    "RevenueTTM": "401503000",
+    "ProfitMargin": "0.0357"
+  },
+  {
+    "symbol": "BBD",
+    "MarketCap": "28424149000",
+    "PERatio": "9.67",
+    "DividendYield": "0.0134",
+    "EBITDA": "None",
+    "RevenueTTM": "83628048000",
+    "ProfitMargin": "0.224"
+  },
+  {
+    "symbol": "BBDC",
+    "MarketCap": "1002066000",
+    "PERatio": "10.13",
+    "DividendYield": "0.114",
+    "EBITDA": "55766000",
+    "RevenueTTM": "280800000",
+    "ProfitMargin": "0.352"
+  },
+  {
+    "symbol": "BBDO",
+    "MarketCap": "28424198000",
+    "PERatio": "8.57",
+    "DividendYield": "0.0553",
+    "EBITDA": "None",
+    "RevenueTTM": "83628048000",
+    "ProfitMargin": "0.224"
+  },
+  {
+    "symbol": "BBGI",
+    "MarketCap": "7357100",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "20170400",
+    "RevenueTTM": "234824000",
+    "ProfitMargin": "-0.0366"
+  },
+  {
+    "symbol": "BBIO",
+    "MarketCap": "8823770000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-662649984",
+    "RevenueTTM": "127415000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BBLG",
+    "MarketCap": "4719500",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-824964",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BBLGW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BBNX",
+    "MarketCap": "945121000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-39370000",
+    "RevenueTTM": "53034000",
+    "ProfitMargin": "-1.046"
+  },
+  {
+    "symbol": "BBSI",
+    "MarketCap": "1105533000",
+    "PERatio": "22.08",
+    "DividendYield": "0.0077",
+    "EBITDA": "64115000",
+    "RevenueTTM": "1171315000",
+    "ProfitMargin": "0.0445"
+  },
+  {
+    "symbol": "BBU",
+    "MarketCap": "2288706000",
+    "PERatio": "None",
+    "DividendYield": "0.0096",
+    "EBITDA": "7162000000",
+    "RevenueTTM": "35354001000",
+    "ProfitMargin": "-0.0007"
+  },
+  {
+    "symbol": "BBUC",
+    "MarketCap": "2139619000",
+    "PERatio": "None",
+    "DividendYield": "0.008",
+    "EBITDA": "799000000",
+    "RevenueTTM": "8309000000",
+    "ProfitMargin": "-0.0958"
+  },
+  {
+    "symbol": "BBVA",
+    "MarketCap": "87124615000",
+    "PERatio": "7.23",
+    "DividendYield": "0.0509",
+    "EBITDA": "None",
+    "RevenueTTM": "32024001000",
+    "ProfitMargin": "0.33"
+  },
+  {
+    "symbol": "BBW",
+    "MarketCap": "657656000",
+    "PERatio": "12.0",
+    "DividendYield": "0.0171",
+    "EBITDA": "86122000",
+    "RevenueTTM": "510069000",
+    "ProfitMargin": "0.109"
+  },
+  {
+    "symbol": "BBWI",
+    "MarketCap": "6949338000",
+    "PERatio": "8.83",
+    "DividendYield": "0.0267",
+    "EBITDA": "1563000000",
+    "RevenueTTM": "7347000000",
+    "ProfitMargin": "0.111"
+  },
+  {
+    "symbol": "BBY",
+    "MarketCap": "15172602000",
+    "PERatio": "17.51",
+    "DividendYield": "0.0566",
+    "EBITDA": "2593000000",
+    "RevenueTTM": "41448002000",
+    "ProfitMargin": "0.0213"
+  },
+  {
+    "symbol": "BC",
+    "MarketCap": "3978444000",
+    "PERatio": "40.11",
+    "DividendYield": "0.0311",
+    "EBITDA": "654600000",
+    "RevenueTTM": "5093900000",
+    "ProfitMargin": "0.0162"
+  },
+  {
+    "symbol": "BCAB",
+    "MarketCap": "22403300",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-66232000",
+    "RevenueTTM": "11000000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCAL",
+    "MarketCap": "525089000",
+    "PERatio": "34.47",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "132045000",
+    "ProfitMargin": "0.131"
+  },
+  {
+    "symbol": "BCAT",
+    "MarketCap": "1592580000",
+    "PERatio": "8.31",
+    "DividendYield": "0.221",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCAX",
+    "MarketCap": "900579000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-58299000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCBP",
+    "MarketCap": "152061000",
+    "PERatio": "55.38",
+    "DividendYield": "0.0759",
+    "EBITDA": "None",
+    "RevenueTTM": "63178000",
+    "ProfitMargin": "0.0702"
+  },
+  {
+    "symbol": "BCC",
+    "MarketCap": "3430324000",
+    "PERatio": "11.37",
+    "DividendYield": "0.0097",
+    "EBITDA": "556882000",
+    "RevenueTTM": "6615368000",
+    "ProfitMargin": "0.0473"
+  },
+  {
+    "symbol": "BCDA",
+    "MarketCap": "13031700",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-8392000",
+    "RevenueTTM": "3000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCE",
+    "MarketCap": "21982915000",
+    "PERatio": "76.81",
+    "DividendYield": "0.0581",
+    "EBITDA": "8667000000",
+    "RevenueTTM": "24327999000",
+    "ProfitMargin": "0.0233"
+  },
+  {
+    "symbol": "BCG",
+    "MarketCap": "32540900",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "172860000",
+    "ProfitMargin": "-0.0113"
+  },
+  {
+    "symbol": "BCGWW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "172860000",
+    "ProfitMargin": "-0.0113"
+  },
+  {
+    "symbol": "BCH",
+    "MarketCap": "14794345000",
+    "PERatio": "10.81",
+    "DividendYield": "0.0692",
+    "EBITDA": "None",
+    "RevenueTTM": "2680364990000",
+    "ProfitMargin": "0.462"
+  },
+  {
+    "symbol": "BCLI",
+    "MarketCap": "11806600",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-12080000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCML",
+    "MarketCap": "309734000",
+    "PERatio": "13.4",
+    "DividendYield": "0.0291",
+    "EBITDA": "None",
+    "RevenueTTM": "95714000",
+    "ProfitMargin": "0.245"
+  },
+  {
+    "symbol": "BCO",
+    "MarketCap": "3908940000",
+    "PERatio": "25.09",
+    "DividendYield": "0.0114",
+    "EBITDA": "749800000",
+    "RevenueTTM": "5022500000",
+    "ProfitMargin": "0.0329"
+  },
+  {
+    "symbol": "BCPC",
+    "MarketCap": "5167885000",
+    "PERatio": "38.0",
+    "DividendYield": "0.0055",
+    "EBITDA": "238447000",
+    "RevenueTTM": "964544000",
+    "ProfitMargin": "0.142"
+  },
+  {
+    "symbol": "BCRX",
+    "MarketCap": "1833030000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "37473000",
+    "RevenueTTM": "503485000",
+    "ProfitMargin": "-0.106"
+  },
+  {
+    "symbol": "BCS",
+    "MarketCap": "66015154000",
+    "PERatio": "9.02",
+    "DividendYield": "0.0227",
+    "EBITDA": "None",
+    "RevenueTTM": "24875999000",
+    "ProfitMargin": "0.265"
+  },
+  {
+    "symbol": "BCSF",
+    "MarketCap": "1004813000",
+    "PERatio": "8.9",
+    "DividendYield": "0.112",
+    "EBITDA": "None",
+    "RevenueTTM": "284993000",
+    "ProfitMargin": "0.396"
+  },
+  {
+    "symbol": "BCTX",
+    "MarketCap": "13842100",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-24266070",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCTXW",
+    "MarketCap": "48083900",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-24266070",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCTXZ",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCV-P-A",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BCYC",
+    "MarketCap": "554031000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-241210000",
+    "RevenueTTM": "25722000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BDC",
+    "MarketCap": "4842320000",
+    "PERatio": "23.71",
+    "DividendYield": "0.0017",
+    "EBITDA": "410073000",
+    "RevenueTTM": "2550165000",
+    "ProfitMargin": "0.0836"
+  },
+  {
+    "symbol": "BDL",
+    "MarketCap": "61800000",
+    "PERatio": "15.18",
+    "DividendYield": "0.0156",
+    "EBITDA": "11911000000",
+    "RevenueTTM": "137045000000",
+    "ProfitMargin": "0.086"
+  },
+  {
+    "symbol": "BDMD",
+    "MarketCap": "234173000",
+    "PERatio": "18.4",
+    "DividendYield": "None",
+    "EBITDA": "15129600",
+    "RevenueTTM": "33048200",
+    "ProfitMargin": "0.38"
+  },
+  {
+    "symbol": "BDMDW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "15129600",
+    "RevenueTTM": "33048200",
+    "ProfitMargin": "0.38"
+  },
+  {
+    "symbol": "BDN",
+    "MarketCap": "745904000",
+    "PERatio": "None",
+    "DividendYield": "0.14",
+    "EBITDA": "54576000",
+    "RevenueTTM": "312538000",
+    "ProfitMargin": "-0.661"
+  },
+  {
+    "symbol": "BDRX",
+    "MarketCap": "4414200",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-9082000",
+    "RevenueTTM": "83000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BDSX",
+    "MarketCap": "45229300",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-26577000",
+    "RevenueTTM": "74463000",
+    "ProfitMargin": "-0.543"
+  },
+  {
+    "symbol": "BDTX",
+    "MarketCap": "163196000",
+    "PERatio": "47.83",
+    "DividendYield": "None",
+    "EBITDA": "-716000",
+    "RevenueTTM": "70000000",
+    "ProfitMargin": "0.0727"
+  },
+  {
+    "symbol": "BDX",
+    "MarketCap": "50434236000",
+    "PERatio": "34.1",
+    "DividendYield": "0.0242",
+    "EBITDA": "5573000000",
+    "RevenueTTM": "20867000000",
+    "ProfitMargin": "0.0718"
+  },
+  {
+    "symbol": "BE",
+    "MarketCap": "5898616000",
+    "PERatio": "1270",
+    "DividendYield": "None",
+    "EBITDA": "105372000",
+    "RevenueTTM": "1564579000",
+    "ProfitMargin": "0.0029"
+  },
+  {
+    "symbol": "BEAG",
+    "MarketCap": "313806000",
+    "PERatio": "1002.0",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEAGR",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEAGU",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEAM",
+    "MarketCap": "2127786000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-408700000",
+    "RevenueTTM": "63578000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEAT",
+    "MarketCap": "41924000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-19880000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEATW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEDU",
+    "MarketCap": "51426000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "8647200",
+    "RevenueTTM": "178255000",
+    "ProfitMargin": "-0.607"
+  },
+  {
+    "symbol": "BEEM",
+    "MarketCap": "25299000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-14081000",
+    "RevenueTTM": "41099000",
+    "ProfitMargin": "-0.578"
+  },
+  {
+    "symbol": "BEEP",
+    "MarketCap": "177656000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "10479000",
+    "RevenueTTM": "36416000",
+    "ProfitMargin": "-0.207"
+  },
+  {
+    "symbol": "BEKE",
+    "MarketCap": "22501431000",
+    "PERatio": "34.87",
+    "DividendYield": "0.0203",
+    "EBITDA": "5397416000",
+    "RevenueTTM": "100408533000",
+    "ProfitMargin": "0.0447"
+  },
+  {
+    "symbol": "BELFA",
+    "MarketCap": "1261844000",
+    "PERatio": "28.13",
+    "DividendYield": "0.0027",
+    "EBITDA": "103743000",
+    "RevenueTTM": "558940000",
+    "ProfitMargin": "0.0769"
+  },
+  {
+    "symbol": "BELFB",
+    "MarketCap": "1261843000",
+    "PERatio": "30.93",
+    "DividendYield": "0.0029",
+    "EBITDA": "103743000",
+    "RevenueTTM": "558940000",
+    "ProfitMargin": "0.0769"
+  },
+  {
+    "symbol": "BEN",
+    "MarketCap": "13069707000",
+    "PERatio": "36.04",
+    "DividendYield": "0.0537",
+    "EBITDA": "1667100000",
+    "RevenueTTM": "8697100000",
+    "ProfitMargin": "0.0465"
+  },
+  {
+    "symbol": "BENF",
+    "MarketCap": "2693500",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-87819000",
+    "RevenueTTM": "-19931000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BENFW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-87819000",
+    "RevenueTTM": "-19931000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEP",
+    "MarketCap": "16747016000",
+    "PERatio": "None",
+    "DividendYield": "0.0585",
+    "EBITDA": "3135000000",
+    "RevenueTTM": "5964000000",
+    "ProfitMargin": "-0.0783"
+  },
+  {
+    "symbol": "BEP-P-A",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEPC",
+    "MarketCap": "5909794000",
+    "PERatio": "None",
+    "DividendYield": "0.0455",
+    "EBITDA": "2164000000",
+    "RevenueTTM": "3923000000",
+    "ProfitMargin": "-0.0637"
+  },
+  {
+    "symbol": "BEPH",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "0.0793",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEPI",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "0",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BEPJ",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "0.0622",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BETR",
+    "MarketCap": "206781000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "118790000",
+    "ProfitMargin": "-1.729"
+  },
+  {
+    "symbol": "BETRW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "118790000",
+    "ProfitMargin": "-1.729"
+  },
+  {
+    "symbol": "BF-A",
+    "MarketCap": "13758540000",
+    "PERatio": "15.91",
+    "DividendYield": "0.033",
+    "EBITDA": "1246000000",
+    "RevenueTTM": "3975000000",
+    "ProfitMargin": "0.219"
+  },
+  {
+    "symbol": "BF-B",
+    "MarketCap": "13758544000",
+    "PERatio": "15.77",
+    "DividendYield": "0.0337",
+    "EBITDA": "1246000000",
+    "RevenueTTM": "3975000000",
+    "ProfitMargin": "0.219"
+  },
+  {
+    "symbol": "BFAM",
+    "MarketCap": "6604179000",
+    "PERatio": "41.64",
+    "DividendYield": "None",
+    "EBITDA": "391295000",
+    "RevenueTTM": "2728831000",
+    "ProfitMargin": "0.0591"
+  },
+  {
+    "symbol": "BFC",
+    "MarketCap": "1189928000",
+    "PERatio": "17.62",
+    "DividendYield": "0.0153",
+    "EBITDA": "None",
+    "RevenueTTM": "163459000",
+    "ProfitMargin": "0.418"
+  },
+  {
+    "symbol": "BFH",
+    "MarketCap": "2847660000",
+    "PERatio": "10.8",
+    "DividendYield": "0.0147",
+    "EBITDA": "682000000",
+    "RevenueTTM": "2445000000",
+    "ProfitMargin": "0.115"
+  },
+  {
+    "symbol": "BFIN",
+    "MarketCap": "146039000",
+    "PERatio": "32.56",
+    "DividendYield": "0.0346",
+    "EBITDA": "None",
+    "RevenueTTM": "48547000",
+    "ProfitMargin": "0.0915"
+  },
+  {
+    "symbol": "BFLY",
+    "MarketCap": "447593000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-62828000",
+    "RevenueTTM": "85625000",
+    "ProfitMargin": "-0.756"
+  },
+  {
+    "symbol": "BFLY-WS",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BFRG",
+    "MarketCap": "14217400",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-7325561",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BFRGW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BFRI",
+    "MarketCap": "8123700",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-15968000",
+    "RevenueTTM": "37997000",
+    "ProfitMargin": "-0.303"
+  },
+  {
+    "symbol": "BFRIW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-15968000",
+    "RevenueTTM": "37997000",
+    "ProfitMargin": "-0.303"
+  },
+  {
+    "symbol": "BFS",
+    "MarketCap": "1198989000",
+    "PERatio": "23.83",
+    "DividendYield": "0.0691",
+    "EBITDA": "169098000",
+    "RevenueTTM": "274011000",
+    "ProfitMargin": "0.171"
+  },
+  {
+    "symbol": "BFS-P-D",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BFS-P-E",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BFST",
+    "MarketCap": "765141000",
+    "PERatio": "10.6",
+    "DividendYield": "0.0227",
+    "EBITDA": "None",
+    "RevenueTTM": "276739000",
+    "ProfitMargin": "0.261"
+  },
+  {
+    "symbol": "BG",
+    "MarketCap": "15349303000",
+    "PERatio": "9.85",
+    "DividendYield": "0.0349",
+    "EBITDA": "1790000000",
+    "RevenueTTM": "51334001000",
+    "ProfitMargin": "0.0213"
+  },
+  {
+    "symbol": "BGC",
+    "MarketCap": "5042827000",
+    "PERatio": "39.73",
+    "DividendYield": "0.0078",
+    "EBITDA": "None",
+    "RevenueTTM": "2252851000",
+    "ProfitMargin": "0.059"
+  },
+  {
+    "symbol": "BGFV",
+    "MarketCap": "32454200",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-41934000",
+    "RevenueTTM": "777688000",
+    "ProfitMargin": "-0.1"
+  },
+  {
+    "symbol": "BGI",
+    "MarketCap": "17341600",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "7667000",
+    "RevenueTTM": "177576000",
+    "ProfitMargin": "-0.0351"
+  },
+  {
+    "symbol": "BGLC",
+    "MarketCap": "9144700",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-2210005",
+    "RevenueTTM": "9265900",
+    "ProfitMargin": "-0.229"
+  },
+  {
+    "symbol": "BGM",
+    "MarketCap": "2483460000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-2373423",
+    "RevenueTTM": "29870500",
+    "ProfitMargin": "-0.263"
+  },
+  {
+    "symbol": "BGS",
+    "MarketCap": "352707000",
+    "PERatio": "None",
+    "DividendYield": "0.18",
+    "EBITDA": "267884000",
+    "RevenueTTM": "1882633000",
+    "ProfitMargin": "-0.112"
+  },
+  {
+    "symbol": "BGSF",
+    "MarketCap": "72984000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "8898000",
+    "RevenueTTM": "266968000",
+    "ProfitMargin": "-0.0122"
+  },
+  {
+    "symbol": "BH",
+    "MarketCap": "909166000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "59422000",
+    "RevenueTTM": "367698000",
+    "ProfitMargin": "-0.162"
+  },
+  {
+    "symbol": "BH-A",
+    "MarketCap": "909168000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "59422000",
+    "RevenueTTM": "367698000",
+    "ProfitMargin": "-0.162"
+  },
+  {
+    "symbol": "BHAT",
+    "MarketCap": "13328800",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-4248413",
+    "RevenueTTM": "18724200",
+    "ProfitMargin": "-0.509"
+  },
+  {
+    "symbol": "BHB",
+    "MarketCap": "481717000",
+    "PERatio": "11.07",
+    "DividendYield": "0.0427",
+    "EBITDA": "None",
+    "RevenueTTM": "149882000",
+    "ProfitMargin": "0.291"
+  },
+  {
+    "symbol": "BHC",
+    "MarketCap": "2375676000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "3089000000",
+    "RevenueTTM": "9731000000",
+    "ProfitMargin": "-0.0041"
+  },
+  {
+    "symbol": "BHE",
+    "MarketCap": "1435522000",
+    "PERatio": "27.62",
+    "DividendYield": "0.0175",
+    "EBITDA": "150887000",
+    "RevenueTTM": "2612294000",
+    "ProfitMargin": "0.0203"
+  },
+  {
+    "symbol": "BHF",
+    "MarketCap": "2800985000",
+    "PERatio": "6.24",
+    "DividendYield": "None",
+    "EBITDA": "2216750000",
+    "RevenueTTM": "8610000000",
+    "ProfitMargin": "0.0712"
+  },
+  {
+    "symbol": "BHFAL",
+    "MarketCap": "3885861000",
+    "PERatio": "None",
+    "DividendYield": "0.0773",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BHFAM",
+    "MarketCap": "None",
+    "PERatio": "0.997",
+    "DividendYield": "0.0869",
+    "EBITDA": "None",
+    "RevenueTTM": "8610000000",
+    "ProfitMargin": "0.0712"
+  },
+  {
+    "symbol": "BHFAN",
+    "MarketCap": "None",
+    "PERatio": "1.158",
+    "DividendYield": "0.0909",
+    "EBITDA": "None",
+    "RevenueTTM": "8610000000",
+    "ProfitMargin": "0.0712"
+  },
+  {
+    "symbol": "BHFAO",
+    "MarketCap": "None",
+    "PERatio": "1.46",
+    "DividendYield": "0.0877",
+    "EBITDA": "2216750000",
+    "RevenueTTM": "8610000000",
+    "ProfitMargin": "0.0712"
+  },
+  {
+    "symbol": "BHFAP",
+    "MarketCap": "2979372000",
+    "PERatio": "1.425",
+    "DividendYield": "0.0893",
+    "EBITDA": "2216750000",
+    "RevenueTTM": "8610000000",
+    "ProfitMargin": "0.0712"
+  },
+  {
+    "symbol": "BHK-R",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BHLB",
+    "MarketCap": "1213837000",
+    "PERatio": "10.65",
+    "DividendYield": "0.0288",
+    "EBITDA": "None",
+    "RevenueTTM": "431403000",
+    "ProfitMargin": "0.248"
+  },
+  {
+    "symbol": "BHM",
+    "MarketCap": "54116000",
+    "PERatio": "None",
+    "DividendYield": "0.0399",
+    "EBITDA": "16032000",
+    "RevenueTTM": "67757000",
+    "ProfitMargin": "0.0118"
+  },
+  {
+    "symbol": "BHP",
+    "MarketCap": "132146242000",
+    "PERatio": "11.62",
+    "DividendYield": "0.0516",
+    "EBITDA": "25828999000",
+    "RevenueTTM": "53971001000",
+    "ProfitMargin": "0.211"
+  },
+  {
+    "symbol": "BHR",
+    "MarketCap": "205391000",
+    "PERatio": "None",
+    "DividendYield": "0.0816",
+    "EBITDA": "129997000",
+    "RevenueTTM": "723586000",
+    "ProfitMargin": "-0.0092"
   }
 ]
