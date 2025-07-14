@@ -1,0 +1,2282 @@
+[
+  {
+    "symbol": "AAPL",
+    "description": "Apple Inc. is an American multinational technology company that specializes in consumer electronics, computer software, and online services. Apple is the world's largest technology company by revenue (totalling $274.5 billion in 2020) and, since January 2021, the world's most valuable company. As of 2021, Apple is the world's fourth-largest PC vendor by unit sales, and fourth-largest smartphone manufacturer. It is one of the Big Five American information technology companies, along with Amazon, Google, Microsoft, and Facebook."
+  },
+  {
+    "symbol": "MSFT",
+    "description": "Microsoft Corporation is an American multinational technology company which produces computer software, consumer electronics, personal computers, and related services. Its best known software products are the Microsoft Windows line of operating systems, the Microsoft Office suite, and the Internet Explorer and Edge web browsers. Its flagship hardware products are the Xbox video game consoles and the Microsoft Surface lineup of touchscreen personal computers. Microsoft ranked No. 21 in the 2020 Fortune 500 rankings of the largest United States corporations by total revenue; it was the world's largest software maker by revenue as of 2016. It is considered one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Amazon, and Facebook."
+  },
+  {
+    "symbol": "GOOGL",
+    "description": "Alphabet Inc. is an American multinational conglomerate headquartered in Mountain View, California. It was created through a restructuring of Google on October 2, 2015, and became the parent company of Google and several former Google subsidiaries. The two co-founders of Google remained as controlling shareholders, board members, and employees at Alphabet. Alphabet is the world's fourth-largest technology company by revenue and one of the world's most valuable companies."
+  },
+  {
+    "symbol": "AMZN",
+    "description": "Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook. The company has been referred to as one of the most influential economic and cultural forces in the world, as well as the world's most valuable brand."
+  },
+  {
+    "symbol": "TSLA",
+    "description": "Tesla, Inc. is an American electric vehicle and clean energy company based in Palo Alto, California. Tesla's current products include electric cars, battery energy storage from home to grid-scale, solar panels and solar roof tiles, as well as other related products and services. In 2020, Tesla had the highest sales in the plug-in and battery electric passenger car segments, capturing 16% of the plug-in market (which includes plug-in hybrids) and 23% of the battery-electric (purely electric) market. Through its subsidiary Tesla Energy, the company develops and is a major installer of solar photovoltaic energy generation systems in the United States. Tesla Energy is also one of the largest global suppliers of battery energy storage systems, with 3 GWh of battery storage supplied in 2020."
+  },
+  {
+    "symbol": "NVDA",
+    "description": "Nvidia Corporation is an American multinational technology company incorporated in Delaware and based in Santa Clara, California. It designs graphics processing units (GPUs) for the gaming and professional markets, as well as system on a chip units (SoCs) for the mobile computing and automotive market."
+  },
+  {
+    "symbol": "META",
+    "description": "Meta Platforms, Inc. develops products that enable people to connect and share with friends and family through mobile devices, PCs, virtual reality headsets, wearables and home devices around the world. The company is headquartered in Menlo Park, California."
+  },
+  {
+    "symbol": "NFLX",
+    "description": "Netflix, Inc. is an American over-the-top content platform and production company headquartered in Los Gatos, California. Netflix was founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California. The company's primary business is a subscription-based streaming service offering online streaming from a library of films and television series, including those produced in-house."
+  },
+  {
+    "symbol": "INTC",
+    "description": "Intel Corporation is an American multinational corporation and technology company headquartered in Santa Clara, California, in Silicon Valley. It is the world's largest semiconductor chip manufacturer by revenue, and is the developer of the x86 series of microprocessors, the processors found in most personal computers (PCs)."
+  },
+  {
+    "symbol": "AMD",
+    "description": "Advanced Micro Devices, Inc. (AMD) is an American multinational semiconductor company based in Santa Clara, California, that develops computer processors and related technologies for business and consumer markets. AMD's main products include microprocessors, motherboard chipsets, embedded processors and graphics processors for servers, workstations, personal computers and embedded system applications."
+  },
+  {
+    "symbol": "A",
+    "description": "Agilent Technologies, Inc. is an American analytical instrumentation development and manufacturing company that offers its products and services to markets worldwide. Its global headquarters is located in Santa Clara, California."
+  },
+  {
+    "symbol": "AA",
+    "description": "Alcoa Corporation produces and sells bauxite, alumina, and aluminum products in the United States, Spain, Australia, Brazil, Canada, and internationally. The company is headquartered in Pittsburgh, Pennsylvania."
+  },
+  {
+    "symbol": "AACBR",
+    "description": "None"
+  },
+  {
+    "symbol": "AACBU",
+    "description": "None"
+  },
+  {
+    "symbol": "AACG",
+    "description": "ATA Creativity Global, provides educational services to individual students through its network of training centers in China. The company is headquartered in Beijing, China."
+  },
+  {
+    "symbol": "AACIU",
+    "description": "None"
+  },
+  {
+    "symbol": "AACT",
+    "description": "Ares Acquisition Corporation II focuses on effecting a merger, share exchange, share purchase, asset acquisition, reorganization, or similar business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "AACT-U",
+    "description": "None"
+  },
+  {
+    "symbol": "AACT-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "AAL",
+    "description": "American Airlines Group Inc. is an American publicly traded airline holding company headquartered in Fort Worth, Texas."
+  },
+  {
+    "symbol": "AAM",
+    "description": "None"
+  },
+  {
+    "symbol": "AAM-U",
+    "description": "None"
+  },
+  {
+    "symbol": "AAM-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "AAME",
+    "description": "Atlantic American Corporation provides life and health insurance and property and casualty products in the United States. The company is headquartered in Atlanta, Georgia."
+  },
+  {
+    "symbol": "AAMI",
+    "description": "BrightSphere Investment Group Inc. is a publically owned asset management holding company. The company is headquartered in Boston, Massachusetts."
+  },
+  {
+    "symbol": "AAOI",
+    "description": "Applied Optoelectronics, Inc. designs, manufactures, and sells various fiber optic networking products globally. The company is headquartered in Sugar Land, Texas."
+  },
+  {
+    "symbol": "AAON",
+    "description": "AAON, Inc. engages in the engineering, manufacturing, marketing and sales of heating and air conditioning equipment in the United States and Canada. The company is headquartered in Tulsa, Oklahoma."
+  },
+  {
+    "symbol": "AAP",
+    "description": "Advance Auto Parts, Inc. (Advance) is an American automotive aftermarket parts provider. Headquartered in Raleigh, North Carolina, it serves both professional installer and do-it-yourself (DIY) customers."
+  },
+  {
+    "symbol": "AAPG",
+    "description": "Ascentage Pharma Group International, a clinical-stage biotechnology company, develops therapies for cancers, chronic hepatitis B virus (HBV), and age-related diseases in Mainland China. The company is headquartered in Suzhou, China."
+  },
+  {
+    "symbol": "AARD",
+    "description": "Aardvark Therapeutics, Inc., a clinical-stage biopharmaceutical company, focuses on developing small-molecule therapeutics to activate innate homeostatic pathways for the treatment of metabolic diseases. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "AAT",
+    "description": "American Assets Trust, Inc. is a self-managed, vertically integrated, full-service real estate investment trust, or REIT, based in San Diego, California. "
+  },
+  {
+    "symbol": "AAUC",
+    "description": "Allied Gold Corporation, explores and produces mineral deposits in Africa. The company is headquartered in Toronto, Canada."
+  },
+  {
+    "symbol": "AB",
+    "description": "AllianceBernstein Holding LP is a publicly owned investment manager. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ABAT",
+    "description": "American Battery Technology Company is a battery materials company. The company is headquartered in Reno, Nevada."
+  },
+  {
+    "symbol": "ABBV",
+    "description": "AbbVie is an American publicly traded biopharmaceutical company founded in 2013. It originated as a spin-off of Abbott Laboratories."
+  },
+  {
+    "symbol": "ABCB",
+    "description": "Ameris Bancorp is the banking holding company for Ameris Bank providing a range of banking services to retail and business clients primarily in Georgia, Alabama, Florida and South Carolina. The company is headquartered in Atlanta, Georgia."
+  },
+  {
+    "symbol": "ABCL",
+    "description": "AbCellera Biologics Inc. develops an antibody discovery platform. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "ABEO",
+    "description": "Abeona Therapeutics Inc., a clinical-stage biopharmaceutical company, develops gene and cell therapies for rare, life-threatening genetic diseases. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ABEV",
+    "description": "Ambev SA produces, distributes and sells beer, draft beer, carbonated soft drinks (CSD), other non-alcoholic beverages, malt and food products in the Americas. The company is headquartered in So Paulo, Brazil."
+  },
+  {
+    "symbol": "ABG",
+    "description": "Asbury Automotive Group, Inc. is an automobile retailer in the United States. The company is headquartered in Duluth, Georgia."
+  },
+  {
+    "symbol": "ABL",
+    "description": "Abacus Life, Inc. is an alternative asset manager specializing in life insurance products. The company is headquartered in Orlando, Florida."
+  },
+  {
+    "symbol": "ABLLL",
+    "description": "None"
+  },
+  {
+    "symbol": "ABLLW",
+    "description": "Abacus Life, Inc. is an alternative asset manager specializing in life insurance products. The company is headquartered in Orlando, Florida."
+  },
+  {
+    "symbol": "ABLV",
+    "description": "Able View Inc. provides brand management services. The company is headquartered in Hong Kong."
+  },
+  {
+    "symbol": "ABLVW",
+    "description": "Able View Inc. provides brand management services. The company is headquartered in Hong Kong."
+  },
+  {
+    "symbol": "ABM",
+    "description": "ABM Industries Incorporated provides integrated facility solutions in the United States and internationally. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ABNB",
+    "description": "Airbnb, Inc. is an American company that operates an online marketplace for lodging, primarily homestays for vacation rentals, and tourism activities, based in San Francisco, California."
+  },
+  {
+    "symbol": "ABOS",
+    "description": "Acumen Pharmaceuticals, Inc., a clinical-stage biopharmaceutical company, is dedicated to developing therapies for the treatment of Alzheimer's disease and other neurodegenerative diseases. The company is headquartered in Charlottesville, Virginia."
+  },
+  {
+    "symbol": "ABPWW",
+    "description": "Abpro Holdings, Inc., a biotechnology company, engages in developing antibody therapeutics for patients with immuno-oncology, ophthalmology, and autoimmunity issues. The company is headquartered in Woburn, Massachusetts."
+  },
+  {
+    "symbol": "ABR",
+    "description": "Arbor Realty Trust, Inc. invests in a diversified portfolio of structured financial assets in the commercial, single-family, and multi-family real estate markets in the United States. The company is headquartered in Uniondale, New York."
+  },
+  {
+    "symbol": "ABR-P-D",
+    "description": "None"
+  },
+  {
+    "symbol": "ABR-P-E",
+    "description": "None"
+  },
+  {
+    "symbol": "ABR-P-F",
+    "description": "None"
+  },
+  {
+    "symbol": "ABSI",
+    "description": "None"
+  },
+  {
+    "symbol": "ABT",
+    "description": "Abbott Laboratories is an American multinational medical devices and health care company with headquarters in Abbott Park, Illinois, United States. The company was founded by Chicago physician Wallace Calvin Abbott in 1888 to formulate known drugs; today, it sells medical devices, diagnostics, branded generic medicines and nutritional products. It split off its research-based pharmaceuticals business into AbbVie in 2013."
+  },
+  {
+    "symbol": "ABTS",
+    "description": "Abits Group Inc. provides bitcoin mining and related services in the United States. The company is headquartered in Beijing, the People's Republic of China."
+  },
+  {
+    "symbol": "ABUS",
+    "description": "Arbutus Biopharma Corporation, a biopharmaceutical company, is dedicated to the discovery, development, and commercialization of a cure for patients with chronic hepatitis B virus (HBV) infection in the United States. The company is headquartered in Warminster, Pennsylvania."
+  },
+  {
+    "symbol": "ABVC",
+    "description": "American BriVision (Holding) Corporation, a clinical-stage biopharmaceutical company, develops drugs and medical devices to meet unmet medical needs in the United States. "
+  },
+  {
+    "symbol": "ABVE",
+    "description": "Above Food Ingredients Inc., a regenerative ingredient company, produces vertically integrated supply chain products in Canada, the United States, Mexico, China, France, Turkey, and internationally. The company is headquartered in Regina, Canada."
+  },
+  {
+    "symbol": "ABVEW",
+    "description": "Above Food Ingredients Inc., a regenerative ingredient company, produces vertically integrated supply chain products in Canada, the United States, Mexico, China, France, Turkey, and internationally. The company is headquartered in Regina, Canada."
+  },
+  {
+    "symbol": "ABVX",
+    "description": "None"
+  },
+  {
+    "symbol": "AC",
+    "description": "Associated Capital Group, Inc. provides investment advisory services in the United States. The company is headquartered in Greenwich, Connecticut."
+  },
+  {
+    "symbol": "ACA",
+    "description": "Arcosa, Inc. provides infrastructure related products and solutions for the construction, energy and transportation markets in North America. The company is headquartered in Dallas, Texas."
+  },
+  {
+    "symbol": "ACAD",
+    "description": "ACADIA Pharmaceuticals Inc., a biopharmaceutical company, focuses on the development and commercialization of small molecule drugs that address unmet medical needs in central nervous system disorders. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "ACB",
+    "description": "Aurora Cannabis Inc. produces and distributes medical cannabis products globally. The company is headquartered in Edmonton, Canada."
+  },
+  {
+    "symbol": "ACCO",
+    "description": "ACCO Brands Corporation designs, manufactures and markets consumer, school, technology and office products. The company is headquartered in Lake Zurich, Illinois."
+  },
+  {
+    "symbol": "ACCS",
+    "description": "ACCESS Newswire Inc., a communications and compliance company, provides solutions for public relations and investor relations professionals in the United States and internationally. The company is headquartered in Raleigh, North Carolina."
+  },
+  {
+    "symbol": "ACDC",
+    "description": "None"
+  },
+  {
+    "symbol": "ACEL",
+    "description": "Accel Entertainment, Inc., is a distributed games operator in the United States. The company is headquartered in Burr Ridge, Illinois."
+  },
+  {
+    "symbol": "ACET",
+    "description": "Adicet Bio, Inc., a biotechnology company, discovers and develops allogeneic gamma delta T cell therapies for cancer and other diseases. The company is headquartered in Boston, Massachusetts."
+  },
+  {
+    "symbol": "ACGL",
+    "description": "Arch Capital Group Ltd., offers insurance, reinsurance and mortgage products worldwide. The company is headquartered in Pembroke, Bermuda."
+  },
+  {
+    "symbol": "ACGLN",
+    "description": "None"
+  },
+  {
+    "symbol": "ACGLO",
+    "description": "Arch Capital Group Ltd., offers insurance, reinsurance and mortgage products worldwide. The company is headquartered in Pembroke, Bermuda."
+  },
+  {
+    "symbol": "ACHC",
+    "description": "Acadia Healthcare Company, Inc. develops and operates inpatient psychiatric facilities, residential treatment centers, group homes, substance abuse facilities, and outpatient behavioral health facilities to serve the behavioral health and recovery needs of the communities in the United States. United States and Puerto Rico. The company is headquartered in Franklin, Tennessee."
+  },
+  {
+    "symbol": "ACHR",
+    "description": "None"
+  },
+  {
+    "symbol": "ACHR-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "ACHV",
+    "description": "Achieve Life Sciences, Inc., a clinical-stage pharmaceutical company, develops and markets cytisinicline for smoking and nicotine addiction cessation in the United States and internationally. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "ACI",
+    "description": "Albertsons Companies, Inc. participates in the pharmacy and food operation in the United States. "
+  },
+  {
+    "symbol": "ACIC",
+    "description": "Atlas Crest Investment Corp. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ACIU",
+    "description": "AC Immune SA, a clinical-stage biopharmaceutical company, discovers, designs and develops drugs and diagnostic products for the prevention and treatment of neurodegenerative diseases associated with protein misfolding. The company is headquartered in Lausanne, Switzerland."
+  },
+  {
+    "symbol": "ACIW",
+    "description": "ACI Worldwide, Inc., a software company, develops, markets, installs and supports a variety of software products and solutions to facilitate electronic payments to banks, financial intermediaries, merchants and invoice issuers globally. The company is headquartered in Naples, Florida."
+  },
+  {
+    "symbol": "ACLS",
+    "description": "Axcelis Technologies, Inc. designs, manufactures and services the ion implantation and other processing equipment used in the manufacture of semiconductor chips in the United States, Europe and Asia. The company is headquartered in Beverly, Massachusetts."
+  },
+  {
+    "symbol": "ACLX",
+    "description": "Arcellx, Inc., a clinical-stage biotechnology company, is engaged in the development of various immunotherapies for patients with cancer and other incurable diseases. The company is headquartered in Gaithersburg, Maryland."
+  },
+  {
+    "symbol": "ACM",
+    "description": "AECOM provides professional construction and program management services in the Americas, Europe, the Middle East, Africa, and Asia Pacific. The company is headquartered in Los Angeles, California."
+  },
+  {
+    "symbol": "ACMR",
+    "description": "ACM Research, Inc. develops, manufactures and sells single wafer wet cleaning equipment to improve the manufacturing process and performance of embedded chips globally. The company is headquartered in Fremont, California."
+  },
+  {
+    "symbol": "ACN",
+    "description": "Accenture plc is an Irish-domiciled multinational company that provides consulting and processing services. It has been incorporated in Dublin, Ireland since 2009."
+  },
+  {
+    "symbol": "ACNB",
+    "description": "ACNB Corporation, a financial holding company, provides banking, insurance and financial services to individual, commercial and government clients in the United States. The company is headquartered in Gettysburg, Pennsylvania."
+  },
+  {
+    "symbol": "ACNT",
+    "description": "Ascent Industries Co., manufactures and sells specialty metals and chemicals in the United States and internationally. The company is headquartered in Oak Brook, Illinois."
+  },
+  {
+    "symbol": "ACOG",
+    "description": "None"
+  },
+  {
+    "symbol": "ACON",
+    "description": "None"
+  },
+  {
+    "symbol": "ACONW",
+    "description": "None"
+  },
+  {
+    "symbol": "ACP-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "ACR",
+    "description": "ACRES Commercial Realty Corp. The company is headquartered in Westbury, New York."
+  },
+  {
+    "symbol": "ACR-P-C",
+    "description": "None"
+  },
+  {
+    "symbol": "ACR-P-D",
+    "description": "None"
+  },
+  {
+    "symbol": "ACRE",
+    "description": "Ares Commercial Real Estate Corporation, a specialized finance company, originates and invests in commercial real estate loans (CRE) and related investments in the United States. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ACRS",
+    "description": "Aclaris Therapeutics, Inc. is a clinical-stage biopharmaceutical company developing a line of novel small molecule therapeutics to address the needs of patients with immuno-inflammatory diseases. The company is headquartered in Wayne, Pennsylvania."
+  },
+  {
+    "symbol": "ACRV",
+    "description": "Acrivon Therapeutics, Inc., a clinical-stage biopharmaceutical company, is dedicated to the development of precision cancer medicines. The company is headquartered in Watertown, Massachusetts."
+  },
+  {
+    "symbol": "ACT",
+    "description": "None"
+  },
+  {
+    "symbol": "ACTG",
+    "description": "Acacia Research Corporation intends to acquire undervalued businesses primarily in the technology, life sciences, industry and financial services segments in the United States. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ACTU",
+    "description": "None"
+  },
+  {
+    "symbol": "ACU",
+    "description": "Acme United Corporation supplies cutting, measuring, first aid, sharpening and safety products for the school, home, office, hardware, sporting goods and industrial markets in the United States, Canada, Europe and Asia. The company is headquartered in Shelton, Connecticut."
+  },
+  {
+    "symbol": "ACVA",
+    "description": "ACV Auctions, Inc., operates a digital marketplace that connects buyers and sellers for online wholesale vehicle auctions. The company is headquartered in Buffalo, New York."
+  },
+  {
+    "symbol": "ACXP",
+    "description": "Acurx Pharmaceuticals, LLC, a clinical-stage biopharmaceutical company, develops antibiotics to treat bacterial infections. The company is headquartered in Staten Island, New York."
+  },
+  {
+    "symbol": "ADAG",
+    "description": "Adagene Inc., a clinical-stage biopharmaceutical company, is dedicated to the research, development, and production of monoclonal antibody drugs for cancer. The company is headquartered in Suzhou, China."
+  },
+  {
+    "symbol": "ADAP",
+    "description": "Adaptimmune Therapeutics plc, a clinical-stage biopharmaceutical company, focuses on providing novel cell therapies primarily to solid tumor patients in the United States and the United Kingdom. The company is headquartered in Abingdon, the United Kingdom."
+  },
+  {
+    "symbol": "ADBE",
+    "description": "Adobe Inc. is an American multinational computer software company. Incorporated in Delaware and headquartered in San Jose, California, it has historically specialized in software for the creation and publication of a wide range of content, including graphics, photography, illustration, animation, multimedia, motion pictures and print. The company has expanded into digital marketing management software. Adobe has millions of users worldwide. Flagship products include: Photoshop image editing software, Adobe Illustrator vector-based illustration software, Adobe Acrobat Reader and the Portable Document Format (PDF), plus a host of tools primarily for audio-visual content creation, editing and publishing."
+  },
+  {
+    "symbol": "ADC",
+    "description": "Agree Realty Corporation is a publicly traded real estate investment trust primarily engaged in the acquisition and development of net leased properties to industry leading retail tenants. "
+  },
+  {
+    "symbol": "ADC-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "ADCT",
+    "description": "ADC Therapeutics SA, a biotechnology company focused on clinical stage oncology, develops Antibody Drug Conjugates (ADC) for patients suffering from hematologic malignancies and solid tumors. The company is headquartered in Epalinges, Switzerland."
+  },
+  {
+    "symbol": "ADD",
+    "description": "None"
+  },
+  {
+    "symbol": "ADEA",
+    "description": "Adeia Inc., is a global consumer and entertainment products/solutions licensing company. The company is headquartered in San Jose, California."
+  },
+  {
+    "symbol": "ADGM",
+    "description": "None"
+  },
+  {
+    "symbol": "ADI",
+    "description": "Analog Devices, Inc. (ADI), also known simply as Analog, is an American multinational semiconductor company specializing in data conversion, signal processing and power management technology, headquartered in Wilmington, Massachusetts."
+  },
+  {
+    "symbol": "ADIL",
+    "description": "Adial Pharmaceuticals, Inc., a clinical-stage biopharmaceutical company, focuses on the development of therapies for the treatment or prevention of addictions and related disorders. The company is headquartered in Charlottesville, Virginia."
+  },
+  {
+    "symbol": "ADM",
+    "description": "The Archer-Daniels-Midland Company, commonly known as ADM, is an American multinational food processing and commodities trading corporation founded in 1902 and headquartered in Chicago, Illinois. The company operates more than 270 plants and 420 crop procurement facilities worldwide, where cereal grains and oilseeds are processed into products used in food, beverage, nutraceutical, industrial, and animal feed markets worldwide."
+  },
+  {
+    "symbol": "ADMA",
+    "description": "ADMA Biologics, Inc., a biopharmaceutical company, develops, manufactures and markets plasma-derived biological products specialized for the treatment of immunodeficiencies and infectious diseases in the United States. The company is headquartered in Ramsey, New Jersey."
+  },
+  {
+    "symbol": "ADN",
+    "description": "Advent Technologies Holdings, Inc., an advanced materials and technology development company, operates in the hydrogen and fuel cell technology markets. The company is headquartered in Boston, Massachusetts."
+  },
+  {
+    "symbol": "ADNT",
+    "description": "Adient plc designs, manufactures and markets a range of seating systems and components for passenger cars, commercial vehicles and light trucks. The company is headquartered in Dublin, Ireland."
+  },
+  {
+    "symbol": "ADNWW",
+    "description": "Advent Technologies Holdings, Inc. develops, manufactures and distributes high temperature proton exchange membrane (PEM) fuel cells. The company is headquartered in Cambridge, Massachusetts."
+  },
+  {
+    "symbol": "ADP",
+    "description": "Automatic Data Processing, Inc. (ADP) is an American provider of human resources management software and services."
+  },
+  {
+    "symbol": "ADPT",
+    "description": "Adaptive Biotechnologies Corporation, a commercial-stage company, develops an immune medicine platform for the diagnosis and treatment of various diseases. The company is headquartered in Seattle, Washington."
+  },
+  {
+    "symbol": "ADSE",
+    "description": "None"
+  },
+  {
+    "symbol": "ADSEW",
+    "description": "None"
+  },
+  {
+    "symbol": "ADSK",
+    "description": "Autodesk, Inc. is an American multinational software corporation that makes software products and services for the architecture, engineering, construction, manufacturing, media, education, and entertainment industries. Autodesk is headquartered in San Rafael, California."
+  },
+  {
+    "symbol": "ADT",
+    "description": "ADT Inc. provides security, automation and smart home solutions to consumers and business customers in the United States. The company is headquartered in Boca Raton, Florida."
+  },
+  {
+    "symbol": "ADTN",
+    "description": "ADTRAN, Inc. provides networking and communications platforms and services for service providers, cable / multi-system operators, small and medium-sized businesses, and distributed businesses in the United States, Germany, Mexico, and internationally. The company is headquartered in Huntsville, Alabama."
+  },
+  {
+    "symbol": "ADTX",
+    "description": "None"
+  },
+  {
+    "symbol": "ADUS",
+    "description": "Addus HomeCare Corporation, provides personal care services to the elderly, the chronically ill, the disabled, and people who are at risk of hospitalization or institutionalization in the United States. The company is headquartered in Frisco, Texas."
+  },
+  {
+    "symbol": "ADV",
+    "description": "Advantage Solutions Inc. provides outsourced solutions to retail and consumer goods companies in North America and internationally. The company is headquartered in Irvine, California."
+  },
+  {
+    "symbol": "ADVB",
+    "description": "Advanced Biomed Inc., an investment holding company, engages in the research and development of microfluidic biochip technologies and provides them for precision oncology detection, diagnosis, and treatment in Taiwan. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ADVM",
+    "description": "Adverum Biotechnologies, Inc., a clinical-stage gene therapy company, develops candidate gene therapy products to treat eye and rare diseases. The company is headquartered in Redwood City, California."
+  },
+  {
+    "symbol": "ADXN",
+    "description": "Addex Therapeutics Ltd, a developing-stage biopharmaceutical company, discovers, develops and markets small molecule pharmaceuticals for central nervous system (CNS) disorders in Switzerland. The company is headquartered in Geneva, Switzerland."
+  },
+  {
+    "symbol": "AEE",
+    "description": "Ameren Corporation is an American power company created December 31, 1997, by the merger of St. Louis, Missouri's Union Electric Company (formerly NYSE: UEP) and the neighboring Central Illinois Public Service Company (CIPSCO Inc. holding, formerly NYSE: CIP) of Springfield, Illinois. It is now a holding company for several power companies and energy companies."
+  },
+  {
+    "symbol": "AEFC",
+    "description": "None"
+  },
+  {
+    "symbol": "AEG",
+    "description": "Aegon NV offers a range of financial services in the Americas, Europe and Asia. The company is headquartered in The Hague, the Netherlands."
+  },
+  {
+    "symbol": "AEHL",
+    "description": "Antelope Enterprise Holdings Limited, manufactures and sells ceramic tiles for exterior cladding and interior flooring, and design in residential and commercial buildings in the People's Republic of China. The company is headquartered in Jinjiang, the People's Republic of China."
+  },
+  {
+    "symbol": "AEHR",
+    "description": "Aehr Test Systems primarily designs, designs, manufactures and sells test and burn equipment for use in the semiconductor industry in the United States, Asia and Europe. The company is headquartered in Fremont, California."
+  },
+  {
+    "symbol": "AEI",
+    "description": "Alset EHome International Inc., is engaged in property development, digital transformation technology, and biohealth activities in the United States, Singapore, Hong Kong, Australia, and South Korea. The company is headquartered in Bethesda, Maryland."
+  },
+  {
+    "symbol": "AEIS",
+    "description": "Advanced Energy Industries, Inc. designs, manufactures, sells and supports precision energy conversion, measurement and control solutions globally. The company is headquartered in Denver, Colorado."
+  },
+  {
+    "symbol": "AEM",
+    "description": "Agnico Eagle Mines Limited is engaged in the exploration, development and production of mineral properties in Canada, Sweden and Finland. The company is headquartered in Toronto, Canada."
+  },
+  {
+    "symbol": "AEMD",
+    "description": "Aethlon Medical, Inc., a medical technology company, focuses on developing products to diagnose and treat life- and organ-threatening diseases in the United States. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "AENT",
+    "description": "Alliance Entertainment Holding Corporation is a wholesaler, distributor, and e-commerce provider for the entertainment industry globally. The company is headquartered in Plantation, Florida."
+  },
+  {
+    "symbol": "AENTW",
+    "description": "Alliance Entertainment Holding Corporation is a wholesaler, distributor, and e-commerce provider for the entertainment industry globally. The company is headquartered in Plantation, Florida."
+  },
+  {
+    "symbol": "AEO",
+    "description": "American Eagle Outfitters, Inc. is a specialty retailer offering clothing, accessories, and personal care products under the American Eagle and Aerie brand names. The company is headquartered in Pittsburgh, Pennsylvania."
+  },
+  {
+    "symbol": "AEON",
+    "description": "AEON Biopharma, Inc., a biopharmaceutical company, focuses on the development botulinum toxins for the treatment of debilitating medical conditions. The company is headquartered in Newport Beach, California."
+  },
+  {
+    "symbol": "AEP",
+    "description": "American Electric Power (AEP) is a major investor-owned electric utility in the United States, delivering electricity to more than five million customers in 11 states."
+  },
+  {
+    "symbol": "AER",
+    "description": "AerCap Holdings NV is engaged in the leasing, financing, sale and management of commercial aircraft and engines in mainland China, Hong Kong, Macau, the United States, Ireland and internationally. The company is headquartered in Dublin, Ireland."
+  },
+  {
+    "symbol": "AERT",
+    "description": "None"
+  },
+  {
+    "symbol": "AERTW",
+    "description": "Aeries Technology, Inc. is a professional services and consulting partner in the United States and internationally. The company is headquartered in Orem, Utah."
+  },
+  {
+    "symbol": "AES",
+    "description": "The AES Corporation is a Fortune 500 company that generates and distributes electrical power. AES is headquartered in Arlington, Virginia."
+  },
+  {
+    "symbol": "AESI",
+    "description": "Atlas Energy Solutions Inc. provides proppant and logistics services to the oil and natural gas industry within the Permian Basin of West Texas and New Mexico. The company is headquartered in Austin, Texas."
+  },
+  {
+    "symbol": "AEVA",
+    "description": "Aeva Technologies, Inc., through its frequency modulated continuous wave (FMCW) sensing technology, designs a 4D LiDAR on chip that enables the adoption of LiDAR in various applications. The company is headquartered in Mountain View, California."
+  },
+  {
+    "symbol": "AEVAW",
+    "description": "Aeva Technologies, Inc. engages in the design, development, manufacture, and sale of LiDAR sensing systems, and related perception and autonomy-enabling software solutions in North America, Europe, the Middle East, Africa, and Asia. The company is headquartered in Mountain View, California."
+  },
+  {
+    "symbol": "AEYE",
+    "description": "AudioEye, Inc. provides Internet, printing, streaming, and other media software solutions to individuals regardless of their network connection, device, location, or disabilities in the United States. The company is headquartered in Tucson, Arizona."
+  },
+  {
+    "symbol": "AFBI",
+    "description": "Affinity Bancshares, Inc. is the holding company of Affinity Bank offering various banking products and services. The company is headquartered in Covington, Georgia."
+  },
+  {
+    "symbol": "AFCG",
+    "description": "AFC Gamma, Inc. originates, structures, underwrites and administers senior secured loans and other types of loans for established companies operating in the cannabis industry in states that have legalized medical and / or adult cannabis. The company is headquartered in West Palm Beach, Florida."
+  },
+  {
+    "symbol": "AFG",
+    "description": "American Financial Group, Inc., an insurance holding company, offers property and casualty insurance products in the United States. The company is headquartered in Cincinnati, Ohio."
+  },
+  {
+    "symbol": "AFGB",
+    "description": "None"
+  },
+  {
+    "symbol": "AFGC",
+    "description": "Africa Growth Corporation focuses on the real estate market. The company is headquartered in Hamilton, Bermuda."
+  },
+  {
+    "symbol": "AFGD",
+    "description": "American Financial Group, Inc., an insurance holding company, offers property and casualty insurance products in the United States. The company is headquartered in Cincinnati, Ohio."
+  },
+  {
+    "symbol": "AFGE",
+    "description": "American Financial Group, Inc., offers property and casualty insurance products in the United States. The company is headquartered in Cincinnati, Ohio."
+  },
+  {
+    "symbol": "AFJK",
+    "description": "None"
+  },
+  {
+    "symbol": "AFJKR",
+    "description": "None"
+  },
+  {
+    "symbol": "AFJKU",
+    "description": "None"
+  },
+  {
+    "symbol": "AFL",
+    "description": "Aflac Inc. (American Family Life Assurance Company) is an American insurance company and is the largest provider of supplemental insurance in the United States."
+  },
+  {
+    "symbol": "AFRI",
+    "description": "None"
+  },
+  {
+    "symbol": "AFRIW",
+    "description": "None"
+  },
+  {
+    "symbol": "AFRM",
+    "description": "Affirm Holdings, Inc. operates a platform for digital and mobile commerce in the United States and Canada. The company is headquartered in San Francisco, California."
+  },
+  {
+    "symbol": "AFYA",
+    "description": "Afya Limited, is a medical education group in Brazil. The company is headquartered in Nova Lima, Brazil."
+  },
+  {
+    "symbol": "AG",
+    "description": "First Majestic Silver Corp. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "AGAE",
+    "description": "Allied Gaming & Entertainment Inc. provides entertainment and gaming products globally. The company is headquartered in Irvine, California."
+  },
+  {
+    "symbol": "AGCO",
+    "description": "AGCO Corporation manufactures and distributes agricultural equipment and related spare parts worldwide. The company is headquartered in Duluth, Georgia."
+  },
+  {
+    "symbol": "AGEN",
+    "description": "Agenus Inc., a clinical-stage immuno-oncology company, discovers and develops immuno-oncology products in the United States and internationally. The company is headquartered in Lexington, Massachusetts."
+  },
+  {
+    "symbol": "AGFY",
+    "description": "Agrify Corporation develops precision hardware and software growing solutions for the indoor agriculture market, primarily in the United States. The company is headquartered in Burlington, Massachusetts."
+  },
+  {
+    "symbol": "AGH",
+    "description": "Aureus Greenway Holdings Inc., owns and operates public golf country clubs in Florida. The company is headquartered in Kissimmee, Florida."
+  },
+  {
+    "symbol": "AGI",
+    "description": "Alamos Gold Inc. is engaged in the acquisition, exploration, development and extraction of gold in North America, Canada and Mexico. The company is headquartered in Toronto, Canada."
+  },
+  {
+    "symbol": "AGIO",
+    "description": "Agios Pharmaceuticals, Inc., a biopharmaceutical company, is dedicated to drug discovery and development in the field of cellular metabolism and adjacent areas of biology. The company is headquartered in Cambridge, Massachusetts."
+  },
+  {
+    "symbol": "AGL",
+    "description": "agilon health, inc. The company is headquartered in Long Beach, California."
+  },
+  {
+    "symbol": "AGM",
+    "description": "Federal Agricultural Mortgage Corporation offers a secondary market for various loans made to borrowers in the United States. The company is headquartered in Washington, District of Columbia."
+  },
+  {
+    "symbol": "AGM-A",
+    "description": "Federal Agricultural Mortgage Corporation offers a secondary market for various loans made to borrowers in the United States. The company is headquartered in Washington, District of Columbia."
+  },
+  {
+    "symbol": "AGM-P-D",
+    "description": "None"
+  },
+  {
+    "symbol": "AGM-P-E",
+    "description": "None"
+  },
+  {
+    "symbol": "AGM-P-F",
+    "description": "None"
+  },
+  {
+    "symbol": "AGM-P-G",
+    "description": "None"
+  },
+  {
+    "symbol": "AGMH",
+    "description": "AGM Group Holdings Inc. is a software company in the People's Republic of China. The company is headquartered in Wan Chai, Hong Kong."
+  },
+  {
+    "symbol": "AGNC",
+    "description": "AGNC Investment Corp. The company is headquartered in Bethesda, Maryland."
+  },
+  {
+    "symbol": "AGNCL",
+    "description": "AGNC Investment Corp. The company is headquartered in Bethesda, Maryland."
+  },
+  {
+    "symbol": "AGNCM",
+    "description": "AGNC Investment Corp. The company is headquartered in Bethesda, Maryland."
+  },
+  {
+    "symbol": "AGNCN",
+    "description": "AGNC Investment Corp. The company is headquartered in Bethesda, Maryland."
+  },
+  {
+    "symbol": "AGNCO",
+    "description": "AGNC Investment Corp. The company is headquartered in Bethesda, Maryland."
+  },
+  {
+    "symbol": "AGNCP",
+    "description": "AGNC Investment Corp. The company is headquartered in Bethesda, Maryland."
+  },
+  {
+    "symbol": "AGO",
+    "description": "Assured Guaranty Ltd., provides credit protection products to the public finance, infrastructure and structured finance markets in the United States and internationally. The company is headquartered in Hamilton, Bermuda."
+  },
+  {
+    "symbol": "AGRI",
+    "description": "AgriFORCE Growing Systems Ltd., an agriculture-focused technology company, focuses on the development and commercialization of plant-based ingredients and products that deliver healthier and nutritious solutions. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "AGRO",
+    "description": "Adecoagro SA is an agro-industrial company in South America. The company is headquartered in Luxembourg, Luxembourg."
+  },
+  {
+    "symbol": "AGX",
+    "description": "Argan, Inc. provides engineering, procurement, construction, commissioning, operations management, maintenance, project development, technical and consulting services for the power generation and renewable energy markets. The company is headquartered in Rockville, Maryland."
+  },
+  {
+    "symbol": "AGYS",
+    "description": "Agilysys, Inc. is a developer and marketer of hardware and software products and services for the hospitality industry in North America, Europe, Asia-Pacific and India. The company is headquartered in Alpharetta, Georgia."
+  },
+  {
+    "symbol": "AHCO",
+    "description": "AdaptHealth Corp. The company is headquartered in Plymouth Meeting, Pennsylvania."
+  },
+  {
+    "symbol": "AHG",
+    "description": "None"
+  },
+  {
+    "symbol": "AHH",
+    "description": "Armada Hoffler Properties, Inc. (NYSE: AHH) is a vertically integrated, self-managed real estate investment trust (REIT) with four decades of experience in the development, construction, acquisition and management of high-end office, retail and institutional grade quality. and multi-family properties located primarily in the mid-Atlantic and southeastern United States. "
+  },
+  {
+    "symbol": "AHH-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "AHL",
+    "description": "Aspen Insurance Holdings Limited, participates in insurance and reinsurance businesses in the United States and internationally. The company is headquartered in Hamilton, Bermuda."
+  },
+  {
+    "symbol": "AHL-P-D",
+    "description": "None"
+  },
+  {
+    "symbol": "AHL-P-E",
+    "description": "None"
+  },
+  {
+    "symbol": "AHR",
+    "description": "None"
+  },
+  {
+    "symbol": "AHT",
+    "description": "None"
+  },
+  {
+    "symbol": "AHT-P-D",
+    "description": "None"
+  },
+  {
+    "symbol": "AHT-P-F",
+    "description": "None"
+  },
+  {
+    "symbol": "AHT-P-G",
+    "description": "None"
+  },
+  {
+    "symbol": "AHT-P-H",
+    "description": "None"
+  },
+  {
+    "symbol": "AHT-P-I",
+    "description": "None"
+  },
+  {
+    "symbol": "AI",
+    "description": "C3. "
+  },
+  {
+    "symbol": "AIFE",
+    "description": "None"
+  },
+  {
+    "symbol": "AIFER",
+    "description": "None"
+  },
+  {
+    "symbol": "AIFEU",
+    "description": "None"
+  },
+  {
+    "symbol": "AIFF",
+    "description": "Firefly Neuroscience, Inc., a medical technology and artificial intelligence company, provides neuroscientific solutions that improve outcomes for patients with mental illnesses and neurological disorders. The company is headquartered in Toronto, Canada."
+  },
+  {
+    "symbol": "AIFU",
+    "description": "None"
+  },
+  {
+    "symbol": "AIG",
+    "description": "American International Group, Inc., also known as AIG, is an American multinational finance and insurance corporation with operations in more than 80 countries and jurisdictions. The company operates through three core businesses: General Insurance, Life & Retirement, and a standalone technology-enabled subsidiary."
+  },
+  {
+    "symbol": "AIHS",
+    "description": "Senmiao Technology Limited is engaged in the automobile transactions and related services business in the People's Republic of China. The company is headquartered in Chengdu, the People's Republic of China."
+  },
+  {
+    "symbol": "AII",
+    "description": "None"
+  },
+  {
+    "symbol": "AIMD",
+    "description": "Ainos, Inc., a healthcare company, is dedicated to the development of medical technologies for safe and novel point-of-care testing and medical treatment for disease indications. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "AIMDW",
+    "description": "Ainos, Inc., a healthcare company, is dedicated to the development of medical technologies for safe and novel point-of-care testing and medical treatment for disease indications. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "AIN",
+    "description": "Albany International Corp. The company is headquartered in Rochester, New Hampshire."
+  },
+  {
+    "symbol": "AIOT",
+    "description": "PowerFleet, Inc. provides Internet-of-Things solutions in the United States, Israel, and internationally. The company is headquartered in Woodcliff Lake, New Jersey."
+  },
+  {
+    "symbol": "AIP",
+    "description": "None"
+  },
+  {
+    "symbol": "AIR",
+    "description": "AAR Corp. The company is headquartered in Wood Dale, Illinois."
+  },
+  {
+    "symbol": "AIRE",
+    "description": "None"
+  },
+  {
+    "symbol": "AIRG",
+    "description": "None"
+  },
+  {
+    "symbol": "AIRI",
+    "description": "Air Industries Group, an aerospace and defense company, designs, manufactures and sells structural parts and assemblies for the major defense contractors in the United States aerospace industry. The company is headquartered in Bay Shore, New York."
+  },
+  {
+    "symbol": "AIRJ",
+    "description": "Montana Technologies Corporation is an atmospheric energy and water harvesting technology company that provides air conditioning and pure water from air through its AirJoule technology. The company is headquartered in Ronan, Montana."
+  },
+  {
+    "symbol": "AIRJW",
+    "description": "Montana Technologies Corporation is an atmospheric energy and water harvesting technology company that provides air conditioning and pure water from air through its AirJoule technology. The company is headquartered in Ronan, Montana."
+  },
+  {
+    "symbol": "AIRO",
+    "description": "AIRO Group Holdings, Inc., a multi-faceted advanced Aerospace and Defense company. The company is headquartered in Albuquerque, New Mexico."
+  },
+  {
+    "symbol": "AIRS",
+    "description": "None"
+  },
+  {
+    "symbol": "AIRT",
+    "description": "Air T, Inc. provides overnight air cargo, ground equipment sales, commercial jet engines and parts, printing equipment, and maintenance services in the United States and internationally. The company is headquartered in Denver, North Carolina."
+  },
+  {
+    "symbol": "AIRTP",
+    "description": "Air T, Inc. provides overnight air cargo, ground equipment sales, commercial jet engines and parts, printing equipment, and maintenance services in the United States and internationally. The company is headquartered in Denver, North Carolina."
+  },
+  {
+    "symbol": "AISP",
+    "description": "None"
+  },
+  {
+    "symbol": "AISPW",
+    "description": "None"
+  },
+  {
+    "symbol": "AIT",
+    "description": "Applied Industrial Technologies, Inc. distributes industrial products in North America, Australia, New Zealand, and Singapore. The company is headquartered in Cleveland, Ohio."
+  },
+  {
+    "symbol": "AIV",
+    "description": "Aimco is a Real Estate Investment Trust focused on property development, redevelopment, and various other value-creating investment strategies targeting the US multi-family market. "
+  },
+  {
+    "symbol": "AIXI",
+    "description": "Xiao-I Corporation, through its subsidiary, Shanghai Xiaoi Robot Technology Co., Ltd., provides smart city, software, and architectural design artificial intelligence (AI) services in China. The company is headquartered in Shanghai, China."
+  },
+  {
+    "symbol": "AIZ",
+    "description": "Assurant, Inc. is a global provider of risk management products and services with headquarters in New York City."
+  },
+  {
+    "symbol": "AIZN",
+    "description": "None"
+  },
+  {
+    "symbol": "AJG",
+    "description": "Arthur J. Gallagher & Co. (AJG) is an American global insurance brokerage and risk management services firm headquartered in Rolling Meadows, Illinois."
+  },
+  {
+    "symbol": "AKA",
+    "description": "also known as Brands Holding Corp. The company is headquartered in San Francisco, California."
+  },
+  {
+    "symbol": "AKAM",
+    "description": "Akamai Technologies, Inc. is a global content delivery network (CDN), cybersecurity, and cloud service company, providing web and Internet security services."
+  },
+  {
+    "symbol": "AKAN",
+    "description": "Akanda Corporation. The company is headquartered in New Romney, the United Kingdom."
+  },
+  {
+    "symbol": "AKBA",
+    "description": "Akebia Therapeutics, Inc., a biopharmaceutical company, focuses on the development and commercialization of kidney therapies for patients with kidney disease. The company is headquartered in Cambridge, Massachusetts."
+  },
+  {
+    "symbol": "AKO-A",
+    "description": "Embotelladora Andina SA produces, markets and distributes Coca-Cola brand beverages in Chile, Brazil, Argentina and Paraguay. The company is headquartered in Santiago, Chile."
+  },
+  {
+    "symbol": "AKO-B",
+    "description": "Embotelladora Andina SA produces, markets and distributes Coca-Cola brand beverages in Chile, Brazil, Argentina and Paraguay. The company is headquartered in Santiago, Chile."
+  },
+  {
+    "symbol": "AKR",
+    "description": "Acadia Realty Trust is an equity real estate investment trust focused on delivering long-term profitable growth through its double? "
+  },
+  {
+    "symbol": "AKRO",
+    "description": "Akero Therapeutics, Inc., a cardio-metabolic nonalcoholic steatohepatitis (NASH) company, is dedicated to developing medications designed to restore metabolic balance and improve overall health. The company is headquartered in South San Francisco, California."
+  },
+  {
+    "symbol": "AKTX",
+    "description": "Akari Therapeutics, Plc, a clinical-stage biopharmaceutical company, focuses on the development and commercialization of treatments for autoinflammatory diseases that involve complement and leukotriene pathways. The company is headquartered in London, the United Kingdom."
+  },
+  {
+    "symbol": "AKYA",
+    "description": "Akoya Biosciences, Inc., a life sciences technology company, offers space biology solutions focused on transforming discovery and clinical research. The company is headquartered in Marlborough, Massachusetts."
+  },
+  {
+    "symbol": "AL",
+    "description": "Air Lease Corporation, an aircraft leasing company, is engaged in the purchase and leasing of new commercial jet aircraft to airlines around the world. The company is headquartered in Los Angeles, California."
+  },
+  {
+    "symbol": "ALAB",
+    "description": "Astera Labs, Inc. designs, manufactures, and sells semiconductor-based connectivity solutions for cloud and AI infrastructure. The company is headquartered in Santa Clara, California."
+  },
+  {
+    "symbol": "ALAR",
+    "description": "Alarum Technologies Ltd. provides cybersecurity and privacy solutions to consumers and enterprises in Israel, the United States, Hong Kong, the Asia Pacific, and internationally. The company is headquartered in Tel Aviv-Yafo, Israel."
+  },
+  {
+    "symbol": "ALB",
+    "description": "Albemarle Corporation is a fine chemical manufacturing company based in Charlotte, North Carolina."
+  },
+  {
+    "symbol": "ALBT",
+    "description": "Avalon GloboCare Corp. The company is headquartered in Freehold, New Jersey."
+  },
+  {
+    "symbol": "ALC",
+    "description": "Alcon, Inc., an eye care company, researches, develops, manufactures, distributes and sells eye care products for eye care professionals and their patients around the world. The company is headquartered in Geneva, Switzerland."
+  },
+  {
+    "symbol": "ALCO",
+    "description": "Alico, Inc., is an agribusiness and land administration company in the United States. The company is headquartered in Fort Myers, Florida."
+  },
+  {
+    "symbol": "ALCY",
+    "description": "Alchemy Investments Acquisition Corp 1, a special purpose acquisition company, focuses on effecting a merger, capital stock exchange, asset acquisition, stock purchase, reorganization, or similar business combination with one or more businesses. The company is headquartered in Newark, Delaware."
+  },
+  {
+    "symbol": "ALCYU",
+    "description": "Alchemy Investments Acquisition Corp 1, a special purpose acquisition company, focuses on effecting a merger, capital stock exchange, asset acquisition, stock purchase, reorganization, or similar business combination with one or more businesses. The company is headquartered in Newark, Delaware."
+  },
+  {
+    "symbol": "ALCYW",
+    "description": "Alchemy Investments Acquisition Corp 1, a special purpose acquisition company, focuses on effecting a merger, capital stock exchange, asset acquisition, stock purchase, reorganization, or similar business combination with one or more businesses. The company is headquartered in Newark, Delaware."
+  },
+  {
+    "symbol": "ALDF",
+    "description": "None"
+  },
+  {
+    "symbol": "ALDFU",
+    "description": "None"
+  },
+  {
+    "symbol": "ALDFW",
+    "description": "None"
+  },
+  {
+    "symbol": "ALDX",
+    "description": "Aldeyra Therapeutics, Inc., a biotechnology company, develops and markets drugs for immune-mediated systemic and eye diseases. The company is headquartered in Lexington, Massachusetts."
+  },
+  {
+    "symbol": "ALE",
+    "description": "ALLETE, Inc. is an energy company. The company is headquartered in Duluth, Minnesota."
+  },
+  {
+    "symbol": "ALEC",
+    "description": "Alector, Inc., a clinical-stage biopharmaceutical company, develops therapies for the treatment of neurodegenerative diseases. The company is headquartered in South San Francisco, California."
+  },
+  {
+    "symbol": "ALEX",
+    "description": "Alexander & Baldwin, Inc. (A&B) is Hawaii's leading commercial real estate company and the largest neighborhood grocery shopping center owner in the state. "
+  },
+  {
+    "symbol": "ALF",
+    "description": "Alfi, Inc. provides interactive intelligent artificial intelligence and machine learning software solutions. The company is headquartered in Miami Beach, Florida."
+  },
+  {
+    "symbol": "ALFUU",
+    "description": "None"
+  },
+  {
+    "symbol": "ALFUW",
+    "description": "None"
+  },
+  {
+    "symbol": "ALG",
+    "description": "Alamo Group Inc. designs, manufactures, distributes and services agricultural and infrastructure maintenance equipment for government and industrial use worldwide. The company is headquartered in Seguin, Texas."
+  },
+  {
+    "symbol": "ALGM",
+    "description": "Allegro MicroSystems, Inc. designs, develops, manufactures and markets sensor integrated circuits (ICs) and analog power ICs for specific applications for motion control and energy efficient systems. The company is headquartered in Manchester, New Hampshire."
+  },
+  {
+    "symbol": "ALGN",
+    "description": "Align Technology is a manufacturer of 3D digital scanners and the Invisalign clear aligners used in orthodontics. It is headquartered in San Jose, California."
+  },
+  {
+    "symbol": "ALGS",
+    "description": "Aligos Therapeutics, Inc., a clinical-stage biopharmaceutical company, is focused on developing novel therapies to address unmet medical needs in viral and liver diseases. The company is headquartered in South San Francisco, California."
+  },
+  {
+    "symbol": "ALGT",
+    "description": "Allegiant Travel Company, a leisure travel company, provides travel products and services to residents of underserved cities in the United States. The company is headquartered in Las Vegas, Nevada."
+  },
+  {
+    "symbol": "ALHC",
+    "description": "Alignment Healthcare, Inc. provides a consumer-centric platform that provides personalized healthcare to seniors in the United States. The company is headquartered in Orange, California."
+  },
+  {
+    "symbol": "ALIT",
+    "description": "Alight Inc. provides integrated cloud-based human capital solutions that enable its clients and employees to manage health, wealth and human resource needs. The company is headquartered in Lincolnshire, Illinois."
+  },
+  {
+    "symbol": "ALK",
+    "description": "Alaska Air Group is an airline holding company based in SeaTac, Washington, United States."
+  },
+  {
+    "symbol": "ALKS",
+    "description": "Alkermes plc, a biopharmaceutical company, researches, develops and markets pharmaceutical products to address the unmet medical needs of patients in various therapeutic areas in the United States, Ireland and internationally. The company is headquartered in Dublin, Ireland."
+  },
+  {
+    "symbol": "ALKT",
+    "description": "Alkami Technology, Inc. offers a cloud-based digital banking platform to serve banks and credit unions in the United States. The company is headquartered in Plano, Texas."
+  },
+  {
+    "symbol": "ALL",
+    "description": "The Allstate Corporation is an American insurance company, headquartered in Northfield Township, Illinois."
+  },
+  {
+    "symbol": "ALL-P-B",
+    "description": "The Allstate Corporation is an American insurance company, headquartered in Northfield Township, Illinois."
+  },
+  {
+    "symbol": "ALL-P-H",
+    "description": "The Allstate Corporation is an American insurance company, headquartered in Northfield Township, Illinois."
+  },
+  {
+    "symbol": "ALL-P-I",
+    "description": "The Allstate Corporation is an American insurance company, headquartered in Northfield Township, Illinois."
+  },
+  {
+    "symbol": "ALL-P-J",
+    "description": "The Allstate Corporation is an American insurance company, headquartered in Northfield Township, Illinois."
+  },
+  {
+    "symbol": "ALLE",
+    "description": "Allegion plc is an American-Irish provider based in Dublin of security products, for homes and businesses. It comprises thirty one global brands, including CISA, Interflex, LCN, Schlage and Von Duprin."
+  },
+  {
+    "symbol": "ALLO",
+    "description": "Allogene Therapeutics, Inc., a clinical-stage immuno-oncology company, develops and markets genetically engineered allogeneic T-cell therapies for the treatment of cancer. The company is headquartered in South San Francisco, California."
+  },
+  {
+    "symbol": "ALLR",
+    "description": "Allarity Therapeutics A / S develops various therapeutic candidates for the treatment of cancer using complementary drug-specific diagnostics (cDx) generated by its drug response prediction technology. The company is headquartered in Horsholm, Denmark."
+  },
+  {
+    "symbol": "ALLT",
+    "description": "Allot Ltd. provides network intelligence and security solutions to protect and personalize the digital experience in Europe, Asia, Oceania, the Middle East, Africa and the Americas. The company is headquartered in Hod-Hasharon, Israel."
+  },
+  {
+    "symbol": "ALLY",
+    "description": "Ally Financial Inc., a banking holding company, offers a variety of digital financial products and services to consumers, business and corporate clients primarily in the United States and Canada. The company is headquartered in Detroit, Michigan."
+  },
+  {
+    "symbol": "ALMS",
+    "description": "None"
+  },
+  {
+    "symbol": "ALNT",
+    "description": "None"
+  },
+  {
+    "symbol": "ALNY",
+    "description": "Alnylam Pharmaceuticals, Inc., a biopharmaceutical company, focuses on discovering, developing and commercializing RNA interference (RNAi) therapies. The company is headquartered in Cambridge, Massachusetts."
+  },
+  {
+    "symbol": "ALOT",
+    "description": "AstroNova, Inc. designs, develops, manufactures, and distributes specialty printers and data acquisition and analysis systems in the United States, Europe, Asia, Canada, Central and South America, and internationally. "
+  },
+  {
+    "symbol": "ALRM",
+    "description": "Alarm.com Holdings, Inc. offers cloud-based solutions for smart residential and commercial properties in the United States and internationally. The company is headquartered in Tysons, Virginia."
+  },
+  {
+    "symbol": "ALRS",
+    "description": "Alerus Financial Corporation, through its subsidiary, Alerus Financial, National Association, provides various financial services to businesses and consumers. The company is headquartered in Grand Forks, North Dakota."
+  },
+  {
+    "symbol": "ALSN",
+    "description": "Allison Transmission Holdings, Inc. designs, manufactures and sells fully automatic commercial and defense transmissions for medium and heavy duty commercial vehicles, and medium and heavy duty US defense vehicles globally. The company is headquartered in Indianapolis, Indiana."
+  },
+  {
+    "symbol": "ALT",
+    "description": "Altimmune, Inc., a clinical-stage biopharmaceutical company, focuses on the development of intranasal vaccines, immunomodulatory therapies, and treatments for liver disease. The company is headquartered in Gaithersburg, Maryland."
+  },
+  {
+    "symbol": "ALTG",
+    "description": "Alta Equipment Group Inc. owns and operates integrated equipment distribution platforms in the United States. The company is headquartered in Livonia, Michigan."
+  },
+  {
+    "symbol": "ALTG-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "ALTI",
+    "description": "Alvarium Tiedemann Holdings, Inc. is a wealth and asset manager in the United States and internationally. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ALTO",
+    "description": "Alto Ingredients, Inc. produces and markets specialty alcohols and essential ingredients in the United States. The company is headquartered in Sacramento, California."
+  },
+  {
+    "symbol": "ALTS",
+    "description": "ALT5 Sigma Corporation operates a next generation blockchain platform. The company is headquartered in Las Vegas, Nevada."
+  },
+  {
+    "symbol": "ALUR",
+    "description": "Allurion Technologies Inc. focuses on ending obesity with a weight loss platform to treat people who are overweight. The company is headquartered in Natick, Massachusetts."
+  },
+  {
+    "symbol": "ALUR-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "ALV",
+    "description": "Autoliv, Inc. develops, manufactures and supplies automotive security systems for the automotive industry in Europe, America, China, Japan and the rest of Asia. The company is headquartered in Stockholm, Sweden."
+  },
+  {
+    "symbol": "ALVO",
+    "description": "Alvotech Holdings SA, develops and manufactures biosimilars for global markets. The company is headquartered in Iceland."
+  },
+  {
+    "symbol": "ALVOW",
+    "description": "Alvotech Holdings SA, develops and manufactures biosimilars for global markets. The company is headquartered in Iceland."
+  },
+  {
+    "symbol": "ALX",
+    "description": "None"
+  },
+  {
+    "symbol": "ALXO",
+    "description": "ALX Oncology Holdings Inc., a clinical-stage immuno-oncology company, focuses on developing therapies for patients fighting cancer. The company is headquartered in Burlingame, California."
+  },
+  {
+    "symbol": "ALYAF",
+    "description": "Alithya Group Inc. provides strategy and digital technology services in Canada, the United States, and Europe. The company is headquartered in Montreal, Canada."
+  },
+  {
+    "symbol": "ALZN",
+    "description": "None"
+  },
+  {
+    "symbol": "AM",
+    "description": "Antero Midstream Corporation owns, operates and develops midstream energy infrastructure. The company is headquartered in Denver, Colorado."
+  },
+  {
+    "symbol": "AMAL",
+    "description": "Amalgamated Finance Corporation The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "AMAT",
+    "description": "Applied Materials, Inc. is an American corporation that supplies equipment, services and software for the manufacture of semiconductor (integrated circuit) chips for electronics, flat panel displays for computers, smartphones and televisions, and solar products. The company also supplies equipment to produce coatings for flexible electronics, packaging and other applications. The company is headquartered in Santa Clara, California, in Silicon Valley."
+  },
+  {
+    "symbol": "AMBA",
+    "description": "Ambarella, Inc. develops semiconductor video solutions that enable high definition (HD) and ultra HD compression, image processing, and deep neural network processing globally. The company is headquartered in Santa Clara, California."
+  },
+  {
+    "symbol": "AMBC",
+    "description": "Ambac Financial Group, Inc., a financial services holding company, offers financial guarantees in the United States, the United Kingdom, Italy, Austria, Australia, France and internationally. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "AMBI",
+    "description": "None"
+  },
+  {
+    "symbol": "AMBI-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "AMBO",
+    "description": "Ambow Education Holding Ltd. provides a range of educational and career enhancement products and services to students, recent graduates, corporate employees, and management professionals in the People's Republic of China. The company is headquartered in Beijing, the People's Republic of China."
+  },
+  {
+    "symbol": "AMBP",
+    "description": "None"
+  },
+  {
+    "symbol": "AMBP-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "AMBR",
+    "description": "Amber Road, Inc. provides cloud-based Global Trade Management (GTM) solutions in the United States and internationally. The company is headquartered in East Rutherford, New Jersey."
+  },
+  {
+    "symbol": "AMC",
+    "description": "AMC Entertainment Holdings, Inc., involved in the theatrical business. The company is headquartered in Leawood, Kansas."
+  },
+  {
+    "symbol": "AMCR",
+    "description": "Amcor plc is an Australian-American, UK-domiciled packaging company. It develops and produces flexible packaging, rigid containers, specialty cartons, closures and services for food, beverage, pharmaceutical, medical-device, home and personal-care, and other products."
+  },
+  {
+    "symbol": "AMCX",
+    "description": "AMC Networks Inc., an entertainment company, owns and operates a suite of video entertainment products that are delivered to the public and a platform to distributors and advertisers in the United States and internationally. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "AME",
+    "description": "AMETEK, Inc. is an American global manufacturer of electronic instruments and electromechanical devices with a headquarters in the United States and over 220 manufacturing sites worldwide."
+  },
+  {
+    "symbol": "AMED",
+    "description": "Amedisys, Inc., provides healthcare services in the United States. The company is headquartered in Baton Rouge, Louisiana."
+  },
+  {
+    "symbol": "AMG",
+    "description": "Affiliated Managers Group, Inc., through its affiliates, is an asset management company providing investment management services to mutual funds, institutional clients and high net worth individuals in the United States. The company is headquartered in Prides Crossing, Massachusetts."
+  },
+  {
+    "symbol": "AMGN",
+    "description": "Amgen Inc. (formerly Applied Molecular Genetics Inc.) is an American multinational biopharmaceutical company headquartered in Thousand Oaks, California. Focused on molecular biology and biochemistry, its goal is to provide a healthcare business based on recombinant DNA technology."
+  },
+  {
+    "symbol": "AMH",
+    "description": "American Homes 4 Rent (NYSE: AMH) is a leader in the single-family rental industry and American Homes 4 Rent is fast becoming a nationally recognized rental housing brand, known for its high quality, good value and satisfaction. of tenants. "
+  },
+  {
+    "symbol": "AMH-P-G",
+    "description": "None"
+  },
+  {
+    "symbol": "AMH-P-H",
+    "description": "None"
+  },
+  {
+    "symbol": "AMIX",
+    "description": "Autonomix Medical, Inc., a development stage medical device development company, focuses on advancing technologies for sensing and treating disorders relating to the peripheral nervous system. The company is headquartered in The Woodlands, Texas."
+  },
+  {
+    "symbol": "AMKR",
+    "description": "Amkor Technology, Inc. provides outsourced semiconductor packaging and testing services in the United States, Japan, Europe, the Middle East, Africa, and the rest of Asia Pacific. The company is headquartered in Tempe, Arizona."
+  },
+  {
+    "symbol": "AMLX",
+    "description": "None"
+  },
+  {
+    "symbol": "AMN",
+    "description": "AMN Healthcare Services, Inc. provides healthcare personnel solutions and staffing services to hospitals and healthcare facilities in the United States. The company is headquartered in Dallas, Taxas."
+  },
+  {
+    "symbol": "AMOD",
+    "description": "None"
+  },
+  {
+    "symbol": "AMODW",
+    "description": "None"
+  },
+  {
+    "symbol": "AMP",
+    "description": "Ameriprise Financial, Inc. is a diversified financial services company and bank holding company incorporated in Delaware and headquartered in Minneapolis, Minnesota. It provides financial planning products and services, including wealth management, asset management, insurance, annuities, and estate planning."
+  },
+  {
+    "symbol": "AMPG",
+    "description": "Amplitech Group, Inc. designs, designs and assembles amplifiers based on microwave components. The company is headquartered in Bohemia, New York."
+  },
+  {
+    "symbol": "AMPGW",
+    "description": "AmpliTech Group, Inc. designs, designs, and assembles amplifiers based on microwave components. The company is headquartered in Bohemia, New York."
+  },
+  {
+    "symbol": "AMPH",
+    "description": "Amphastar Pharmaceuticals, Inc., a specialty pharmaceutical company, develops, manufactures, markets, and sells generic and proprietary injectable, inhalation, and intranasal products in the United States, China, and France. The company is headquartered in Rancho Cucamonga, California."
+  },
+  {
+    "symbol": "AMPL",
+    "description": "None"
+  },
+  {
+    "symbol": "AMPX",
+    "description": "Amprius Technologies, Inc. manufactures and distributes lithium ion batteries. The company is headquartered in Fremont, California."
+  },
+  {
+    "symbol": "AMPX-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "AMPY",
+    "description": "Amplify Energy Corp. The company is headquartered in Houston, Texas."
+  },
+  {
+    "symbol": "AMR",
+    "description": "Alpha Metallurgical Resources, Inc. is a mining company. The company is headquartered in Bristol, Tennessee."
+  },
+  {
+    "symbol": "AMRC",
+    "description": "Ameresco, Inc. provides comprehensive energy services for businesses and organizations in the United States, Canada, and internationally. The company is headquartered in Framingham, Massachusetts."
+  },
+  {
+    "symbol": "AMRK",
+    "description": "A-Mark Precious Metals, Inc., is a precious metals trading company. The company is headquartered in El Segundo, California."
+  },
+  {
+    "symbol": "AMRN",
+    "description": "Amarin Corporation plc, a pharmaceutical company, is engaged in the development and commercialization of therapies for the treatment of cardiovascular disease in the United States. The company is headquartered in Dublin, Ireland."
+  },
+  {
+    "symbol": "AMRX",
+    "description": "Amneal Pharmaceuticals, Inc. develops, licenses, manufactures, markets and distributes generic and specialty pharmaceutical products for various dosage forms and therapeutic areas. The company is headquartered in Bridgewater, New Jersey."
+  },
+  {
+    "symbol": "AMRZ",
+    "description": "None"
+  },
+  {
+    "symbol": "AMS",
+    "description": "American Shared Hospital Services rents radiosurgery and radiation therapy equipment to healthcare providers. The company is headquartered in San Francisco, California."
+  },
+  {
+    "symbol": "AMSC",
+    "description": "American Superconductor Corporation provides megawatt-scale power resiliency solutions globally. The company is headquartered in Ayer, Massachusetts."
+  },
+  {
+    "symbol": "AMSF",
+    "description": "AMERISAFE, Inc., an insurance holding company, writes workers' compensation insurance in the United States. The company is headquartered in DeRidder, Louisiana."
+  },
+  {
+    "symbol": "AMST",
+    "description": "Amesite Inc., an artificial intelligence-powered platform and course designer, offers products and services online in the United States. The company is headquartered in Detroit, Michigan."
+  },
+  {
+    "symbol": "AMT",
+    "description": "American Tower Corporation (also referred to as American Tower or ATC) is an American real estate investment trust and an owner and operator of wireless and broadcast communications infrastructure in several countries worldwide and is headquartered in Boston, Massachusetts."
+  },
+  {
+    "symbol": "AMTB",
+    "description": "Amerant Bancorp Inc. is the banking holding company for Amerant Bank, NA that provides banking products and services to individuals and businesses in the United States and internationally. The company is headquartered in Coral Gables, Florida."
+  },
+  {
+    "symbol": "AMTD",
+    "description": "TD Ameritrade Holding Corporation provides securities brokerage and technology-related financial services to retail investors and traders and Registered Independent Investment Advisers (RIAs) in the United States. The company is headquartered in Omaha, Nebraska."
+  },
+  {
+    "symbol": "AMTM",
+    "description": "Amentum Holdings, Inc. provides engineering and technology solutions to address challenges in science, security, and sustainability. "
+  },
+  {
+    "symbol": "AMTX",
+    "description": "Aemetis, Inc. is a biochemical and renewable natural gas and fuels company in North America and India. The company is headquartered in Cupertino, California."
+  },
+  {
+    "symbol": "AMUU",
+    "description": "None"
+  },
+  {
+    "symbol": "AMWD",
+    "description": "American Woodmark Corporation manufactures and distributes kitchen, bathroom and home organization products for the remodeling and new home construction markets in the United States. The company is headquartered in Winchester, Virginia."
+  },
+  {
+    "symbol": "AMWL",
+    "description": "American Well Corporation is a telehealth business enabling digital healthcare delivery. The company is headquartered in Boston, Massachusetts."
+  },
+  {
+    "symbol": "AMX",
+    "description": "Amrica Mvil, SAB de CV provides telecommunications services in Latin America and internationally. The company is headquartered in Mexico City, Mexico."
+  },
+  {
+    "symbol": "AMZE",
+    "description": "Amaze Holdings, Inc. produces and sells low-carb and low-calorie wines in the United States and Puerto Rico. The company is headquartered in Charlotte, North Carolina."
+  },
+  {
+    "symbol": "AN",
+    "description": "AutoNation, Inc. is an automobile retailer in the United States. The company is headquartered in Fort Lauderdale, Florida."
+  },
+  {
+    "symbol": "ANAB",
+    "description": "AnaptysBio, Inc., a clinical-stage biotechnology company, is dedicated to developing therapeutic product candidates for inflammation and immuno-oncology indications. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "ANDE",
+    "description": "Andersons, Inc., an agricultural company, operates in the commerce, ethanol, plant nutrients, and railroad sectors in the United States and internationally. The company is headquartered in Maumee, Ohio."
+  },
+  {
+    "symbol": "ANEB",
+    "description": "Anebulo Pharmaceuticals, Inc., a clinical-stage biotechnology company, focuses on developing and commercializing treatments for patients suffering from cannabinoid overdose and addiction. The company is headquartered in Lakeway, Texas."
+  },
+  {
+    "symbol": "ANET",
+    "description": "Arista Networks (formerly Arastra) is an American computer networking company headquartered in Santa Clara, California. The company designs and sells multilayer network switches to deliver software-defined networking (SDN) solutions for large datacenter, cloud computing, high-performance computing, and high-frequency trading environments."
+  },
+  {
+    "symbol": "ANF",
+    "description": "Abercrombie & Fitch Co., is a specialty retailer. The company is headquartered in New Albany, Ohio."
+  },
+  {
+    "symbol": "ANG-P-B",
+    "description": "None"
+  },
+  {
+    "symbol": "ANGH",
+    "description": "Anghami Inc. operates a digital music entertainment technology platform in the Middle East and North Africa. The company is headquartered in Abu Dhabi, the United Arab Emirates."
+  },
+  {
+    "symbol": "ANGHW",
+    "description": "Anghami Inc. operates a digital music entertainment technology platform in the Middle East and North Africa. The company is headquartered in Abu Dhabi, the United Arab Emirates."
+  },
+  {
+    "symbol": "ANGI",
+    "description": "Angi Inc. provides home service professionals in the United States and internationally. "
+  },
+  {
+    "symbol": "ANGO",
+    "description": "AngioDynamics, Inc. designs, manufactures and sells various medical, surgical and diagnostic devices for the treatment of peripheral vascular disease and vascular access; and for use in oncology and surgical settings in the United States and internationally. The company is headquartered in Latham, New York."
+  },
+  {
+    "symbol": "ANIK",
+    "description": "Anika Therapeutics, Inc., is a joint preservation company in the United States, Europe, and internationally. The company is headquartered in Bedford, Massachusetts."
+  },
+  {
+    "symbol": "ANIP",
+    "description": "ANI Pharmaceuticals, Inc., a specialty pharmaceutical company, develops, manufactures, and markets brand-name and generic prescription pharmaceuticals in the United States and Canada. The company is headquartered in Baudette, Minnesota."
+  },
+  {
+    "symbol": "ANIX",
+    "description": "Anixa Biosciences, Inc., a biotechnology company, develops therapies and vaccines focusing on critical unmet needs in oncology and infectious diseases. The company is headquartered in San Jose, California."
+  },
+  {
+    "symbol": "ANL",
+    "description": "Adlai Nortye Ltd., a clinical-stage biotechnology company, focuses on the discovery and development of cancer therapies in the United States and Mainland China. The company is headquartered in Grand Cayman, the Cayman Islands."
+  },
+  {
+    "symbol": "ANNA",
+    "description": "None"
+  },
+  {
+    "symbol": "ANNAW",
+    "description": "None"
+  },
+  {
+    "symbol": "ANNX",
+    "description": "Annexon, Inc., a clinical-stage biopharmaceutical company, discovers and develops therapies for autoimmune and neurodegenerative diseases. The company is headquartered in South San Francisco, California."
+  },
+  {
+    "symbol": "ANRO",
+    "description": "Alto Neuroscience, Inc. is a clinical-stage biopharmaceutical company that engages in the psychiatry drug development business. The company is headquartered in Los Altos, California."
+  },
+  {
+    "symbol": "ANSC",
+    "description": "Agriculture & Natural Solutions Acquisition Corporation focuses on effecting a merger, amalgamation, share exchange, asset acquisition, share purchase, reorganization, or similar business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ANSCU",
+    "description": "Agriculture & Natural Solutions Acquisition Corporation focuses on effecting a merger, amalgamation, share exchange, asset acquisition, share purchase, reorganization, or similar business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ANSCW",
+    "description": "Agriculture & Natural Solutions Acquisition Corporation focuses on effecting a merger, amalgamation, share exchange, asset acquisition, share purchase, reorganization, or similar business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ANSS",
+    "description": "Ansys, Inc. is an American company based in Canonsburg, Pennsylvania. It develops and markets multiphysics engineering simulation software for product design, testing and operation and offers its products and services to customers worldwide."
+  },
+  {
+    "symbol": "ANTA",
+    "description": "Antalpha Platform Holding Company provides financing, technology, and risk management solutions to the crypto asset industry. "
+  },
+  {
+    "symbol": "ANTE",
+    "description": "AirNet Technology Inc. operates out-of-home advertising platforms in the People's Republic of China. The company is headquartered in Beijing, the People's Republic of China."
+  },
+  {
+    "symbol": "ANTX",
+    "description": "Anthem, Inc., is a health benefits company in the United States. The company is headquartered in Indianapolis, Indiana."
+  },
+  {
+    "symbol": "ANVS",
+    "description": "Annovis Bio, Inc., a clinical-stage drug platform company, develops drugs to treat neurodegeneration. The company is headquartered in Berwyn, Pennsylvania."
+  },
+  {
+    "symbol": "ANY",
+    "description": "Sphere 3D Corp. The company is headquartered in Toronto, Canada."
+  },
+  {
+    "symbol": "AOMD",
+    "description": "None"
+  },
+  {
+    "symbol": "AOMN",
+    "description": "None"
+  },
+  {
+    "symbol": "AOMR",
+    "description": "None"
+  },
+  {
+    "symbol": "AON",
+    "description": "Aon plc is a multinational professional services firm that sells a range of financial risk-mitigation products, including insurance, pension administration, and health-insurance plans."
+  },
+  {
+    "symbol": "AONCW",
+    "description": "American Oncology Network, Inc., provides oncology services in the United States. The company is headquartered in Fort Myers, Florida."
+  },
+  {
+    "symbol": "AORT",
+    "description": "Artivion Inc. manufactures, processes and distributes implantable human tissues and medical devices worldwide. "
+  },
+  {
+    "symbol": "AOS",
+    "description": "A. O. Smith Corporation is an American manufacturer of both residential and commercial water heaters and boilers and the largest manufacturer and marketer of water heaters in North America. It also supplies water treatment products in the Asian market."
+  },
+  {
+    "symbol": "AOSL",
+    "description": "Alpha and Omega Semiconductor Limited designs, develops and supplies power semiconductor products for computer, consumer electronics, communications and industrial applications. The company is headquartered in Sunnyvale, California."
+  },
+  {
+    "symbol": "AOUT",
+    "description": "American Outdoor Brands, Inc. provides outdoor products and accessories for outdoor enthusiasts in the United States and internationally. The company is headquartered in Columbia, Missouri."
+  },
+  {
+    "symbol": "AP",
+    "description": "Ampco-Pittsburgh Corporation manufactures and sells specialty metal products and custom equipment to commercial and industrial users worldwide. The company is headquartered in Carnegie, Pennsylvania."
+  },
+  {
+    "symbol": "AP-WS",
+    "description": "None"
+  },
+  {
+    "symbol": "APA",
+    "description": "APA Corporation is the holding company for Apache Corporation, a company engaged in hydrocarbon exploration. It is organized in Delaware and headquartered in Houston."
+  },
+  {
+    "symbol": "APAM",
+    "description": "Artisan Partners Asset Management Inc. is a publicly owned investment manager. The company is headquartered in Milwaukee, Wisconsin with additional offices in Atlanta, Georgia; New York City; San Francisco, California; Leawood, Kansas; and London, United Kingdom."
+  },
+  {
+    "symbol": "APCXW",
+    "description": "AppTech Payments Corp. The company is headquartered in Carlsbad, California."
+  },
+  {
+    "symbol": "APD",
+    "description": "Air Products and Chemicals, Inc. is an American international corporation whose principal business is selling gases and chemicals for industrial uses. Air Products' headquarters is in Allentown, Pennsylvania."
+  },
+  {
+    "symbol": "APDN",
+    "description": "Applied DNA Sciences, Inc. develops and markets DNA-based technology solutions for use in the pre-clinical drug development and manufacturing markets based on nucleic acid-based in vitro diagnostics; and for supply chain security, anti-counterfeiting, and anti-theft technology applications in the United States, Europe, and Asia. The company is headquartered in Stony Brook, New York."
+  },
+  {
+    "symbol": "APEI",
+    "description": "American Public Education, Inc. offers postsecondary education online and on campus. The company is headquartered in Charles Town, West Virginia."
+  },
+  {
+    "symbol": "APG",
+    "description": "APi Group Corporation provides security, specialty and industrial services primarily in North America. The company is headquartered in New Brighton, Minnesota."
+  },
+  {
+    "symbol": "APGE",
+    "description": "Apogee Therapeutics, Inc., through its subsidiary, is a biotechnology company that develops biologics for the treatment of atopic dermatitis (AD), chronic obstructive pulmonary disease (COPD), and related inflammatory and immunology indications. The company is headquartered in Waltham, Massachusetts."
+  },
+  {
+    "symbol": "APH",
+    "description": "Amphenol Corporation is a major producer of electronic and fiber optic connectors, cable and interconnect systems such as coaxial cables. Amphenol is a portmanteau from the corporation's original name, American Phenolic Corp."
+  },
+  {
+    "symbol": "API",
+    "description": "Agora, Inc. provides a Real-Time Interaction Platform as a Service (RTE-PaaS) in the People's Republic of China, the United States, and internationally. The company is headquartered in Shanghai, China."
+  },
+  {
+    "symbol": "APLD",
+    "description": "Applied Blockchain, Inc. is engaged in crypto mining and co-hosting operations. The company is headquartered in Dallas, Texas."
+  },
+  {
+    "symbol": "APLE",
+    "description": "Apple Hospitality REIT, Inc. (NYSE: APLE) is a publicly traded real estate investment trust (? "
+  },
+  {
+    "symbol": "APLM",
+    "description": "Apollomics, Inc., a biotechnology company, engages in the discovery and development of mono and combination oncology therapies to harness the immune system and target specific molecular pathways to inhibit cancer. The company is headquartered in Foster City, California with additional locations in Hangzhou and Shanghai, China and Southbank, Australia."
+  },
+  {
+    "symbol": "APLMW",
+    "description": "Apollomics, Inc., a biotechnology company, engages in the discovery and development of mono and combination oncology therapies to harness the immune system and target specific molecular pathways to inhibit cancer. The company is headquartered in Foster City, California with additional locations in Hangzhou and Shanghai, China and Southbank, Australia."
+  },
+  {
+    "symbol": "APLS",
+    "description": "Apellis Pharmaceuticals, Inc., a clinical-stage biopharmaceutical company, focuses on the development of therapeutic compounds through inhibition of the complement system for autoimmune and inflammatory diseases. The company is headquartered in Waltham, Massachusetts."
+  },
+  {
+    "symbol": "APLT",
+    "description": "Applied Therapeutics, Inc., a clinical-stage biopharmaceutical company, develops novel products to combat cardiovascular disease, galactosemia, and diabetes complications. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "APM",
+    "description": "Aptorum Group Limited, a pharmaceutical company, is dedicated to the discovery, development and commercialization of therapeutic products for the treatment of diseases with a focus on infectious diseases and cancers. The company is headquartered in London, the United Kingdom."
+  },
+  {
+    "symbol": "APO",
+    "description": "None"
+  },
+  {
+    "symbol": "APO-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "APOG",
+    "description": "Apogee Enterprises, Inc. designs and develops glass and metal products and services in the United States, Canada, and Brazil. The company is headquartered in Minneapolis, Minnesota."
+  },
+  {
+    "symbol": "APOS",
+    "description": "None"
+  },
+  {
+    "symbol": "APP",
+    "description": "AppLovin Corporation is committed to creating a software-based platform for mobile application developers to improve the marketing and monetization of their applications globally. The company is headquartered in Palo Alto, California."
+  },
+  {
+    "symbol": "APPF",
+    "description": "AppFolio, Inc. provides industry-specific cloud-based enterprise software data analytics, services and solutions for the real estate industry. The company is headquartered in Santa Barbara, California."
+  },
+  {
+    "symbol": "APPN",
+    "description": "Appian Corporation provides a low-code automation platform in the United States and internationally. The company is headquartered in McLean, Virginia."
+  },
+  {
+    "symbol": "APPS",
+    "description": "Digital Turbine, Inc. provides mobile and media communication products and solutions for mobile operators, application advertisers, publishers, original equipment manufacturers (OEMs), and other third parties. The company is headquartered in Austin, Texas."
+  },
+  {
+    "symbol": "APRE",
+    "description": "Aprea Therapeutics, Inc., a clinical-stage biopharmaceutical company, develops and markets cancer therapies that reactivate the mutant p53 tumor suppressor protein. The company is headquartered in Boston, Massachusetts."
+  },
+  {
+    "symbol": "APT",
+    "description": "Alpha Pro Tech, Ltd., develops, manufactures and markets a range of disposable protective garments, infection control and construction products in the United States and internationally. The company is headquartered in Markham, Canada."
+  },
+  {
+    "symbol": "APTV",
+    "description": "Aptiv plc is an auto parts company headquartered in Dublin, Ireland."
+  },
+  {
+    "symbol": "APUS",
+    "description": "Apimeds Pharmaceuticals US, Inc. is a clinical stage biopharmaceutical company in the United States. The company is headquartered in Hopewell, New Jersey."
+  },
+  {
+    "symbol": "APVO",
+    "description": "Aptevo Therapeutics Inc., a clinical-stage biotechnology company, focuses on developing immunotherapeutic candidates for the treatment of various forms of cancer in the United States. The company is headquartered in Seattle, Washington."
+  },
+  {
+    "symbol": "APWC",
+    "description": "Asia Pacific Wire & Cable Corporation Limited manufactures and distributes telecommunications, power cables and electronic and enameled cable products in Singapore, Thailand, Australia, the People's Republic of China and other markets in the Asia Pacific region. The company is headquartered in Taipei, Taiwan."
+  },
+  {
+    "symbol": "APYX",
+    "description": "Apyx Medical Corporation, an energy technology company, develops, manufactures and sells medical devices in the cosmetic and surgical markets worldwide. The company is headquartered in Clearwater, Florida."
+  },
+  {
+    "symbol": "AQB",
+    "description": "AquaBounty Technologies, Inc., a biotechnology company, focuses on improving productivity in the commercial aquaculture industry in the United States and Canada. The company is headquartered in Maynard, Massachusetts."
+  },
+  {
+    "symbol": "AQMS",
+    "description": "Aqua Metals, Inc. engages in lead recycling primarily in the United States. The company is headquartered in McCarran, Nevada."
+  },
+  {
+    "symbol": "AQN",
+    "description": "Algonquin Power & Utilities Corp. The company is headquartered in Oakville, Canada."
+  },
+  {
+    "symbol": "AQNB",
+    "description": "None"
+  },
+  {
+    "symbol": "AQST",
+    "description": "Aquestive Therapeutics, Inc., a pharmaceutical company, focuses on identifying, developing, and marketing various products to address unmet medical needs in the United States and internationally. The company is headquartered in Warren, New Jersey."
+  },
+  {
+    "symbol": "AR",
+    "description": "Antero Resources Corporation, an independent oil and natural gas company, acquires, explores, develops, and produces natural gas, natural gas liquids, and oil properties in the United States. The company is headquartered in Denver, Colorado."
+  },
+  {
+    "symbol": "ARAI",
+    "description": "Arrive AI Inc. operates subscription-based platform, a Mailbox-as-a-Service. The company is headquartered in Fishers, Indiana."
+  },
+  {
+    "symbol": "ARAY",
+    "description": "Accuray Incorporated designs, develops and sells radiosurgery and radiation therapy systems for the treatment of tumors in the body in the Americas, Europe, the Middle East, India, Japan, Africa and the rest of the Asia Pacific region. The company is headquartered in Sunnyvale, California."
+  },
+  {
+    "symbol": "ARBB",
+    "description": "ARB IOT Group Limited, provides Internet of Things (IoT) system solutions, and system integration and support services. The company is headquartered in Kuala Lumpur, Malaysia."
+  },
+  {
+    "symbol": "ARBE",
+    "description": "None"
+  },
+  {
+    "symbol": "ARBEW",
+    "description": "None"
+  },
+  {
+    "symbol": "ARBK",
+    "description": "None"
+  },
+  {
+    "symbol": "ARBKL",
+    "description": "None"
+  },
+  {
+    "symbol": "ARCB",
+    "description": "ArcBest Corporation offers integrated freight forwarding and logistics services. The company is headquartered in Fort Smith, Arkansas."
+  },
+  {
+    "symbol": "ARCC",
+    "description": "None"
+  },
+  {
+    "symbol": "ARCO",
+    "description": "Arcos Dorados Holdings Inc. is a McDonald's restaurant franchise. The company is headquartered in Montevideo, Uruguay."
+  },
+  {
+    "symbol": "ARCT",
+    "description": "Arcturus Therapeutics Holdings Inc., an RNA drug company, focuses on the treatment of liver and respiratory diseases. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "ARDT",
+    "description": "None"
+  },
+  {
+    "symbol": "ARDX",
+    "description": "Ardelyx, Inc., a biopharmaceutical company, develops and sells drugs for the treatment of kidney and cardiorenal diseases in the United States and internationally. The company is headquartered in Fremont, California."
+  },
+  {
+    "symbol": "ARE",
+    "description": "Alexandria Real Estate Equities, Inc. is an American real estate investment trust that invests in office buildings and laboratories leased to tenants in the life science and technology industries."
+  },
+  {
+    "symbol": "AREB",
+    "description": "American Rebel Holdings, Inc. offers safes and personal security products. The company is headquartered in Nashville, Kansas."
+  },
+  {
+    "symbol": "AREBW",
+    "description": "American Rebel Holdings, Inc. offers safes and personal security products. The company is headquartered in Nashville, Kansas."
+  },
+  {
+    "symbol": "AREC",
+    "description": "American Resources Corporation supplies raw materials for the global infrastructure market. The company is headquartered in Fishers, Indiana."
+  },
+  {
+    "symbol": "AREN",
+    "description": "Arena Group Holdings, Inc. operates a technology platform in the United States. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ARES",
+    "description": "Ares Management Corporation is an alternative asset manager in the United States, Europe, and Asia. "
+  },
+  {
+    "symbol": "ARGD",
+    "description": "None"
+  },
+  {
+    "symbol": "ARGO-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "ARGX",
+    "description": "argenx SE, a clinical-phase biotechnology company, focuses on the development of antibody-based therapies for the treatment of autoimmune diseases, hematology and cancer. The company is headquartered in Breda, the Netherlands."
+  },
+  {
+    "symbol": "ARHS",
+    "description": "None"
+  },
+  {
+    "symbol": "ARI",
+    "description": "Apollo Commercial Real Estate Finance, Inc. is a real estate investment trust (REIT) that originates, acquires, invests, and manages commercial first mortgage loans, subordinated financings, and other real estate-related commercial debt investments in the United States. . The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ARIS",
+    "description": "ARI Network Services, Inc. provides software as a service (SaaS), data as a service (DaaS), and other solutions to equipment manufacturers, distributors, and dealers. The company is headquartered in Milwaukee, Wisconsin."
+  },
+  {
+    "symbol": "ARKO",
+    "description": "Arko Corp. The company is headquartered in Richmond, Virginia."
+  },
+  {
+    "symbol": "ARKR",
+    "description": "Ark Restaurants Corp. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ARL",
+    "description": "American Realty Investors, Inc. acquires, develops and owns multi-family apartment communities and commercial real estate in the Southwest, Southeast, and Midwest of the United States. The company is headquartered in Dallas, Texas."
+  },
+  {
+    "symbol": "ARLO",
+    "description": "Arlo Technologies, Inc. provides smart connected devices to monitor environments in real time with a Wi-Fi or cellular connection in the Americas, Europe, Middle East and Africa, and Asia Pacific regions. The company is headquartered in San Jose, California."
+  },
+  {
+    "symbol": "ARLP",
+    "description": "Alliance Resource Partners, LP, a diversified natural resources company, produces and markets coal primarily for industrial and utility users in the United States. The company is headquartered in Tulsa, Oklahoma."
+  },
+  {
+    "symbol": "ARM",
+    "description": "Arm Holdings plc architects, develops, and licenses central processing unit products and related technologies for semiconductor companies and original equipment manufacturers rely on to develop products. "
+  },
+  {
+    "symbol": "ARMK",
+    "description": "Aramark provides uniform food, facilities, and services to education, health, business and industrial, sports, recreation, and correctional clients in the United States and internationally. The company is headquartered in Philadelphia, Pennsylvania."
+  },
+  {
+    "symbol": "ARMN",
+    "description": " engages in the acquisition, exploration, development, and operation of gold and silver properties primarily in Colombia. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "ARMP",
+    "description": "Armata Pharmaceuticals Inc., a clinical-stage biotechnology company, focuses on the development of specific bacteriophage therapies for the treatment of antibiotic-resistant infections worldwide. The company is headquartered in Marina del Rey, California."
+  },
+  {
+    "symbol": "AROC",
+    "description": "Archrock, Inc. is an energy infrastructure company in the United States. The company is headquartered in Houston, Texas."
+  },
+  {
+    "symbol": "AROW",
+    "description": "Arrow Financial Corporation, a banking holding company, offers consumer and commercial banking and financial products and services. The company is headquartered in Glens Falls, New York."
+  },
+  {
+    "symbol": "ARQ",
+    "description": "Arq, Inc. produces activated carbon products in North America. The company is headquartered in Greenwood Village, Colorado."
+  },
+  {
+    "symbol": "ARQQ",
+    "description": "Arqit Limited develops and offers a quantum key distribution network. The company is headquartered in London, United Kingdom."
+  },
+  {
+    "symbol": "ARQQW",
+    "description": "Arqit Limited develops and offers a quantum key distribution network. The company is headquartered in London, United Kingdom."
+  },
+  {
+    "symbol": "ARQT",
+    "description": "Arcutis Biotherapeutics, Inc., a biopharmaceutical company, focuses on developing and commercializing treatments for dermatological diseases. The company is headquartered in Westlake Village, California."
+  },
+  {
+    "symbol": "ARR",
+    "description": "ARMOR Residential REIT, Inc. invests in residential mortgage-backed securities (MBS) in the United States. The company is headquartered in Vero Beach, Florida."
+  },
+  {
+    "symbol": "ARR-P-C",
+    "description": "None"
+  },
+  {
+    "symbol": "ARRY",
+    "description": "Array Technologies, Inc. manufactures and supplies solar tracking systems and related products for customers in the United States and internationally. The company is headquartered in Albuquerque, New Mexico."
+  },
+  {
+    "symbol": "ARTL",
+    "description": "Artelo Biosciences, Inc., a clinical-stage biopharmaceutical company, focuses on developing and commercializing treatments to modulate the endocannabinoid system. The company is headquartered in La Jolla, California."
+  },
+  {
+    "symbol": "ARTNA",
+    "description": "Artesian Resources Corporation provides water, wastewater, and other services in Delaware, Maryland, and Pennsylvania. The company is headquartered in Newark, Delaware."
+  },
+  {
+    "symbol": "ARTV",
+    "description": "None"
+  },
+  {
+    "symbol": "ARTW",
+    "description": "Art's-Way Manufacturing Co., Inc. manufactures and sells agricultural equipment, specialized modular science buildings, and steel cutting tools in the United States and internationally. The company is headquartered in Armstrong, Iowa."
+  },
+  {
+    "symbol": "ARVN",
+    "description": "Arvinas, Inc., a clinical-stage biopharmaceutical company, is dedicated to the discovery, development, and commercialization of therapies to break down disease-causing proteins. The company is headquartered in New Haven, Connecticut."
+  },
+  {
+    "symbol": "ARW",
+    "description": "Arrow Electronics, Inc. provides products, services, and solutions to industrial and commercial users of electronic components and enterprise computing solutions in the Americas, Europe, the Middle East, Africa, and Asia Pacific. The company is headquartered in Centennial, Colorado."
+  },
+  {
+    "symbol": "ARWR",
+    "description": "Arrowhead Pharmaceuticals, Inc. develops drugs for the treatment of intractable diseases in the United States. The company is headquartered in Pasadena, California."
+  },
+  {
+    "symbol": "AS",
+    "description": "None"
+  },
+  {
+    "symbol": "ASAN",
+    "description": "Asana, Inc. operates a work management platform for individuals, team leaders, and executives in the United States and internationally. The company is headquartered in San Francisco, California."
+  },
+  {
+    "symbol": "ASB",
+    "description": "Associated Banc-Corp, a bank holding company, offers a variety of banking and non-banking products to individuals and businesses in Wisconsin, Illinois, and Minnesota. The company is headquartered in Green Bay, Wisconsin."
+  },
+  {
+    "symbol": "ASB-P-E",
+    "description": "None"
+  },
+  {
+    "symbol": "ASB-P-F",
+    "description": "None"
+  },
+  {
+    "symbol": "ASBA",
+    "description": "None"
+  },
+  {
+    "symbol": "ASBP",
+    "description": "Aspire Biopharma Holdings, Inc., early-stage biopharmaceutical company, engages in developing and marketing of disruptive technology for delivery mechanisms for do no harm drugs in the United States. The company is headquartered in Humacao, Puerto Rico."
+  },
+  {
+    "symbol": "ASBPW",
+    "description": "Aspire Biopharma Holdings, Inc., early-stage biopharmaceutical company, engages in developing and marketing of disruptive technology for delivery mechanisms for do no harm drugs in the United States. The company is headquartered in Humacao, Puerto Rico."
+  },
+  {
+    "symbol": "ASC",
+    "description": "Ardmore Shipping Corporation is engaged in the global shipping of chemicals and petroleum products. The company is headquartered in Pembroke, Bermuda."
+  },
+  {
+    "symbol": "ASGN",
+    "description": "ASGN Incorporated provides professional staff and IT solutions in the fields of technology, digital, creative, engineering and life sciences in the commercial and government sectors in the United States and internationally. The company is headquartered in Glen Allen, Virginia."
+  },
+  {
+    "symbol": "ASH",
+    "description": "Ashland Global Holdings Inc. offers specialized chemical solutions globally. The company is headquartered in Covington, Kentucky."
+  },
+  {
+    "symbol": "ASIC",
+    "description": "Ategrity Specialty Insurance Company Holdings, provides excess and surplus lines insurance and reinsurance products to small and medium-sized businesses in the United States. "
+  },
+  {
+    "symbol": "ASIX",
+    "description": "AdvanSix Inc. manufactures and sells polymer resins in the United States and internationally. The company is headquartered in Parsippany, New Jersey."
+  },
+  {
+    "symbol": "ASLE",
+    "description": "AerSale Corporation provides aftermarket commercial aircraft, engines and their parts to cargo and passenger airlines, leasing companies, original equipment manufacturers, and government and defense contractors, as well as level-level maintenance, repair and overhaul (MRO) service providers. world. The company is headquartered in Coral Gables, Florida."
+  },
+  {
+    "symbol": "ASM",
+    "description": "Avino Silver & Gold Mines Ltd. is engaged in the acquisition, exploration and advancement of mineral properties in Canada. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "ASMB",
+    "description": "Assembly Biosciences, Inc. is a clinical-stage biotechnology company in the United States. The company is headquartered in South San Francisco, California."
+  },
+  {
+    "symbol": "ASML",
+    "description": "ASML Holding NV develops, produces, markets, sells and services advanced semiconductor equipment systems consisting of lithography, metrology and inspection related systems for memory and logic chip manufacturers. The company is headquartered in Veldhoven, the Netherlands."
+  },
+  {
+    "symbol": "ASND",
+    "description": "Ascendis Pharma A / S, a biopharmaceutical company, develops therapies for unmet medical needs. The company is headquartered in Hellerup, Denmark."
+  },
+  {
+    "symbol": "ASNS",
+    "description": "Arsanis, Inc., a clinical-stage biopharmaceutical company, focuses on applying monoclonal antibody (mAb) immunotherapies to treat infectious diseases. The company is headquartered in Waltham, Massachusetts."
+  },
+  {
+    "symbol": "ASO",
+    "description": "Academy Sports and Outdoors, Inc., is a retailer of sporting goods and outdoor recreational products in the United States. The company is headquartered in Katy, Texas."
+  },
+  {
+    "symbol": "ASPC",
+    "description": "Alpha Capital Acquisition Company focuses on effecting a merger, stock exchange, asset acquisition, stock purchase, reorganization or similar business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ASPCR",
+    "description": "None"
+  },
+  {
+    "symbol": "ASPCU",
+    "description": "Alpha Capital Acquisition Company focuses on effecting a merger, stock exchange, asset acquisition, stock purchase, reorganization or similar business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ASPI",
+    "description": "Aspire Real Estate Investors, Inc. focuses on investing, developing, remodeling and managing a portfolio of multi-family properties in metropolitan areas of the United States. The company is headquartered in Irvine, California."
+  },
+  {
+    "symbol": "ASPN",
+    "description": "Aspen Aerogels, Inc. designs, develops, manufactures, and sells airgel insulation products primarily for use in the energy infrastructure and building materials markets in the United States, Asia, Canada, Europe, and Latin America. The company is headquartered in Northborough, Massachusetts."
+  },
+  {
+    "symbol": "ASPS",
+    "description": "Altisource Portfolio Solutions SA is an integrated service provider and marketplace for the real estate and mortgage industries in the United States, India, Luxembourg, Uruguay and internationally. The company is headquartered in Luxembourg City, Luxembourg."
+  },
+  {
+    "symbol": "ASPSW",
+    "description": "Altisource Portfolio Solutions S.A. is an integrated service provider and marketplace for the real estate and mortgage industries in the United States. The company is headquartered in Luxembourg City, Luxembourg."
+  },
+  {
+    "symbol": "ASPSZ",
+    "description": "Altisource Portfolio Solutions S.A. is an integrated service provider and marketplace for the real estate and mortgage industries in the United States. The company is headquartered in Luxembourg City, Luxembourg."
+  },
+  {
+    "symbol": "ASR",
+    "description": "Grupo Aeroportuario del Sureste, SAB de CV holds concessions to operate, maintain and develop airports in the southeast region of Mexico. The company is headquartered in Mexico City, Mexico."
+  },
+  {
+    "symbol": "ASRT",
+    "description": "Assertio Holdings, Inc., a commercial pharmaceutical company, provides medications in the areas of neurology, hospital, and pain and inflammation. The company is headquartered in Lake Forest, Illinois."
+  },
+  {
+    "symbol": "ASRV",
+    "description": "AmeriServ Financial, Inc. is the banking holding company for AmeriServ Financial Bank offering a variety of consumer, mortgage and commercial financial products. The company is headquartered in Johnstown, Pennsylvania."
+  },
+  {
+    "symbol": "ASST",
+    "description": "Asset Entities Inc., a technology company, provides social media marketing and content delivery services across Discord, TikTok, and other social media platforms. The company is headquartered in Dallas, Texas."
+  },
+  {
+    "symbol": "ASTC",
+    "description": "Astrotech Corporation is a science and technology development and commercialization company in the United States. The company is headquartered in Austin, Texas."
+  },
+  {
+    "symbol": "ASTE",
+    "description": "Astec Industries, Inc. designs, designs, manufactures, and markets equipment and components used primarily in highway construction and related construction activities in the United States and internationally. The company is headquartered in Chattanooga, Tennessee."
+  },
+  {
+    "symbol": "ASTH",
+    "description": "Astrana Health, Inc., Inc., a physician-centric technology-powered healthcare management company, provides medical care services in the United States. The company is headquartered in Alhambra, California."
+  },
+  {
+    "symbol": "ASTI",
+    "description": "Ascent Solar Technologies, Inc. designs, manufactures, and sells copper-indium-gallium-diselenide photovoltaic products for aerospace, defense, emergency management, and consumer/OEM applications. The company is headquartered in Thornton, Colorado."
+  },
+  {
+    "symbol": "ASTL",
+    "description": "Algoma Steel Group Inc. produces and sells steel products in Canada and the United States. "
+  },
+  {
+    "symbol": "ASTLW",
+    "description": "Algoma Steel Group Inc. produces and sells steel products in Canada and the United States. "
+  },
+  {
+    "symbol": "ASTS",
+    "description": "AST SpaceMobile, Inc. operates a space-based cellular broadband network for mobile phones. The company is headquartered in Midland, Texas."
+  },
+  {
+    "symbol": "ASUR",
+    "description": "Asure Software, Inc. provides cloud-based human capital management solutions in the United States. The company is headquartered in Austin, Texas."
+  },
+  {
+    "symbol": "ASX",
+    "description": "None"
+  },
+  {
+    "symbol": "ASYS",
+    "description": "Amtech Systems, Inc. manufactures and sells capital equipment and related consumables for use in the manufacture of silicon carbide (SiC), silicon power devices, analog and discrete devices, electronic assemblies, and light-emitting diodes (LEDs) to world level. The company is headquartered in Tempe, Arizona."
+  },
+  {
+    "symbol": "ATAI",
+    "description": "ATA Creativity Global provides educational services to students in China. The company is headquartered in Beijing, China."
+  },
+  {
+    "symbol": "ATAT",
+    "description": "Atour Lifestyle Holdings Limited, operates a chain of hotels in China. The company is headquartered in Shanghai, China."
+  },
+  {
+    "symbol": "ATCH",
+    "description": "AirTouch Communications, Inc., a technology firm, engages in the development and marketing of communication devices in the United States. The company is headquartered in Newport Beach, California."
+  },
+  {
+    "symbol": "ATCO-P-D",
+    "description": "None"
+  },
+  {
+    "symbol": "ATCO-P-H",
+    "description": "None"
+  },
+  {
+    "symbol": "ATCOL",
+    "description": "Atlas Corp. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "ATEC",
+    "description": "Alphatec Holdings, Inc., a medical technology company, designs, develops and advances technologies for the surgical treatment of spinal disorders. The company is headquartered in Carlsbad, California."
+  },
+  {
+    "symbol": "ATEN",
+    "description": "A10 Networks, Inc. offers network solutions in the United States, Japan, other Asia Pacific countries, and EMEA. The company is headquartered in San Jose, California."
+  },
+  {
+    "symbol": "ATER",
+    "description": "Aterian, Inc., is a technology-enabled consumer products company in North America and internationally. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ATEST-B",
+    "description": "None"
+  },
+  {
+    "symbol": "ATEST-C",
+    "description": "None"
+  },
+  {
+    "symbol": "ATEX",
+    "description": "Anterix Inc. is a wireless communications company. The company is headquartered in Woodland Park, New Jersey."
+  },
+  {
+    "symbol": "ATGE",
+    "description": "Adtalem Global Education Inc. provides educational services worldwide. The company is headquartered in Chicago, Illinois."
+  },
+  {
+    "symbol": "ATGL",
+    "description": "Alpha Technology Group Limited, an investment holding company, provides IT development and consulting service in Hong Kong. The company is headquartered in Kwun Tong, Hong Kong."
+  },
+  {
+    "symbol": "ATH-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "ATH-P-D",
+    "description": "None"
+  },
+  {
+    "symbol": "ATH-P-E",
+    "description": "None"
+  },
+  {
+    "symbol": "ATHA",
+    "description": "Athira Pharma, Inc., a late-stage biopharmaceutical company, focuses on developing small molecules to restore neuronal health and stop neurodegradation. The company is headquartered in Bothell, Washington."
+  },
+  {
+    "symbol": "ATHE",
+    "description": "Alterity Therapeutics Limited researches and develops therapeutic drugs for the treatment of Parkinson's disease and other neurodegenerative diseases in Australia. The company is headquartered in Melbourne, Australia."
+  },
+  {
+    "symbol": "ATHM",
+    "description": "Autohome Inc. is an online destination for automobile consumers in the People's Republic of China. The company is headquartered in Beijing, the People's Republic of China."
+  },
+  {
+    "symbol": "ATHR",
+    "description": "None"
+  },
+  {
+    "symbol": "ATHS",
+    "description": "None"
+  },
+  {
+    "symbol": "ATI",
+    "description": "Allegheny Technologies Incorporated manufactures and sells specialty materials and components worldwide. The company is headquartered in Pittsburgh, Pennsylvania."
+  },
+  {
+    "symbol": "ATII",
+    "description": "None"
+  },
+  {
+    "symbol": "ATIIU",
+    "description": "None"
+  },
+  {
+    "symbol": "ATIIW",
+    "description": "None"
+  },
+  {
+    "symbol": "ATKR",
+    "description": "Atkore Inc. manufactures and distributes Electrical Conduit Products and Mechanical Products and Solutions (MP&S) in the United States and internationally. The company is headquartered in Harvey, Illinois."
+  },
+  {
+    "symbol": "ATLC",
+    "description": "Atlanticus Holdings Corporation provides credit and related financial products and services to clients in the United States. The company is headquartered in Atlanta, Georgia."
+  },
+  {
+    "symbol": "ATLCL",
+    "description": "None"
+  },
+  {
+    "symbol": "ATLCP",
+    "description": "None"
+  },
+  {
+    "symbol": "ATLCZ",
+    "description": "None"
+  }
+]

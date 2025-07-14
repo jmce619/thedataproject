@@ -69,8 +69,8 @@ function InteractiveLineChart() {
   const chartData = Object.values(yearMap).sort((a,b) => a.year - b.year);
 
   return (
-    <div style={{ width: '100%', height: 500, minWidth: 0, minHeight: 0 }}>
-      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+    <div style={{ width: '100%', height: 400 }}>
+      <ResponsiveContainer width="100%" height="100%">
         <LineChart data={chartData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
           <XAxis dataKey="year" tick={{ fontSize: 10 }} />
           <YAxis tick={{ fontSize: 10 }} />
@@ -121,9 +121,9 @@ function CleanDataPivotTable() {
   }, []);
 
   return (
-    <div className="mt-6 p-4 bg-gray-50 border rounded-lg overflow-auto">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-100">
+    <div className="overflow-auto">
+      <table className="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-xl">
+        <thead className="bg-gray-100 sticky top-0 z-10">
           <tr>
             <th className="px-3 py-2 text-left text-sm font-semibold">State</th>
             {years.map(y => (
@@ -134,7 +134,7 @@ function CleanDataPivotTable() {
         <tbody className="bg-white">
           {pivotData.map((row, i) => (
             <tr key={i} className={i % 2 ? 'bg-gray-50' : ''}>
-              <td className="px-3 py-2 text-sm">{row.Location}</td>
+              <td className="px-3 py-2 text-sm font-medium">{row.Location}</td>
               {years.map(y => (
                 <td key={y} className="px-3 py-2 text-sm text-right">{row[y]}</td>
               ))}
@@ -167,8 +167,8 @@ function ClaimDenialChart() {
   ];
 
   return (
-    <div style={{ width: '100%', height: 400, minWidth: 0, minHeight: 0 }}>
-      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+    <div style={{ width: '100%', height: 350 }}>
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
           layout="vertical"
@@ -229,8 +229,8 @@ function NewClaimBarChart() {
   ];
 
   return (
-    <div style={{ width: '100%', height: 400, minWidth: 0, minHeight: 0 }}>
-      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+    <div style={{ width: '100%', height: 350 }}>
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
           <XAxis
             dataKey="state"
@@ -283,92 +283,111 @@ export default function StudyOnePage() {
   }, [activeTab]);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6 space-y-8">
-      {/* Premiums & Claims */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold">Premiums and Claims</h2>
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="flex-1">
-            <InteractiveLineChart />
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-5xl mx-auto px-4 py-8 space-y-12">
+        {/* Premiums & Claims */}
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Premiums and Claims</h2>
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <div className="bg-white rounded-2xl shadow p-4 flex flex-col h-full">
+                <InteractiveLineChart />
+                <p className="text-xs text-center text-gray-500 mt-2">
+                  Marketplace Average Benchmark Premiums (2014–2025)<br/>
+                  <span className="italic">Source: kff.org/affordable-care-act</span>
+                </p>
+              </div>
+            </div>
+            <div className="flex-1">
+              <div className="bg-white rounded-2xl shadow p-4 flex flex-col h-full">
+                <PremiumStackedBarChart />
+                <p className="text-xs text-center text-gray-500 mt-2">
+                  Worker vs. Employer Premium Contributions (2000–2024)
+                </p>
+              </div>
+            </div>
+          </div>
+          <p className="text-sm text-gray-700 mt-3">
+            Premiums were analyzed using the second-lowest cost silver benchmark for a 40-year-old…
+          </p>
+        </section>
+
+        {/* Pivot Table */}
+        <section>
+          <div className="bg-white rounded-2xl shadow p-4">
+            <h3 className="text-lg font-semibold mb-2">Premiums Table by State & Year</h3>
+            <CleanDataPivotTable />
+          </div>
+        </section>
+
+        {/* Claims Denial Rates */}
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Claims Denial Rates</h2>
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <div className="bg-white rounded-2xl shadow p-4 flex flex-col h-full">
+                <ClaimDenialChart />
+                <p className="text-xs text-center text-gray-500 mt-2">
+                  Denial Rates by Provider (2024)
+                </p>
+              </div>
+            </div>
+            <div className="flex-1">
+              <div className="bg-white rounded-2xl shadow p-4 flex flex-col h-full">
+                <NewClaimBarChart />
+                <p className="text-xs text-center text-gray-500 mt-2">
+                  Denial Rates by State (2020)
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Table 1.12 */}
+        <section>
+          <div className="bg-white rounded-2xl shadow p-4">
+            <h2 className="text-2xl font-bold mb-2">Rising Cost of Health Insurance</h2>
+            <Table112Chart />
             <p className="text-xs text-center text-gray-500 mt-2">
-              Marketplace Average Benchmark Premiums (2014–2025)<br/>
-              Source: kff.org/affordable-care-act
+              Costs have outpaced inflation and deductibles have risen sharply.
+            </p>
+            <p className="text-sm text-gray-700 mt-2">
+              KFF data shows that employee shares and deductibles have both climbed significantly…
             </p>
           </div>
-          <div className="flex-1">
-            <PremiumStackedBarChart />
-            <p className="text-xs text-center text-gray-500 mt-2">
-              Worker vs. Employer Premium Contributions (2000–2024)
-            </p>
+        </section>
+
+        {/* Tabbed Charts */}
+        <section>
+          <div className="flex gap-6 mb-4">
+            {['cumulative','rebased','yoy'].map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab as any)}
+                className={`pb-2 border-b-2 transition-colors ${
+                  activeTab === tab
+                    ? 'border-red-600 font-bold text-red-600'
+                    : 'border-transparent text-gray-500 hover:text-red-500'
+                }`}
+              >
+                {tab === 'cumulative'
+                  ? 'Cumulative % Change'
+                  : tab === 'rebased'
+                  ? 'Rebased to 100'
+                  : 'YoY % Change'}
+              </button>
+            ))}
           </div>
-        </div>
-        <p className="text-sm text-gray-700">
-          Premiums were analyzed using the second-lowest cost silver benchmark for a 40-year-old…
-        </p>
-      </section>
-
-      {/* Pivot Table */}
-      <CleanDataPivotTable />
-
-      {/* Claims Denial Rates */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold">Claims Denial Rates</h2>
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="flex-1">
-            <ClaimDenialChart />
-            <p className="text-xs text-center text-gray-500 mt-2">
-              Denial Rates by Provider (2024)
-            </p>
+          <div className="bg-white rounded-2xl shadow p-4">
+            <div style={{ width: '100%', height: 500 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                {chartContent}
+              </ResponsiveContainer>
+            </div>
+            <p className="text-sm text-gray-700 mt-3">{description}</p>
           </div>
-          <div className="flex-1">
-            <NewClaimBarChart />
-            <p className="text-xs text-center text-gray-500 mt-2">
-              Denial Rates by State (2020)
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Table 1.12 */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold">Rising Cost of Health Insurance</h2>
-        <Table112Chart />
-        <p className="text-xs text-center text-gray-500">
-          Costs have outpaced inflation and deductibles have risen sharply.
-        </p>
-        <p className="text-sm text-gray-700">
-          KFF data shows that employee shares and deductibles have both climbed significantly…
-        </p>
-      </section>
-
-      {/* Tabbed Charts */}
-      <section className="space-y-4">
-        <div className="flex gap-6">
-          {['cumulative','rebased','yoy'].map(tab => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab as any)}
-              className={`pb-2 border-b-2 ${
-                activeTab === tab
-                  ? 'border-red-600 font-bold'
-                  : 'border-transparent text-gray-500'
-              }`}
-            >
-              {tab === 'cumulative'
-                ? 'Cumulative % Change'
-                : tab === 'rebased'
-                ? 'Rebased to 100'
-                : 'YoY % Change'}
-            </button>
-          ))}
-        </div>
-        <div style={{ width: '100%', height: 500, minWidth: 0, minHeight: 0 }}>
-          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
-            {chartContent}
-          </ResponsiveContainer>
-        </div>
-        <p className="text-sm text-gray-700">{description}</p>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
