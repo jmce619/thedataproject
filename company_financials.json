@@ -5101,5 +5101,905 @@
     "EBITDA": "None",
     "RevenueTTM": "0",
     "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATLN",
+    "MarketCap": "133782000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-25180428",
+    "RevenueTTM": "444795000",
+    "ProfitMargin": "-0.318"
+  },
+  {
+    "symbol": "ATLO",
+    "MarketCap": "161282000",
+    "PERatio": "14.24",
+    "DividendYield": "0.0449",
+    "EBITDA": "None",
+    "RevenueTTM": "55041000",
+    "ProfitMargin": "0.206"
+  },
+  {
+    "symbol": "ATMC",
+    "MarketCap": "41113000",
+    "PERatio": "62.37",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATMCR",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATMCU",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATMCW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATMU",
+    "MarketCap": "3123869000",
+    "PERatio": "17.02",
+    "DividendYield": "0.0055",
+    "EBITDA": "294600000",
+    "RevenueTTM": "1659500000",
+    "ProfitMargin": "0.111"
+  },
+  {
+    "symbol": "ATMV",
+    "MarketCap": "45763700",
+    "PERatio": "40.94",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATMVR",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATMVU",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATNF",
+    "MarketCap": "5471500",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-6555959",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATNFW",
+    "MarketCap": "250778000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-6555959",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATNI",
+    "MarketCap": "275571000",
+    "PERatio": "None",
+    "DividendYield": "0.0677",
+    "EBITDA": "176544000",
+    "RevenueTTM": "721575000",
+    "ProfitMargin": "-0.0403"
+  },
+  {
+    "symbol": "ATNM",
+    "MarketCap": "47417800",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-48966000",
+    "RevenueTTM": "81000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATO",
+    "MarketCap": "24491076000",
+    "PERatio": "21.57",
+    "DividendYield": "0.0226",
+    "EBITDA": "2189750000",
+    "RevenueTTM": "4485994000",
+    "ProfitMargin": "0.254"
+  },
+  {
+    "symbol": "ATOM",
+    "MarketCap": "146305000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-18672000",
+    "RevenueTTM": "121000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATOS",
+    "MarketCap": "121226000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-28039000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATPC",
+    "MarketCap": "74408000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-2481850",
+    "RevenueTTM": "1293100",
+    "ProfitMargin": "-1.902"
+  },
+  {
+    "symbol": "ATR",
+    "MarketCap": "10427826000",
+    "PERatio": "28.92",
+    "DividendYield": "0.0115",
+    "EBITDA": "776348000",
+    "RevenueTTM": "3554747000",
+    "ProfitMargin": "0.104"
+  },
+  {
+    "symbol": "ATRA",
+    "MarketCap": "62724000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "2235000",
+    "RevenueTTM": "199732000",
+    "ProfitMargin": "-0.0783"
+  },
+  {
+    "symbol": "ATRC",
+    "MarketCap": "1520791000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-15685000",
+    "RevenueTTM": "480076000",
+    "ProfitMargin": "-0.0795"
+  },
+  {
+    "symbol": "ATRO",
+    "MarketCap": "1279760000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "59868000",
+    "RevenueTTM": "816288000",
+    "ProfitMargin": "-0.0043"
+  },
+  {
+    "symbol": "ATS",
+    "MarketCap": "2885184000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "164108000",
+    "RevenueTTM": "2533288000",
+    "ProfitMargin": "-0.0111"
+  },
+  {
+    "symbol": "ATUS",
+    "MarketCap": "1206733000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "3295854000",
+    "RevenueTTM": "8855764000",
+    "ProfitMargin": "-0.0178"
+  },
+  {
+    "symbol": "ATXG",
+    "MarketCap": "6581400",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-323967",
+    "RevenueTTM": "4549300",
+    "ProfitMargin": "-0.476"
+  },
+  {
+    "symbol": "ATXS",
+    "MarketCap": "359486000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-32380000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "ATYR",
+    "MarketCap": "471723000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-66354000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AU",
+    "MarketCap": "23748057000",
+    "PERatio": "15.35",
+    "DividendYield": "0.011",
+    "EBITDA": "2888000000",
+    "RevenueTTM": "6585000000",
+    "ProfitMargin": "0.211"
+  },
+  {
+    "symbol": "AUB",
+    "MarketCap": "4721390000",
+    "PERatio": "15.49",
+    "DividendYield": "0.0435",
+    "EBITDA": "None",
+    "RevenueTTM": "797879000",
+    "ProfitMargin": "0.262"
+  },
+  {
+    "symbol": "AUB-P-A",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AUBN",
+    "MarketCap": "86714000",
+    "PERatio": "13.2",
+    "DividendYield": "0.0432",
+    "EBITDA": "None",
+    "RevenueTTM": "31155000",
+    "ProfitMargin": "0.21"
+  },
+  {
+    "symbol": "AUDC",
+    "MarketCap": "285053000",
+    "PERatio": "16.59",
+    "DividendYield": "0.0367",
+    "EBITDA": "21869000",
+    "RevenueTTM": "242474000",
+    "ProfitMargin": "0.0711"
+  },
+  {
+    "symbol": "AUID",
+    "MarketCap": "52430000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-15930197",
+    "RevenueTTM": "1025400",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AUNA",
+    "MarketCap": "470723000",
+    "PERatio": "9.64",
+    "DividendYield": "None",
+    "EBITDA": "903231000",
+    "RevenueTTM": "4351952000",
+    "ProfitMargin": "0.0365"
+  },
+  {
+    "symbol": "AUPH",
+    "MarketCap": "1188915000",
+    "PERatio": "32.59",
+    "DividendYield": "None",
+    "EBITDA": "61923000",
+    "RevenueTTM": "247295000",
+    "ProfitMargin": "0.161"
+  },
+  {
+    "symbol": "AUR",
+    "MarketCap": "9251190000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-782000000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AURA",
+    "MarketCap": "396828000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-101630000",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AUROW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-782000000",
+    "RevenueTTM": "2000000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AUST",
+    "MarketCap": "18182400",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-1897734",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AUTL",
+    "MarketCap": "657361000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-259082000",
+    "RevenueTTM": "9011000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AUUD",
+    "MarketCap": "2469300",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-7600443",
+    "RevenueTTM": "5",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AUUDW",
+    "MarketCap": "40424800",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-7600443",
+    "RevenueTTM": "187510",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AVA",
+    "MarketCap": "3062222000",
+    "PERatio": "16.11",
+    "DividendYield": "0.0516",
+    "EBITDA": "608000000",
+    "RevenueTTM": "1946000000",
+    "ProfitMargin": "0.0966"
+  },
+  {
+    "symbol": "AVAH",
+    "MarketCap": "837489000",
+    "PERatio": "135.33",
+    "DividendYield": "None",
+    "EBITDA": "186080000",
+    "RevenueTTM": "2093077000",
+    "ProfitMargin": "0.0026"
+  },
+  {
+    "symbol": "AVAL",
+    "MarketCap": "3337709000",
+    "PERatio": "11.27",
+    "DividendYield": "0.0448",
+    "EBITDA": "None",
+    "RevenueTTM": "12379723137000",
+    "ProfitMargin": "0.102"
+  },
+  {
+    "symbol": "AVAV",
+    "MarketCap": "12958146000",
+    "PERatio": "169.1",
+    "DividendYield": "None",
+    "EBITDA": "104386000",
+    "RevenueTTM": "820627000",
+    "ProfitMargin": "0.0532"
+  },
+  {
+    "symbol": "AVB",
+    "MarketCap": "28738404000",
+    "PERatio": "25.14",
+    "DividendYield": "0.0344",
+    "EBITDA": "1825578000",
+    "RevenueTTM": "2988732000",
+    "ProfitMargin": "0.383"
+  },
+  {
+    "symbol": "AVBP",
+    "MarketCap": "793719000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AVD",
+    "MarketCap": "111220000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-19674000",
+    "RevenueTTM": "527963000",
+    "ProfitMargin": "-0.258"
+  },
+  {
+    "symbol": "AVDL",
+    "MarketCap": "931214000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-16400000",
+    "RevenueTTM": "194450000",
+    "ProfitMargin": "-0.136"
+  },
+  {
+    "symbol": "AVDX",
+    "MarketCap": "2029364000",
+    "PERatio": "0",
+    "DividendYield": "None",
+    "EBITDA": "30640000",
+    "RevenueTTM": "441284000",
+    "ProfitMargin": "0.0042"
+  },
+  {
+    "symbol": "AVGO",
+    "MarketCap": "1290538189000",
+    "PERatio": "100.14",
+    "DividendYield": "0.0086",
+    "EBITDA": "31113001000",
+    "RevenueTTM": "57046000000",
+    "ProfitMargin": "0.226"
+  },
+  {
+    "symbol": "AVIR",
+    "MarketCap": "314077000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-101035000",
+    "RevenueTTM": "192180000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AVNS",
+    "MarketCap": "551691000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "93800000",
+    "RevenueTTM": "689200000",
+    "ProfitMargin": "-0.558"
+  },
+  {
+    "symbol": "AVNT",
+    "MarketCap": "3131334000",
+    "PERatio": "31.68",
+    "DividendYield": "0.0334",
+    "EBITDA": "503400000",
+    "RevenueTTM": "3238000000",
+    "ProfitMargin": "0.0309"
+  },
+  {
+    "symbol": "AVNW",
+    "MarketCap": "305010000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "25783000",
+    "RevenueTTM": "435926000",
+    "ProfitMargin": "-0.0053"
+  },
+  {
+    "symbol": "AVO",
+    "MarketCap": "857305000",
+    "PERatio": "23.35",
+    "DividendYield": "None",
+    "EBITDA": "100300000",
+    "RevenueTTM": "1392900000",
+    "ProfitMargin": "0.0263"
+  },
+  {
+    "symbol": "AVPT",
+    "MarketCap": "3623644000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "19252000",
+    "RevenueTTM": "349012000",
+    "ProfitMargin": "-0.0686"
+  },
+  {
+    "symbol": "AVPTW",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "19252000",
+    "RevenueTTM": "349012000",
+    "ProfitMargin": "-0.0686"
+  },
+  {
+    "symbol": "AVR",
+    "MarketCap": "287159000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-71430712",
+    "RevenueTTM": "2826600",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AVT",
+    "MarketCap": "4696847000",
+    "PERatio": "15.73",
+    "DividendYield": "0.0249",
+    "EBITDA": "770528000",
+    "RevenueTTM": "22145935000",
+    "ProfitMargin": "0.0143"
+  },
+  {
+    "symbol": "AVTR",
+    "MarketCap": "9253819000",
+    "PERatio": "13.06",
+    "DividendYield": "None",
+    "EBITDA": "1113900000",
+    "RevenueTTM": "6685200000",
+    "ProfitMargin": "0.107"
+  },
+  {
+    "symbol": "AVTX",
+    "MarketCap": "51756000",
+    "PERatio": "0.0402",
+    "DividendYield": "None",
+    "EBITDA": "-50041000",
+    "RevenueTTM": "441000",
+    "ProfitMargin": "165.56"
+  },
+  {
+    "symbol": "AVXL",
+    "MarketCap": "948482000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AVY",
+    "MarketCap": "14244377000",
+    "PERatio": "20.97",
+    "DividendYield": "0.0214",
+    "EBITDA": "1428700000",
+    "RevenueTTM": "8752700000",
+    "ProfitMargin": "0.0798"
+  },
+  {
+    "symbol": "AWI",
+    "MarketCap": "7298308000",
+    "PERatio": "26.93",
+    "DividendYield": "0.0076",
+    "EBITDA": "402800000",
+    "RevenueTTM": "1502100000",
+    "ProfitMargin": "0.182"
+  },
+  {
+    "symbol": "AWK",
+    "MarketCap": "27748256000",
+    "PERatio": "25.92",
+    "DividendYield": "0.0238",
+    "EBITDA": "2602000000",
+    "RevenueTTM": "4815000000",
+    "ProfitMargin": "0.222"
+  },
+  {
+    "symbol": "AWR",
+    "MarketCap": "2913191000",
+    "PERatio": "23.28",
+    "DividendYield": "0.0243",
+    "EBITDA": "239177000",
+    "RevenueTTM": "608221000",
+    "ProfitMargin": "0.202"
+  },
+  {
+    "symbol": "AWRE",
+    "MarketCap": "46612200",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-5568000",
+    "RevenueTTM": "16576000",
+    "ProfitMargin": "-0.304"
+  },
+  {
+    "symbol": "AWX",
+    "MarketCap": "9787600",
+    "PERatio": "11.95",
+    "DividendYield": "None",
+    "EBITDA": "6333000",
+    "RevenueTTM": "81005000",
+    "ProfitMargin": "0.0099"
+  },
+  {
+    "symbol": "AX",
+    "MarketCap": "4742105000",
+    "PERatio": "11.48",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "1181567000",
+    "ProfitMargin": "0.361"
+  },
+  {
+    "symbol": "AXGN",
+    "MarketCap": "541518000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "6559000",
+    "RevenueTTM": "194520000",
+    "ProfitMargin": "-0.0368"
+  },
+  {
+    "symbol": "AXINU",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AXL",
+    "MarketCap": "523299000",
+    "PERatio": "24.5",
+    "DividendYield": "None",
+    "EBITDA": "717400000",
+    "RevenueTTM": "5929300000",
+    "ProfitMargin": "0.0036"
+  },
+  {
+    "symbol": "AXON",
+    "MarketCap": "56801501000",
+    "PERatio": "175.39",
+    "DividendYield": "None",
+    "EBITDA": "113022000",
+    "RevenueTTM": "2226288000",
+    "ProfitMargin": "0.149"
+  },
+  {
+    "symbol": "AXP",
+    "MarketCap": "223817171000",
+    "PERatio": "22.32",
+    "DividendYield": "0.0103",
+    "EBITDA": "None",
+    "RevenueTTM": "62049001000",
+    "ProfitMargin": "0.166"
+  },
+  {
+    "symbol": "AXR",
+    "MarketCap": "125048000",
+    "PERatio": "9.81",
+    "DividendYield": "None",
+    "EBITDA": "13414000",
+    "RevenueTTM": "58052000",
+    "ProfitMargin": "0.223"
+  },
+  {
+    "symbol": "AXS",
+    "MarketCap": "7566437000",
+    "PERatio": "9.54",
+    "DividendYield": "0.017",
+    "EBITDA": "1140513000",
+    "RevenueTTM": "6055200000",
+    "ProfitMargin": "0.145"
+  },
+  {
+    "symbol": "AXS-P-E",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AXSM",
+    "MarketCap": "5365783000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-230960992",
+    "RevenueTTM": "432157000",
+    "ProfitMargin": "-0.644"
+  },
+  {
+    "symbol": "AXTA",
+    "MarketCap": "6670421000",
+    "PERatio": "14.89",
+    "DividendYield": "None",
+    "EBITDA": "1005000000",
+    "RevenueTTM": "5244000000",
+    "ProfitMargin": "0.0856"
+  },
+  {
+    "symbol": "AXTI",
+    "MarketCap": "100328000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-12721000",
+    "RevenueTTM": "96029000",
+    "ProfitMargin": "-0.191"
+  },
+  {
+    "symbol": "AYI",
+    "MarketCap": "9145328000",
+    "PERatio": "23.54",
+    "DividendYield": "0.0023",
+    "EBITDA": "699400000",
+    "RevenueTTM": "4168800000",
+    "ProfitMargin": "0.0963"
+  },
+  {
+    "symbol": "AYRO",
+    "MarketCap": "3541800",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-13415916",
+    "RevenueTTM": "5430",
+    "ProfitMargin": "502.82"
+  },
+  {
+    "symbol": "AYTU",
+    "MarketCap": "19569700",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "6000000",
+    "RevenueTTM": "81659000",
+    "ProfitMargin": "0.0201"
+  },
+  {
+    "symbol": "AZ",
+    "MarketCap": "400153000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-16314000",
+    "RevenueTTM": "7443000",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AZI",
+    "MarketCap": "53062000",
+    "PERatio": "1.134",
+    "DividendYield": "None",
+    "EBITDA": "-5356000",
+    "RevenueTTM": "124737000",
+    "ProfitMargin": "-0.087"
+  },
+  {
+    "symbol": "AZN",
+    "MarketCap": "223896601000",
+    "PERatio": "28.68",
+    "DividendYield": "0.0222",
+    "EBITDA": "18276999000",
+    "RevenueTTM": "54982001000",
+    "ProfitMargin": "0.141"
+  },
+  {
+    "symbol": "AZO",
+    "MarketCap": "61990539000",
+    "PERatio": "25.13",
+    "DividendYield": "None",
+    "EBITDA": "4301897000",
+    "RevenueTTM": "18901371000",
+    "ProfitMargin": "0.136"
+  },
+  {
+    "symbol": "AZTA",
+    "MarketCap": "1532253000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "28533000",
+    "RevenueTTM": "669171000",
+    "ProfitMargin": "-0.0977"
+  },
+  {
+    "symbol": "AZTR",
+    "MarketCap": "3986200",
+    "PERatio": "0.135",
+    "DividendYield": "None",
+    "EBITDA": "-10991084",
+    "RevenueTTM": "7500",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "AZZ",
+    "MarketCap": "3182685000",
+    "PERatio": "12.01",
+    "DividendYield": "0.0075",
+    "EBITDA": "325810000",
+    "RevenueTTM": "1577744000",
+    "ProfitMargin": "0.0817"
+  },
+  {
+    "symbol": "B",
+    "MarketCap": "30580595000",
+    "PERatio": "13.47",
+    "DividendYield": "0.022",
+    "EBITDA": "6538000000",
+    "RevenueTTM": "13305000000",
+    "ProfitMargin": "0.175"
+  },
+  {
+    "symbol": "BA",
+    "MarketCap": "171038720000",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "-7688000000",
+    "RevenueTTM": "69444002000",
+    "ProfitMargin": "-0.166"
+  },
+  {
+    "symbol": "BABA",
+    "MarketCap": "255507972000",
+    "PERatio": "14.31",
+    "DividendYield": "0.0093",
+    "EBITDA": "194145993000",
+    "RevenueTTM": "996347019000",
+    "ProfitMargin": "0.131"
+  },
+  {
+    "symbol": "BAC",
+    "MarketCap": "351964758000",
+    "PERatio": "13.95",
+    "DividendYield": "0.022",
+    "EBITDA": "None",
+    "RevenueTTM": "97452999000",
+    "ProfitMargin": "0.286"
+  },
+  {
+    "symbol": "BAC-P-B",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-E",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-K",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
+  },
+  {
+    "symbol": "BAC-P-L",
+    "MarketCap": "None",
+    "PERatio": "None",
+    "DividendYield": "None",
+    "EBITDA": "None",
+    "RevenueTTM": "0",
+    "ProfitMargin": "0"
   }
 ]

@@ -1,50 +1,60 @@
-## 📊 Production Architecture Overview
+# 📘 Project Overview
+
+This repository contains data-driven analytics and semantic search systems covering multiple domains:
+
+- **📈 Stock Analytics and Similarity Search**
+- **🏀 Sports Data Insights**
+- **🌍 Geographic Data and Visualizations**
+- **🏥 Healthcare Insurance Data Processing**
+
+Each domain is individually documented below.
+
+---
+
+## 📖 Table of Contents
+
+- [📈 Stock Analytics and Similarity Search](#-stock-analytics-and-similarity-search)
+  - [Data Sources](#data-sources)
+  - [Data Processing](#data-processing)
+  - [Semantic Search Architecture](#semantic-search-architecture)
+- [🏀 Sports Data Insights](#-sports-data-insights)
+  - [Data Sources](#sports-data-sources)
+  - [Analysis and Visualizations](#sports-analysis-and-visualizations)
+- [🌍 Geographic Data and Visualizations](#-geographic-data-and-visualizations)
+  - [Geographic Data Sources](#geographic-data-sources)
+  - [Mapping and Visualizations](#mapping-and-visualizations)
+- [🏥 Healthcare Insurance Data Processing](#-healthcare-insurance-data-processing)
+  - [Data Sources](#healthcare-data-sources)
+  - [Claims and Data Extraction](#claims-and-data-extraction)
+- [📚 How to Use This Repo](#-how-to-use-this-repo)
+- [📦 Dependencies and Tools](#-dependencies-and-tools)
+- [🛠️ Monitoring and Logging](#️-monitoring-and-logging)
+- [⚠️ Important Considerations](#️-important-considerations)
+- [📞 Contact & Support](#-contact--support)
+- [🚀 Future Roadmap](#-future-roadmap)
+
+---
+
+## 📈 Stock Analytics and Similarity Search
+
+### Data Sources
+- **Alpha Vantage API**: Company descriptions, financial metrics, and historical stock prices.
+
+### Data Processing
+- Quarterly updates: Company descriptions, core financial metrics.
+- Monthly updates: Selected financial indicators.
+- Daily updates: Stock price and volume data.
+
+### Semantic Search Architecture
 
 ```mermaid
 flowchart TD
-    %% Data Sources
-    AV[("📡 Alpha Vantage API")]
-
-    %% Orchestration & Scheduling
-    subgraph Orchestration
-        direction LR
-        Airflow["🔄 Apache Airflow Scheduler"]
-        Cron["⏰ Cron Jobs (optional)"]
-    end
-
-    %% Storage Layer
-    subgraph Storage
-        CloudStorage["☁️ Cloud Storage (S3, GCS)<br/>- Company Descriptions<br/>- Financial Metrics<br/>- Price/Volume Data"]
-    end
-
-    %% Data Processing & Embeddings
-    subgraph DataProcessing
-        Embed["🧠 Embedding Generation Scripts"]
-    end
-
-    %% Vector Database
-    Pinecone["🌲 Pinecone Vector Database"]
-
-    %% Backend and API Layer
-    subgraph Backend
-        NextAPI["🚀 Next.js API Backend"]
-    end
-
-    %% Frontend Application
+    AV["📡 Alpha Vantage API"]
+    Airflow["🔄 Airflow Scheduler"]
+    Storage["☁️ Cloud Storage (JSON snapshots)"]
+    Embed["🧠 Embedding Generation"]
+    Pinecone["🌲 Pinecone Vector DB"]
+    NextAPI["🚀 Next.js API"]
     Frontend["🌐 React Frontend"]
-
-    %% Monitoring & Alerting
-    subgraph Monitoring
-        Monitor["📈 Monitoring & Alerting<br/>(Airflow, Datadog, CloudWatch)"]
-    end
-
-    %% Flow connections
-    AV --> Airflow --> CloudStorage
-    AV --> Cron --> CloudStorage
-    CloudStorage --> Embed --> Pinecone
-    Pinecone --> NextAPI
-    NextAPI --> Frontend
-    Airflow --> Monitor
-    Cron --> Monitor
-    Embed --> Monitor
-    NextAPI --> Monitor
+    
+    AV --> Airflow --> Storage --> Embed --> Pinecone --> NextAPI --> Frontend

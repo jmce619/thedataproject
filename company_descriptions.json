@@ -2278,5 +2278,405 @@
   {
     "symbol": "ATLCZ",
     "description": "None"
+  },
+  {
+    "symbol": "ATLN",
+    "description": "Atlantic International Corp. The company is headquartered in Englewood Cliffs, New Jersey."
+  },
+  {
+    "symbol": "ATLO",
+    "description": "Ames National Corporation is a multi-bank holding company offering banking products and services primarily in Adams, Boone, Clarke, Hancock, Polk, Marshall, Ringgold, Story, Taylor and Union counties in central, north-central counties. and south. --Central Iowa. The company is headquartered in Ames, Iowa."
+  },
+  {
+    "symbol": "ATMC",
+    "description": "None"
+  },
+  {
+    "symbol": "ATMCR",
+    "description": "None"
+  },
+  {
+    "symbol": "ATMCU",
+    "description": "AlphaTime Acquisition Corp intends to effect a merger, share exchange, asset acquisition, share purchase, reorganization, or similar business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ATMCW",
+    "description": "None"
+  },
+  {
+    "symbol": "ATMU",
+    "description": "None"
+  },
+  {
+    "symbol": "ATMV",
+    "description": "AlphaVest Acquisition Corp is a blank check company that intends to effect a merger, stock exchange, asset acquisition, stock purchase, reorganization, or related business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ATMVR",
+    "description": "AlphaVest Acquisition Corp is a blank check company that intends to effect a merger, stock exchange, asset acquisition, stock purchase, reorganization, or related business combination with one or more businesses. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ATMVU",
+    "description": "None"
+  },
+  {
+    "symbol": "ATNF",
+    "description": "180 Life Sciences Corp. The company is headquartered in Menlo Park, California."
+  },
+  {
+    "symbol": "ATNFW",
+    "description": "180 Life Sciences Corp. "
+  },
+  {
+    "symbol": "ATNI",
+    "description": "ATN International, Inc., provides telecommunications services in the United States, the Caribbean, and Bermuda. The company is headquartered in Beverly, Massachusetts."
+  },
+  {
+    "symbol": "ATNM",
+    "description": "Actinium Pharmaceuticals, Inc., a clinical-stage biopharmaceutical company, focuses on developing and commercializing therapies for bone marrow transplantation (BMT) or a type of cell therapy, and for other adoptive cell therapies. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "ATO",
+    "description": "Atmos Energy Corporation, headquartered in Dallas, Texas, is one of the United States' largest natural-gas-only distributors."
+  },
+  {
+    "symbol": "ATOM",
+    "description": "Atomera Incorporated develops, markets, and licenses proprietary materials, processes, and technologies for the semiconductor industry in North America, Europe, and Asia Pacific. The company is headquartered in Los Gatos, California."
+  },
+  {
+    "symbol": "ATOS",
+    "description": "Atossa Therapeutics, Inc., a clinical-stage biopharmaceutical company, discovers and develops drugs in the areas of oncology and infectious diseases. The company is headquartered in Seattle, Washington."
+  },
+  {
+    "symbol": "ATPC",
+    "description": "None"
+  },
+  {
+    "symbol": "ATR",
+    "description": "AptarGroup, Inc. offers a range of packaging, dispensing and sealing solutions primarily for the beauty, personal care, home care, prescription drug, consumer health care, injectables, and food and beverage markets. The company is headquartered in Crystal Lake, Illinois."
+  },
+  {
+    "symbol": "ATRA",
+    "description": "Atara Biotherapeutics, Inc., a commercially available T-cell immunotherapy company, develops treatments for cancer patients, autoimmune and viral diseases in the United States. The company is headquartered in South San Francisco, California."
+  },
+  {
+    "symbol": "ATRC",
+    "description": "AtriCure, Inc. develops, manufactures, and sells devices for the surgical ablation of cardiac tissue and systems to medical centers in the United States, Europe, Asia, and internationally. The company is headquartered in Mason, Ohio."
+  },
+  {
+    "symbol": "ATRO",
+    "description": "Astronics Corporation designs and manufactures products for the aerospace, defense, and electronics industries in the United States, North America, Asia, Europe, South America, and internationally. The company is headquartered in East Aurora, New York."
+  },
+  {
+    "symbol": "ATS",
+    "description": "None"
+  },
+  {
+    "symbol": "ATUS",
+    "description": "Altice USA, Inc. provides broadband communications and video services in the United States, Canada, Puerto Rico, and the Virgin Islands. "
+  },
+  {
+    "symbol": "ATXG",
+    "description": "Addentax Group Corp. The company is headquartered in Shenzhen, China."
+  },
+  {
+    "symbol": "ATXS",
+    "description": "None"
+  },
+  {
+    "symbol": "ATYR",
+    "description": "aTyr Pharma, Inc., a biotherapeutics company, engages in the discovery and development of medicines based on novel immunological pathways in the United States. The company is headquartered in San Diego, California."
+  },
+  {
+    "symbol": "AU",
+    "description": "AngloGold Ashanti Limited is a gold mining company. The company is headquartered in Johannesburg, South Africa."
+  },
+  {
+    "symbol": "AUB",
+    "description": "Atlantic Union Bankshares Corporation is the holding company of Atlantic Union Bank providing related banking and financial services to consumers and businesses. The company is headquartered in Richmond, Virginia."
+  },
+  {
+    "symbol": "AUB-P-A",
+    "description": "None"
+  },
+  {
+    "symbol": "AUBN",
+    "description": "Auburn National Bancorporation, Inc. is the banking holding company for AuburnBank offering various banking products and services in East Alabama. The company is headquartered in Auburn, Alabama."
+  },
+  {
+    "symbol": "AUDC",
+    "description": "AudioCodes Ltd., provides advanced communications productivity software, products and solutions for the digital workplace. "
+  },
+  {
+    "symbol": "AUID",
+    "description": "Ipsidy Inc. operates an Identity as a Service (IDaaS) platform that offers a suite of secure, mobile and biometric identity solutions globally. The company is headquartered in Long Beach, New York."
+  },
+  {
+    "symbol": "AUNA",
+    "description": "None"
+  },
+  {
+    "symbol": "AUPH",
+    "description": "Aurinia Pharmaceuticals Inc., a biopharmaceutical company, develops and markets therapies to treat various diseases with unmet medical needs in Japan and China. The company is headquartered in Victoria, Canada."
+  },
+  {
+    "symbol": "AUR",
+    "description": "None"
+  },
+  {
+    "symbol": "AURA",
+    "description": "None"
+  },
+  {
+    "symbol": "AUROW",
+    "description": "None"
+  },
+  {
+    "symbol": "AUST",
+    "description": "Austin Gold Corporation. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "AUTL",
+    "description": "Autolus Therapeutics plc, a clinical-stage biopharmaceutical company, develops T-cell therapies for the treatment of cancer. The company is headquartered in London, the United Kingdom."
+  },
+  {
+    "symbol": "AUUD",
+    "description": "Auddia Inc. develops software products for the audio and podcast markets. The company is headquartered in Boulder, Colorado."
+  },
+  {
+    "symbol": "AUUDW",
+    "description": "Auddia Inc. develops software technologies for audio media companies and audio media consumers. The company is headquartered in Boulder, Colorado."
+  },
+  {
+    "symbol": "AVA",
+    "description": "Avista Corporation is a natural gas and electric utility company. The company is headquartered in Spokane, Washington."
+  },
+  {
+    "symbol": "AVAH",
+    "description": "Aveanna Healthcare Holdings Inc., a diversified home care platform company, offers private duty nursing (PDN) services, adult home health and palliative care, pediatric home therapy, and enteral nutrition services in the United States. The company is headquartered in Atlanta, Georgia."
+  },
+  {
+    "symbol": "AVAL",
+    "description": "Grupo Aval Actions y Valores SA offers a range of financial services and products to public and private sector clients in Colombia and Central America. The company is headquartered in Bogot, Colombia."
+  },
+  {
+    "symbol": "AVAV",
+    "description": "AeroVironment, Inc. designs, develops, produces, supports and operates a portfolio of products and services for government agencies and businesses. The company is headquartered in Arlington, Virginia."
+  },
+  {
+    "symbol": "AVB",
+    "description": "AvalonBay Communities, Inc. is a publicly traded real estate investment trust that invests in apartments."
+  },
+  {
+    "symbol": "AVBP",
+    "description": "None"
+  },
+  {
+    "symbol": "AVD",
+    "description": "American Vanguard Corporation develops, manufactures, and markets specialty chemicals for agricultural, commercial, and consumer uses in the United States and internationally. The company is headquartered in Newport Beach, California."
+  },
+  {
+    "symbol": "AVDL",
+    "description": "Avadel Pharmaceuticals plc is a biopharmaceutical company in the United States. The company is headquartered in Dublin, Ireland."
+  },
+  {
+    "symbol": "AVDX",
+    "description": "AvidXchange Holdings, Inc. provides accounts payable (AP) automation software and payment solutions for middle market businesses and vendors in North America. The company is headquartered in Charlotte, North Carolina."
+  },
+  {
+    "symbol": "AVGO",
+    "description": "Broadcom Inc. is an American designer, developer, manufacturer and global supplier of a wide range of semiconductor and infrastructure software products. Broadcom's product offerings serve the data center, networking, software, broadband, wireless, and storage and industrial markets."
+  },
+  {
+    "symbol": "AVIR",
+    "description": "Atea Pharmaceuticals, Inc., a clinical-stage biopharmaceutical company focused on discovering, developing and commercializing antiviral therapies for patients suffering from viral infections. The company is headquartered in Boston, Massachusetts."
+  },
+  {
+    "symbol": "AVNS",
+    "description": "Avanos Medical, Inc. is a medical technology company focused on providing medical device solutions to improve the quality of life for patients in North America, Europe, the Middle East, Africa, Asia Pacific, and Latin America. The company is headquartered in Alpharetta, Georgia."
+  },
+  {
+    "symbol": "AVNT",
+    "description": "Avient Corporation provides specialty polymer materials, services, and solutions in the United States, Canada, Mexico, Europe, South America, and Asia. The company is headquartered in Avon Lake, Ohio."
+  },
+  {
+    "symbol": "AVNW",
+    "description": "Aviat Networks, Inc. designs, manufactures, and sells a range of wireless networking products, solutions, and services in North America, Africa, the Middle East, Europe, Russia, Latin America, and Asia Pacific. The company is headquartered in Austin, Texas."
+  },
+  {
+    "symbol": "AVO",
+    "description": "Mission Produce, Inc. is engaged in the sourcing, production, and distribution of avocados in the United States and internationally. The company is headquartered in Oxnard, California."
+  },
+  {
+    "symbol": "AVPT",
+    "description": "None"
+  },
+  {
+    "symbol": "AVPTW",
+    "description": "None"
+  },
+  {
+    "symbol": "AVR",
+    "description": "Anteris Technologies Global Corp. The company is headquartered in Toowong, Australia."
+  },
+  {
+    "symbol": "AVT",
+    "description": "Avnet, Inc., a technology solutions company, markets, sells and distributes electronic components. The company is headquartered in Phoenix, Arizona."
+  },
+  {
+    "symbol": "AVTR",
+    "description": "Avantor, Inc. provides products and services to clients in the biopharmaceutical, healthcare, education and government, advanced technologies and applied materials industries in America, Europe, Asia, the Middle East and Africa. The company is headquartered in Radnor, Pennsylvania."
+  },
+  {
+    "symbol": "AVTX",
+    "description": "None"
+  },
+  {
+    "symbol": "AVXL",
+    "description": "Anavex Life Sciences Corp. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "AVY",
+    "description": "Avery Dennison Corporation is a multinational manufacturer and distributor of pressure-sensitive adhesive materials (such as self-adhesive labels), apparel branding labels and tags, RFID inlays, and specialty medical products. The company is headquartered in Glendale, California."
+  },
+  {
+    "symbol": "AWI",
+    "description": "Armstrong World Industries, Inc. designs, manufactures, and sells roofing systems primarily for use in the construction and renovation of residential and commercial buildings in the United States, Canada, and Latin America. The company is headquartered in Lancaster, Pennsylvania."
+  },
+  {
+    "symbol": "AWK",
+    "description": "American Water is an American public utility company operating in the United States and Canada."
+  },
+  {
+    "symbol": "AWR",
+    "description": "American States Water Company provides water and electricity services to residential, commercial, industrial and other customers in the United States. The company is headquartered in San Dimas, California."
+  },
+  {
+    "symbol": "AWRE",
+    "description": "Aware, Inc. offers biometric software products and solutions in the United States, the United Kingdom, and internationally. The company is headquartered in Bedford, Massachusetts."
+  },
+  {
+    "symbol": "AWX",
+    "description": "Avalon Holdings Corporation provides waste management services to industrial, commercial, municipal and government clients in the United States. The company is headquartered in Warren, Ohio."
+  },
+  {
+    "symbol": "AX",
+    "description": "Axos Financial, Inc. offers commercial and consumer banking products in the United States. The company is headquartered in Las Vegas, Nevada."
+  },
+  {
+    "symbol": "AXGN",
+    "description": "AxoGen, Inc., develops and markets surgical solutions for physical damage or transection of peripheral nerves. The company is headquartered in Alachua, Florida."
+  },
+  {
+    "symbol": "AXINU",
+    "description": "Axiom Intelligence Acquisition Corp 1 focuses on effecting a merger, amalgamation, share exchange, asset acquisition, share purchase, reorganization or similar business combination with one or more businesses in the European infrastructure industry. The company is headquartered in London, the United Kingdom."
+  },
+  {
+    "symbol": "AXL",
+    "description": "American Axle & Manufacturing Holdings, Inc. designs, designs and manufactures transmission line and metal forming products in the United States, Mexico, South America, China, other Asian countries, and Europe. The company is headquartered in Detroit, Michigan."
+  },
+  {
+    "symbol": "AXON",
+    "description": "Axon Enterprise, Inc. develops, manufactures, and sells conducted energy weapons (DEC) under the TASER brand name in the United States and internationally. The company is headquartered in Scottsdale, Arizona."
+  },
+  {
+    "symbol": "AXP",
+    "description": "The American Express Company is a multinational financial services corporation headquartered at 200 Vesey Street in the Battery Park City neighborhood of Lower Manhattan in New York City."
+  },
+  {
+    "symbol": "AXR",
+    "description": "AMREP Corporation is primarily engaged in the real estate business. The company is headquartered in Plymouth Meeting, Pennsylvania."
+  },
+  {
+    "symbol": "AXS",
+    "description": "AXIS Capital Holdings Limited, offers various specialized insurance and reinsurance products worldwide. The company is headquartered in Pembroke, Bermuda."
+  },
+  {
+    "symbol": "AXS-P-E",
+    "description": "Axis Capital Holdings Limited Depositary Shares Series E"
+  },
+  {
+    "symbol": "AXSM",
+    "description": "Axsome Therapeutics, Inc., a biopharmaceutical company, is dedicated to developing new therapies for central nervous system (CNS) disorders in the United States. The company is headquartered in New York, New York."
+  },
+  {
+    "symbol": "AXTA",
+    "description": "Axalta Coating Systems Ltd. manufactures, markets and distributes high performance coating systems in North America, Europe, the Middle East, Africa, Asia Pacific and Latin America. The company is headquartered in Philadelphia, Pennsylvania."
+  },
+  {
+    "symbol": "AXTI",
+    "description": "AXT, Inc. designs, develops, manufactures and distributes single element and composite semiconductor substrates. The company is headquartered in Fremont, California."
+  },
+  {
+    "symbol": "AYI",
+    "description": "Acuity Brands, Inc. provides lighting and building management solutions and services for commercial, institutional, industrial, infrastructure, and residential applications in North America and internationally. The company is headquartered in Atlanta, Georgia."
+  },
+  {
+    "symbol": "AYRO",
+    "description": "Ayro, Inc. designs and manufactures light, emission-free electric vehicles for urban and community transportation, local delivery, closed campus mobility, recreational and government use. The company is headquartered in Round Rock, Texas."
+  },
+  {
+    "symbol": "AYTU",
+    "description": "Aytu Biopharma, Inc., a specialty pharmaceutical company, focuses on developing and marketing novel products in the field of hypogonadism (low testosterone levels), cough and upper respiratory symptoms, insomnia, and male infertility in the United States and internationally. The company is headquartered in Englewood, Colorado."
+  },
+  {
+    "symbol": "AZ",
+    "description": "A2Z Smart Technologies Corp. The company is headquartered in Vancouver, Canada."
+  },
+  {
+    "symbol": "AZI",
+    "description": "Autozi Internet Technology (Global) Ltd., provides automotive products and services through online and offline channels in the People's Republic of China. The company is headquartered in Beijing, China."
+  },
+  {
+    "symbol": "AZN",
+    "description": "AstraZeneca PLC discovers, develops, manufactures and markets prescription drugs in the areas of oncology, cardiovascular, renal and metabolism, respiratory, infections, neuroscience and gastroenterology worldwide. The company is headquartered in Cambridge, the United Kingdom."
+  },
+  {
+    "symbol": "AZO",
+    "description": "AutoZone, Inc. is an American retailer of aftermarket automotive parts and accessories, the largest in the United States."
+  },
+  {
+    "symbol": "AZTA",
+    "description": "None"
+  },
+  {
+    "symbol": "AZTR",
+    "description": "Azitra Inc, a pre-clinical biopharmaceutical company, focuses on developing therapies for precision dermatology using engineered proteins and live biotherapeutic products to treat skin diseases. The company is headquartered in Branford, Connecticut."
+  },
+  {
+    "symbol": "AZZ",
+    "description": "AZZ Inc. provides metal plating and plating solutions, welding solutions, specialized electrical equipment, and engineering services for the power generation, transmission, distribution, refining, and industrial markets in the United States and internationally. The company is headquartered in Fort Worth, Texas."
+  },
+  {
+    "symbol": "B",
+    "description": "Barnes Group Inc. provides engineering products, industrial technologies, and solutions in the United States and internationally. The company is headquartered in Bristol, Connecticut."
+  },
+  {
+    "symbol": "BA",
+    "description": "The Boeing Company is an American multinational corporation that designs, manufactures, and sells airplanes, rotorcraft, rockets, satellites, telecommunications equipment, and missiles worldwide. The company also provides leasing and product support services."
+  },
+  {
+    "symbol": "BABA",
+    "description": "Alibaba Group Holding Limited, also known as Alibaba Group and Alibaba.com, is a Chinese multinational technology company specializing in e-commerce, retail, Internet, and technology. Founded on 28 June 1999 in Hangzhou, Zhejiang, the company provides consumer-to-consumer (C2C), business-to-consumer (B2C), and business-to-business (B2B) sales services via web portals, as well as electronic payment services, shopping search engines and cloud computing services. It owns and operates a diverse portfolio of companies around the world in numerous business sectors."
+  },
+  {
+    "symbol": "BAC",
+    "description": "The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered in Charlotte, North Carolina. Founded in San Francisco, Bank of America was formed through NationsBank's acquisition of BankAmerica in 1998. It is the second largest banking institution in the United States, after JPMorgan Chase, and the eighth largest bank in the world. Bank of America is one of the Big Four banking institutions of the United States. It services approximately 10 percent of all American bank deposits, in direct competition with JPMorgan Chase, Citigroup and Wells Fargo. Its primary financial services revolve around commercial banking, wealth management, and investment banking."
+  },
+  {
+    "symbol": "BAC-P-B",
+    "description": "The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered in Charlotte, North Carolina. Founded in San Francisco, Bank of America was formed through NationsBank's acquisition of BankAmerica in 1998. It is the second largest banking institution in the United States, after JPMorgan Chase, and the eighth largest bank in the world. Bank of America is one of the Big Four banking institutions of the United States. It services approximately 10 percent of all American bank deposits, in direct competition with JPMorgan Chase, Citigroup and Wells Fargo. Its primary financial services revolve around commercial banking, wealth management, and investment banking."
+  },
+  {
+    "symbol": "BAC-P-E",
+    "description": "The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered in Charlotte, North Carolina. Founded in San Francisco, Bank of America was formed through NationsBank's acquisition of BankAmerica in 1998. It is the second largest banking institution in the United States, after JPMorgan Chase, and the eighth largest bank in the world. Bank of America is one of the Big Four banking institutions of the United States. It services approximately 10 percent of all American bank deposits, in direct competition with JPMorgan Chase, Citigroup and Wells Fargo. Its primary financial services revolve around commercial banking, wealth management, and investment banking."
+  },
+  {
+    "symbol": "BAC-P-K",
+    "description": "The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered in Charlotte, North Carolina. Founded in San Francisco, Bank of America was formed through NationsBank's acquisition of BankAmerica in 1998. It is the second largest banking institution in the United States, after JPMorgan Chase, and the eighth largest bank in the world. Bank of America is one of the Big Four banking institutions of the United States. It services approximately 10 percent of all American bank deposits, in direct competition with JPMorgan Chase, Citigroup and Wells Fargo. Its primary financial services revolve around commercial banking, wealth management, and investment banking."
+  },
+  {
+    "symbol": "BAC-P-L",
+    "description": "The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered in Charlotte, North Carolina. Founded in San Francisco, Bank of America was formed through NationsBank's acquisition of BankAmerica in 1998. It is the second largest banking institution in the United States, after JPMorgan Chase, and the eighth largest bank in the world. Bank of America is one of the Big Four banking institutions of the United States. It services approximately 10 percent of all American bank deposits, in direct competition with JPMorgan Chase, Citigroup and Wells Fargo. Its primary financial services revolve around commercial banking, wealth management, and investment banking."
   }
 ]
