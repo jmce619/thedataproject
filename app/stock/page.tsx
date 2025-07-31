@@ -10,8 +10,10 @@ const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 export default function StockDashboard() {
   const [symbol, setSymbol] = useState('AAPL')
   const [data, setData] = useState<any>(null)
+  const [similarCompanies, setSimilarCompanies] = useState<any[]>([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const DUPLICATES: Record<string, string> = { 'GOOG': 'GOOGL' }
 
   const fetchData = async (sym: string) => {
     setLoading(true)
@@ -21,6 +23,23 @@ export default function StockDashboard() {
       const jsonData = await res.json()
       if (!res.ok) throw new Error(jsonData.error || 'Fetch failed')
       setData(jsonData)
+
+      const similarRes = await fetch(`/api/similar/${encodeURIComponent(sym)}`)
+      let similarData = await similarRes.json()
+
+      similarData = similarData.filter((comp: any) => comp.id !== sym)
+
+      const seen = new Set()
+      const filtered = []
+      for (const comp of similarData) {
+        const ticker = DUPLICATES[comp.id] || comp.id
+        if (!seen.has(ticker) && comp.id === ticker) {
+          filtered.push(comp)
+          seen.add(ticker)
+        }
+        if (filtered.length === 5) break
+      }
+      setSimilarCompanies(filtered)
     } catch (err: any) {
       setError(err.message)
     } finally {
@@ -55,32 +74,43 @@ export default function StockDashboard() {
       {data && (
         <>
           <div className="info-financials-wrapper">
+            {/* --- Similar Companies Sidebar --- */}
+            <div className="similar-companies-sidebar">
+              <h3>Similar Companies</h3>
+              <ul className="similar-companies-list">
+                {similarCompanies.map(comp => (
+                  <li className="similar-companies-item" key={comp.id}>
+                    <img src={`https://logo.clearbit.com/${comp.id}.com`} alt={`${comp.id} logo`} />
+                    <div>
+                      <strong>{comp.id}</strong>
+                      <div className="similarity-score">{(comp.score * 100).toFixed(1)}% similar</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* --- Main Info Section --- */}
             <div className="info-section">
-            <div className="overview">
-            <div className="overview-title">
-              {data.logoUrl && (
-                <img src={data.logoUrl} alt={`${data.overview.Name} logo`} className="company-logo" />
-              )}
-              <h2>{data.overview.Name} ({data.quote['01. symbol']})</h2>
-            </div>
-
-            {/* New price and change section */}
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', marginBottom: '6px' }}>
-              <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                ${parseFloat(data.quote['05. price']).toFixed(2)}
-              </span>
-              <span style={{ fontSize: '0.85rem', color: parseFloat(data.quote['09. change']) >= 0 ? '#00B746' : '#EF403C', marginTop: '2px' }}>
-                {parseFloat(data.quote['09. change']) >= 0 ? '▲' : '▼'}&nbsp;
-                {parseFloat(data.quote['09. change']).toFixed(2)}&nbsp;({data.quote['10. change percent']})
-              </span>
-            </div>
-
-            <p>{data.overview.Sector} / {data.overview.Industry}</p>
-            <p>Market Cap: {Number(data.overview.MarketCapitalization).toLocaleString()} USD</p>
-            <p>P/E Ratio: {data.overview.PERatio} | Dividend Yield: {data.overview.DividendYield}</p>
-          </div>
-
-
+              <div className="overview">
+                <div className="overview-title">
+                  {data.logoUrl && (
+                    <img src={data.logoUrl} alt={`${data.overview.Name} logo`} className="company-logo" />
+                  )}
+                  <h2>{data.overview.Name} ({data.quote['01. symbol']})</h2>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', marginBottom: '6px' }}>
+                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
+                    ${parseFloat(data.quote['05. price']).toFixed(2)}
+                  </span>
+                  <span style={{ fontSize: '0.85rem', color: parseFloat(data.quote['09. change']) >= 0 ? '#00B746' : '#EF403C', marginTop: '2px' }}>
+                    {parseFloat(data.quote['09. change']) >= 0 ? '▲' : '▼'}&nbsp;
+                    {parseFloat(data.quote['09. change']).toFixed(2)}&nbsp;({data.quote['10. change percent']})
+                  </span>
+                </div>
+                <p>{data.overview.Sector} / {data.overview.Industry}</p>
+                <p>Market Cap: {Number(data.overview.MarketCapitalization).toLocaleString()} USD</p>
+                <p>P/E Ratio: {data.overview.PERatio} | Dividend Yield: {data.overview.DividendYield}</p>
+              </div>
               <div className="stats-grid">
                 <div className="stat-item">Open: ${data.quote['02. open']}</div>
                 <div className="stat-item">Close: ${data.quote['05. price']}</div>
@@ -89,124 +119,117 @@ export default function StockDashboard() {
                 <div className="stat-item">Volume: {Number(data.quote['06. volume']).toLocaleString()}</div>
               </div>
             </div>
-
+            {/* --- Financials Chart --- */}
             <div className="financials-chart">
+              <Chart
+                options={{
+                  chart: { type: 'bar' },
+                  xaxis: {
+                    categories: data.quarterlyFinancials.map((f: any) => {
+                      const d = new Date(f.fiscalDateEnding);
+                      const q = Math.floor(d.getMonth() / 3) + 1;
+                      return `Q${q} ${d.getFullYear()}`;
+                    }),
+                    labels: { style: { fontSize: '10px' } }
+                  },
+                  legend: {
+                    fontSize: '9px',
+                    position: 'top',
+                    offsetY: -5,
+                    itemMargin: { horizontal: 5, vertical: 0 }
+                  },
+                  dataLabels: { enabled: false },
+                }}
+                series={[
+                  { name: 'EBITDA', data: data.quarterlyFinancials.map((f: any) => f.EBITDA) },
+                  { name: 'Revenue', data: data.quarterlyFinancials.map((f: any) => f.totalRevenue) },
+                  { name: 'Gross Profit', data: data.quarterlyFinancials.map((f: any) => f.grossProfit) },
+                  { name: 'Net Income', data: data.quarterlyFinancials.map((f: any) => f.netIncome) },
+                ]}
+                type="bar"
+                height={350}
+              />
+            </div>
+          </div>
+          {/* --- Candlestick + Volume Chart --- */}
+          <div className="chart" style={{ marginTop: '-30px' }}>
             <Chart
               options={{
-                chart: { type: 'bar' },
-                xaxis: {
-                  categories: data.quarterlyFinancials.map((f: any) => {
-                    const d = new Date(f.fiscalDateEnding);
-                    const q = Math.floor(d.getMonth() / 3) + 1;
-                    return `Q${q} ${d.getFullYear()}`;
-                  }),
-                  labels: { style: { fontSize: '10px' } }
+                chart: {
+                  height: 500,
+                  type: 'candlestick',
+                  toolbar: { show: false },
                 },
-                legend: { 
-                  fontSize: '9px',     // 👈 Smaller legend
-                  position: 'top',
-                  offsetY: -5,
-                  itemMargin: { horizontal: 5, vertical: 0 }
-                },
-                dataLabels: { enabled: false },
-              }}
-              series={[
-                { name: 'EBITDA', data: data.quarterlyFinancials.map((f: any) => f.EBITDA) },
-                { name: 'Revenue', data: data.quarterlyFinancials.map((f: any) => f.totalRevenue) },
-                { name: 'Gross Profit', data: data.quarterlyFinancials.map((f: any) => f.grossProfit) },
-                { name: 'Net Income', data: data.quarterlyFinancials.map((f: any) => f.netIncome) },
-              ]}
-              type="bar"
-              height={350}
-            />
-          </div>
-
-          </div>
-
-          {/* Final Customized Candlestick + Volume Chart */}
-          {/* Customized Candlestick + Volume Chart with User Colors */}
-          <div className="chart" style={{ marginTop: '-30px' }}>
-          <Chart
-            options={{
-              chart: {
-                height: 500,
-                type: 'candlestick',
-                toolbar: { show: false },
-              },
-              plotOptions: {
-                bar: {
-                  columnWidth: '40%',
-                },
-                candlestick: {
-                  colors: {
-                    upward: '#007BFF',
-                    downward: '#FFA500',
+                plotOptions: {
+                  bar: {
+                    columnWidth: '40%',
+                  },
+                  candlestick: {
+                    colors: {
+                      upward: '#007BFF',
+                      downward: '#FFA500',
+                    },
                   },
                 },
-              },
-              stroke: {
-                width: [1, 0],
-              },
-              grid: {
-                show: false,
-              },
-              legend: {
-                show: false, // 👈 hides the legend
-              },
-              xaxis: {
-                type: 'datetime',
-                labels: {
-                  style: { fontSize: '10px' },
+                stroke: {
+                  width: [1, 0],
                 },
-              },
-              yaxis: [
-                {
-                  seriesName: 'Price',
-                  labels: { style: { fontSize: '10px' } },
-                  tooltip: { enabled: true },
-                },
-                {
-                  seriesName: 'Volume',
-                  opposite: true,
+                grid: {
                   show: false,
-                  labels: { show: false },
-                  min: 0,
-                  max: Math.max(...data.timeSeries.map((d: any) => d.volume)) * 15,
                 },
-              ],
-              tooltip: {
-                shared: true,
-                intersect: false,
-              },
-              colors: ['#007BFF', '#00B746'],
-            } as ApexOptions}
-            series={[
-              {
-                name: 'Price',
-                type: 'candlestick',
-                data: data.timeSeries.map((d: any) => ({
-                  x: new Date(d.date),
-                  y: [d.open, d.high, d.low, d.close],
-                })),
-              },
-              {
-                name: 'Volume',
-                type: 'bar',
-                data: data.timeSeries.map((d: any) => ({
-                  x: new Date(d.date),
-                  y: d.volume,
-                })),
-                color: '#00B746',
-              },
-            ]}
-            type="candlestick"
-            height={500}
-          />
-        </div>
-
-
-
-
+                legend: {
+                  show: false,
+                },
+                xaxis: {
+                  type: 'datetime',
+                  labels: {
+                    style: { fontSize: '10px' },
+                  },
+                },
+                yaxis: [
+                  {
+                    seriesName: 'Price',
+                    labels: { style: { fontSize: '10px' } },
+                    tooltip: { enabled: true },
+                  },
+                  {
+                    seriesName: 'Volume',
+                    opposite: true,
+                    show: false,
+                    labels: { show: false },
+                    min: 0,
+                    max: Math.max(...data.timeSeries.map((d: any) => d.volume)) * 15,
+                  },
+                ],
+                tooltip: {
+                  shared: true,
+                  intersect: false,
+                },
+                colors: ['#007BFF', '#00B746'],
+              } as ApexOptions}
+              series={[
+                {
+                  name: 'Price',
+                  type: 'candlestick',
+                  data: data.timeSeries.map((d: any) => ({
+                    x: new Date(d.date),
+                    y: [d.open, d.high, d.low, d.close],
+                  })),
+                },
+                {
+                  name: 'Volume',
+                  type: 'bar',
+                  data: data.timeSeries.map((d: any) => ({
+                    x: new Date(d.date),
+                    y: d.volume,
+                  })),
+                  color: '#00B746',
+                },
+              ]}
+              type="candlestick"
+              height={500}
+            />
+          </div>
           <div className="description">
             <p>{data.overview.Description}</p>
           </div>

@@ -415,3 +415,74 @@ body {
   margin-top: 24px;
   margin-bottom: 24px;
 }
+
+.similar-companies {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.similar-companies h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.similar-companies .stat-item {
+  font-size: 0.75rem;
+}
+
+.info-financials-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 32px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+/* --- Similar Companies Sidebar --- */
+.similar-companies-sidebar {
+  min-width: 190px;
+  max-width: 220px;
+  padding: 18px 14px 14px 14px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(216,180,254,0.13);
+  align-self: flex-start;
+  text-align: left;
+  margin-right: 8px;
+}
+
+.similar-companies-sidebar h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.similar-companies-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.similar-companies-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+  background: #ede9fe;
+  border-radius: 5px;
+  padding: 7px 7px 7px 5px;
+}
+
+.similar-companies-item img {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.similarity-score {
+  font-size: 0.72rem;
+  color: #888;
+  margin-top: 2px;
+}
