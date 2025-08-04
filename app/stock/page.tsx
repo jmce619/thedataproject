@@ -50,8 +50,18 @@ export default function StockDashboard() {
 
   const fetchSimilarCompanies = async (sym: string, type: string) => {
     try {
-      const similarRes = await fetch(`/api/similar/${type}/${encodeURIComponent(sym)}`)
-      let similarData = await similarRes.json()
+        const similarRes = await fetch(`/api/similar/${type}/${encodeURIComponent(sym)}`)
+        let similarData = []
+        try {
+          if (similarRes.ok) {
+            // try to parse only if there's something to parse
+            const text = await similarRes.text()
+            similarData = text ? JSON.parse(text) : []
+          }
+        } catch (e) {
+            similarData = []
+        }
+
 
       similarData = similarData.filter((comp: any) => comp.id !== sym)
 
