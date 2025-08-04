@@ -42,8 +42,8 @@ export default function SignalChart({
     }))
 
   const options = {
-    chart: { type: 'line', height: 160, toolbar: { show: false } },
-    xaxis: { type: 'datetime', labels: { style: { fontSize: '10px' } } },
+    chart: { type: 'line' as const, height: 160, toolbar: { show: false } },
+    xaxis: { type: 'datetime' as const, labels: { style: { fontSize: '10px' } } },
     yaxis: { labels: { style: { fontSize: '10px' } } },
     markers: { size: 0 },
     stroke: { width: 1.5 },
