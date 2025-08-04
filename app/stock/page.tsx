@@ -1,9 +1,11 @@
 // app/stock/page.tsx
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { ApexOptions } from 'apexcharts'
+import companyDescriptions from '../company_descriptions.json'
+import SignalChart from '../components/SignalChart'
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -11,9 +13,22 @@ export default function StockDashboard() {
   const [symbol, setSymbol] = useState('AAPL')
   const [data, setData] = useState<any>(null)
   const [similarCompanies, setSimilarCompanies] = useState<any[]>([])
+  const [similarityType, setSimilarityType] = useState('description')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const DUPLICATES: Record<string, string> = { 'GOOG': 'GOOGL' }
+  const [signalData, setSignalData] = useState<any[]>([])
+
+  const fetchSignalData = async (sym: string) => {
+  try {
+    const res = await fetch(`/api/signal/${encodeURIComponent(sym)}`)
+    const json = await res.json()
+    if (res.ok) setSignalData(json)
+    else setSignalData([])
+  } catch {
+    setSignalData([])
+  }
+}
 
   const fetchData = async (sym: string) => {
     setLoading(true)
@@ -23,8 +38,19 @@ export default function StockDashboard() {
       const jsonData = await res.json()
       if (!res.ok) throw new Error(jsonData.error || 'Fetch failed')
       setData(jsonData)
+      await fetchSimilarCompanies(sym, similarityType)
+      await fetchSignalData(sym) // <--- Add this line
+    } catch (err: any) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
 
-      const similarRes = await fetch(`/api/similar/${encodeURIComponent(sym)}`)
+
+  const fetchSimilarCompanies = async (sym: string, type: string) => {
+    try {
+      const similarRes = await fetch(`/api/similar/${type}/${encodeURIComponent(sym)}`)
       let similarData = await similarRes.json()
 
       similarData = similarData.filter((comp: any) => comp.id !== sym)
@@ -42,12 +68,22 @@ export default function StockDashboard() {
       setSimilarCompanies(filtered)
     } catch (err: any) {
       setError(err.message)
-    } finally {
-      setLoading(false)
     }
   }
 
-  useEffect(() => { fetchData(symbol) }, [])
+  const [expandedSymbol, setExpandedSymbol] = useState<string | null>(null)
+
+  const toggleDescription = (sym: string) => {
+    setExpandedSymbol(prev => (prev === sym ? null : sym))
+  }
+
+  const getDescription = (sym: string) => {
+    const entry = companyDescriptions.find((item: any) => item.symbol === sym)
+    return entry ? entry.description : 'Description not available.'
+  }
+
+  useEffect(() => { fetchData(symbol) }, [symbol])
+  useEffect(() => { if(data) fetchSimilarCompanies(symbol, similarityType) }, [similarityType])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -75,20 +111,7 @@ export default function StockDashboard() {
         <>
           <div className="info-financials-wrapper">
             {/* --- Similar Companies Sidebar --- */}
-            <div className="similar-companies-sidebar">
-              <h3>Similar Companies</h3>
-              <ul className="similar-companies-list">
-                {similarCompanies.map(comp => (
-                  <li className="similar-companies-item" key={comp.id}>
-                    <img src={`https://logo.clearbit.com/${comp.id}.com`} alt={`${comp.id} logo`} />
-                    <div>
-                      <strong>{comp.id}</strong>
-                      <div className="similarity-score">{(comp.score * 100).toFixed(1)}% similar</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
             {/* --- Main Info Section --- */}
             <div className="info-section">
               <div className="overview">
@@ -235,6 +258,84 @@ export default function StockDashboard() {
           </div>
         </>
       )}
+      <div style={{
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  gap: 32,
+  marginTop: 32,
+  width: '100%',
+  paddingLeft: 0,   // Ensures no padding left
+}}>
+  {/* Sidebar */}
+  <div style={{ minWidth: 270 }}>
+          <div className="similar-companies-sidebar">
+    <h3 style={{ fontWeight: 500 }}>
+      Similar Companies by{' '}
+      <select
+        value={similarityType}
+        onChange={(e) => setSimilarityType(e.target.value)}
+        style={{
+          font: 'inherit',
+          fontWeight: 'inherit',
+          fontSize: 'inherit',
+          color: 'inherit',
+          background: 'none',
+          border: 'none',
+          borderBottom: '1px dotted #888',
+          cursor: 'pointer',
+          outline: 'none',
+          padding: '0 2px',
+          margin: 0,
+          appearance: 'none', // removes native arrow in some browsers
+          MozAppearance: 'none',
+          WebkitAppearance: 'none',
+        }}
+      >
+        <option value="description">Description</option>
+        <option value="financials">Financials</option>
+        <option value="price_volume">Price & Volume</option>
+      </select>
+    </h3>
+
+            <ul className="similar-companies-list">
+              {similarCompanies.map(comp => (
+                <React.Fragment key={comp.id}>
+                  <li className="similar-companies-item">
+                    <div className="similar-company-left" onClick={() => setSymbol(comp.id)}>
+                      <img
+                        src={`https://logo.clearbit.com/${comp.id}.com`}
+                        alt={`${comp.id} logo`}
+                        onError={(e) => { e.currentTarget.style.visibility = 'hidden' }}
+                      />
+                      <div>
+                        <strong>{comp.id}</strong>
+                        <div className="similarity-score">
+                          {(comp.score * 100).toFixed(1)}% similar
+                        </div>
+                      </div>
+                    </div>
+                    <div className="similar-company-right" onClick={() => toggleDescription(comp.id)}>
+                      {expandedSymbol === comp.id ? '▼' : '▶'}
+                    </div>
+                  </li>
+                  {expandedSymbol === comp.id && (
+                    <li className="description-expanded">
+                      {getDescription(comp.id)}
+                    </li>
+                  )}
+                </React.Fragment>
+              ))}
+            </ul>
+          </div>
+          </div>
+  <div style={{ flex: 1 }}>
+    <SignalChart data={signalData} signalKey="zscore_signal" title="Z-Score Signals" />
+    <SignalChart data={signalData} signalKey="sma_signal" title="SMA Signals" />
+    <SignalChart data={signalData} signalKey="stoch_signal" title="Stochastic Signals" />
+  </div>
     </div>
+    </div>
+
   )
 }
