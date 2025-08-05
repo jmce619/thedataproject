@@ -1,24 +1,6 @@
 // app/api/similar/[type]/[symbol]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
-function checkEnv() {
-  const missing: string[] = []
-  const envSummary: Record<string, any> = {
-    PINECONE_API_KEY: !!process.env.PINECONE_API_KEY, // don't log the actual key!
-    PINECONE_DESCRIPTION_INDEX_URL: process.env.PINECONE_DESCRIPTION_INDEX_URL,
-    PINECONE_FINANCIALS_INDEX_URL: process.env.PINECONE_FINANCIALS_INDEX_URL,
-    PINECONE_PRICE_VOLUME_INDEX_URL: process.env.PINECONE_PRICE_VOLUME_INDEX_URL,
-    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
-  }
-  if (!process.env.PINECONE_API_KEY) missing.push('PINECONE_API_KEY')
-  if (!process.env.PINECONE_DESCRIPTION_INDEX_URL) missing.push('PINECONE_DESCRIPTION_INDEX_URL')
-  if (!process.env.PINECONE_FINANCIALS_INDEX_URL) missing.push('PINECONE_FINANCIALS_INDEX_URL')
-  if (!process.env.PINECONE_PRICE_VOLUME_INDEX_URL) missing.push('PINECONE_PRICE_VOLUME_INDEX_URL')
-  if (!process.env.NEXT_PUBLIC_BASE_URL) missing.push('NEXT_PUBLIC_BASE_URL')
-  if (missing.length > 0) {
-    console.warn('Missing ENV Vars:', missing)
-  }
-  console.log('Env check summary:', envSummary)
-}
+
 const INDEX_URLS: Record<string, string> = {
   description: process.env.PINECONE_DESCRIPTION_INDEX_URL!,
   financials: process.env.PINECONE_FINANCIALS_INDEX_URL!,
@@ -30,9 +12,10 @@ export async function GET(
   { params }: { params: { type: string; symbol: string } }
 ) {
   const { type, symbol } = params
-  checkEnv()
-  const embeddingRes = await fetch(`/api/embeddings/${type}/${symbol}`);
 
+  const embeddingRes = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/embeddings/${type}/${symbol}`
+  )
   if (!embeddingRes.ok) {
     return NextResponse.json({ error: 'Embedding fetch failed' }, { status: 500 })
   }
