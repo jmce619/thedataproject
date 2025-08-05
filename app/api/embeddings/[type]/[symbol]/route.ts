@@ -1,27 +1,4 @@
-// app/api/embeddings/[type]/[symbol]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
-
-// Util: Check for required env vars and log them (don't print secrets)
-function checkEnv() {
-  const missing: string[] = []
-  const envSummary: Record<string, any> = {
-    PINECONE_API_KEY: !!process.env.PINECONE_API_KEY, // don't log the actual key!
-    PINECONE_DESCRIPTION_INDEX_URL: process.env.PINECONE_DESCRIPTION_INDEX_URL,
-    PINECONE_FINANCIALS_INDEX_URL: process.env.PINECONE_FINANCIALS_INDEX_URL,
-    PINECONE_PRICE_VOLUME_INDEX_URL: process.env.PINECONE_PRICE_VOLUME_INDEX_URL,
-    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
-  }
-  if (!process.env.PINECONE_API_KEY) missing.push('PINECONE_API_KEY')
-  if (!process.env.PINECONE_DESCRIPTION_INDEX_URL) missing.push('PINECONE_DESCRIPTION_INDEX_URL')
-  if (!process.env.PINECONE_FINANCIALS_INDEX_URL) missing.push('PINECONE_FINANCIALS_INDEX_URL')
-  if (!process.env.PINECONE_PRICE_VOLUME_INDEX_URL) missing.push('PINECONE_PRICE_VOLUME_INDEX_URL')
-  if (!process.env.NEXT_PUBLIC_BASE_URL) missing.push('NEXT_PUBLIC_BASE_URL')
-  if (missing.length > 0) {
-    console.warn('Missing ENV Vars:', missing)
-  }
-  console.log('Env check summary:', envSummary)
-}
-
 
 const INDEX_URLS: Record<string, string> = {
   description: process.env.PINECONE_DESCRIPTION_INDEX_URL!,
@@ -29,15 +6,11 @@ const INDEX_URLS: Record<string, string> = {
   price_volume: process.env.PINECONE_PRICE_VOLUME_INDEX_URL!,
 }
 
-
-
 export async function GET(
   request: NextRequest,
   { params }: { params: { type: string; symbol: string } }
 ) {
-  checkEnv();
   const { type, symbol } = params
-
   const indexUrl = INDEX_URLS[type]
   if (!indexUrl) {
     return NextResponse.json({ error: 'Invalid embedding type' }, { status: 400 })
@@ -59,7 +32,16 @@ export async function GET(
       return NextResponse.json({ error: 'Failed to fetch embedding from Pinecone', details: errText }, { status: 500 })
     }
 
-    const data = await pineconeFetchRes.json()
+    let data: any = null
+    try {
+      const text = await pineconeFetchRes.text()
+      if (!text) throw new Error("Empty Pinecone response")
+      data = JSON.parse(text)
+    } catch (e) {
+      console.error('Pinecone returned invalid JSON or empty:', e)
+      return NextResponse.json({ error: 'Invalid JSON from Pinecone' }, { status: 502 })
+    }
+
     const vector = data.vectors?.[symbol]
     if (!vector || !vector.values) {
       return NextResponse.json({ error: 'Embedding not found for symbol' }, { status: 404 })
@@ -67,7 +49,7 @@ export async function GET(
 
     return NextResponse.json({ embedding: vector.values })
   } catch (err) {
-    console.error(err)
-    return NextResponse.json({ error: 'Failed to fetch embedding from Pinecone' }, { status: 500 })
+    console.error('Unexpected error in embeddings route:', err)
+    return NextResponse.json({ error: 'Failed to fetch embedding from Pinecone', details: String(err) }, { status: 500 })
   }
 }

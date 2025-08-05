@@ -12,9 +12,11 @@ export async function GET(
   { params }: { params: { type: string; symbol: string } }
 ) {
   const { type, symbol } = params
-
+  const base_url = process.env.NODE_ENV === "development"
+    ? process.env.NEXT_PUBLIC_BASE_URL
+    : request.nextUrl.origin
   const embeddingRes = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/embeddings/${type}/${symbol}`
+    `${base_url}/api/embeddings/${type}/${symbol}`
   )
   if (!embeddingRes.ok) {
     return NextResponse.json({ error: 'Embedding fetch failed' }, { status: 500 })
