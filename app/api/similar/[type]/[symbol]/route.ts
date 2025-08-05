@@ -31,9 +31,8 @@ export async function GET(
 ) {
   const { type, symbol } = params
   checkEnv()
-  const embeddingRes = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/embeddings/${type}/${symbol}`
-  )
+  const embeddingRes = await fetch(`/api/embeddings/${type}/${symbol}`);
+
   if (!embeddingRes.ok) {
     return NextResponse.json({ error: 'Embedding fetch failed' }, { status: 500 })
   }
