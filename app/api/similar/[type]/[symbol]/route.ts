@@ -6,18 +6,20 @@ const INDEX_URLS: Record<string, string> = {
   financials: process.env.PINECONE_FINANCIALS_INDEX_URL!,
   price_volume: process.env.PINECONE_PRICE_VOLUME_INDEX_URL!,
 }
-
+const getBaseUrl = (request: NextRequest) => {
+  if (process.env.NODE_ENV === "development") {
+    return process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  }
+  return `https://${request.headers.get('host')}`;
+};
 export async function GET(
   request: NextRequest,
   { params }: { params: { type: string; symbol: string } }
 ) {
   const { type, symbol } = params
-  const base_url = process.env.NODE_ENV === "development"
-    ? process.env.NEXT_PUBLIC_BASE_URL
-    : request.nextUrl.origin
-  const embeddingRes = await fetch(
-    `${base_url}/api/embeddings/${type}/${symbol}`
-  )
+  const baseUrl = getBaseUrl(request);
+
+  const embeddingRes = await fetch(`${baseUrl}/api/embeddings/${type}/${symbol}`);
   if (!embeddingRes.ok) {
     return NextResponse.json({ error: 'Embedding fetch failed' }, { status: 500 })
   }
