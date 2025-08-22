@@ -4,32 +4,23 @@
 import React, { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { ApexOptions } from 'apexcharts'
-import companyDescriptions from '../company_descriptions.json'
 import SignalChart from '../components/SignalChart'
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
+
+type SimilarityType = 'description' | 'financials' | 'price-volume'
 
 export default function StockDashboard() {
   const [symbol, setSymbol] = useState('AAPL')
   const [data, setData] = useState<any>(null)
   const [similarCompanies, setSimilarCompanies] = useState<any[]>([])
-  const [similarityType, setSimilarityType] = useState('description')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const DUPLICATES: Record<string, string> = { 'GOOG': 'GOOGL' }
   const [signalData, setSignalData] = useState<any[]>([])
+  const [expandedSymbol, setExpandedSymbol] = useState<string | null>(null)
+  const [similarityType, setSimilarityType] = useState<SimilarityType>('description')
 
-  const fetchSignalData = async (sym: string) => {
-  try {
-    const res = await fetch(`/api/signal/${encodeURIComponent(sym)}`)
-    const json = await res.json()
-    if (res.ok) setSignalData(json)
-    else setSignalData([])
-  } catch {
-    setSignalData([])
-  }
-}
-
+  // -------- Fetchers --------
   const fetchData = async (sym: string) => {
     setLoading(true)
     setError('')
@@ -38,8 +29,9 @@ export default function StockDashboard() {
       const jsonData = await res.json()
       if (!res.ok) throw new Error(jsonData.error || 'Fetch failed')
       setData(jsonData)
+      await fetchSignalData(sym)
+      // Fetch similars for current selector
       await fetchSimilarCompanies(sym, similarityType)
-      await fetchSignalData(sym) // <--- Add this line
     } catch (err: any) {
       setError(err.message)
     } finally {
@@ -47,53 +39,44 @@ export default function StockDashboard() {
     }
   }
 
-
-  const fetchSimilarCompanies = async (sym: string, type: string) => {
+  const fetchSignalData = async (sym: string) => {
     try {
-        const similarRes = await fetch(`/api/similar/${type}/${encodeURIComponent(sym)}`)
-        let similarData = []
-        try {
-          if (similarRes.ok) {
-            // try to parse only if there's something to parse
-            const text = await similarRes.text()
-            similarData = text ? JSON.parse(text) : []
-          }
-        } catch (e) {
-            similarData = []
-        }
-
-
-      similarData = similarData.filter((comp: any) => comp.id !== sym)
-
-      const seen = new Set()
-      const filtered = []
-      for (const comp of similarData) {
-        const ticker = DUPLICATES[comp.id] || comp.id
-        if (!seen.has(ticker) && comp.id === ticker) {
-          filtered.push(comp)
-          seen.add(ticker)
-        }
-        if (filtered.length === 5) break
-      }
-      setSimilarCompanies(filtered)
-    } catch (err: any) {
-      setError(err.message)
+      const res = await fetch(`/api/signal/${encodeURIComponent(sym)}`)
+      const json = await res.json()
+      if (res.ok) setSignalData(json)
+      else setSignalData([])
+    } catch {
+      setSignalData([])
     }
   }
 
-  const [expandedSymbol, setExpandedSymbol] = useState<string | null>(null)
+  // IMPORTANT: this calls the consolidated feature route
+  const fetchSimilarCompanies = async (sym: string, feature: SimilarityType) => {
+    try {
+      setSimilarCompanies([])
+      const res = await fetch(`/api/similar/${encodeURIComponent(feature)}/${encodeURIComponent(sym)}`)
+      if (!res.ok) throw new Error('Failed to fetch similar companies')
+      const data = await res.json()
+      setSimilarCompanies(data) // [{ id, score, description, logoUrl }]
+    } catch {
+      setSimilarCompanies([])
+    }
+  }
 
   const toggleDescription = (sym: string) => {
     setExpandedSymbol(prev => (prev === sym ? null : sym))
   }
 
-  const getDescription = (sym: string) => {
-    const entry = companyDescriptions.find((item: any) => item.symbol === sym)
-    return entry ? entry.description : 'Description not available.'
-  }
+  // -------- Effects --------
+  useEffect(() => {
+    fetchData(symbol)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [symbol])
 
-  useEffect(() => { fetchData(symbol) }, [symbol])
-  useEffect(() => { if(data) fetchSimilarCompanies(symbol, similarityType) }, [similarityType])
+  useEffect(() => {
+    if (symbol) fetchSimilarCompanies(symbol, similarityType)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [similarityType])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -102,7 +85,7 @@ export default function StockDashboard() {
 
   return (
     <div className="container dashboard">
-      <form onSubmit={handleSubmit} className="dashboard-form">
+      <form onSubmit={handleSubmit} className="dashboard-form" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <input
           type="text"
           value={symbol}
@@ -120,8 +103,6 @@ export default function StockDashboard() {
       {data && (
         <>
           <div className="info-financials-wrapper">
-            {/* --- Similar Companies Sidebar --- */}
-
             {/* --- Main Info Section --- */}
             <div className="info-section">
               <div className="overview">
@@ -144,6 +125,7 @@ export default function StockDashboard() {
                 <p>Market Cap: {Number(data.overview.MarketCapitalization).toLocaleString()} USD</p>
                 <p>P/E Ratio: {data.overview.PERatio} | Dividend Yield: {data.overview.DividendYield}</p>
               </div>
+
               <div className="stats-grid">
                 <div className="stat-item">Open: ${data.quote['02. open']}</div>
                 <div className="stat-item">Close: ${data.quote['05. price']}</div>
@@ -152,6 +134,7 @@ export default function StockDashboard() {
                 <div className="stat-item">Volume: {Number(data.quote['06. volume']).toLocaleString()}</div>
               </div>
             </div>
+
             {/* --- Financials Chart --- */}
             <div className="financials-chart">
               <Chart
@@ -159,9 +142,9 @@ export default function StockDashboard() {
                   chart: { type: 'bar' },
                   xaxis: {
                     categories: data.quarterlyFinancials.map((f: any) => {
-                      const d = new Date(f.fiscalDateEnding);
-                      const q = Math.floor(d.getMonth() / 3) + 1;
-                      return `Q${q} ${d.getFullYear()}`;
+                      const d = new Date(f.fiscalDateEnding)
+                      const q = Math.floor(d.getMonth() / 3) + 1
+                      return `Q${q} ${d.getFullYear()}`
                     }),
                     labels: { style: { fontSize: '10px' } }
                   },
@@ -184,41 +167,20 @@ export default function StockDashboard() {
               />
             </div>
           </div>
+
           {/* --- Candlestick + Volume Chart --- */}
           <div className="chart" style={{ marginTop: '-30px' }}>
             <Chart
               options={{
-                chart: {
-                  height: 500,
-                  type: 'candlestick',
-                  toolbar: { show: false },
-                },
+                chart: { height: 500, type: 'candlestick', toolbar: { show: false } },
                 plotOptions: {
-                  bar: {
-                    columnWidth: '40%',
-                  },
-                  candlestick: {
-                    colors: {
-                      upward: '#007BFF',
-                      downward: '#FFA500',
-                    },
-                  },
+                  bar: { columnWidth: '40%' },
+                  candlestick: { colors: { upward: '#007BFF', downward: '#FFA500' } },
                 },
-                stroke: {
-                  width: [1, 0],
-                },
-                grid: {
-                  show: false,
-                },
-                legend: {
-                  show: false,
-                },
-                xaxis: {
-                  type: 'datetime',
-                  labels: {
-                    style: { fontSize: '10px' },
-                  },
-                },
+                stroke: { width: [1, 0] },
+                grid: { show: false },
+                legend: { show: false },
+                xaxis: { type: 'datetime', labels: { style: { fontSize: '10px' } } },
                 yaxis: [
                   {
                     seriesName: 'Price',
@@ -234,10 +196,7 @@ export default function StockDashboard() {
                     max: Math.max(...data.timeSeries.map((d: any) => d.volume)) * 15,
                   },
                 ],
-                tooltip: {
-                  shared: true,
-                  intersect: false,
-                },
+                tooltip: { shared: true, intersect: false },
                 colors: ['#007BFF', '#00B746'],
               } as ApexOptions}
               series={[
@@ -263,89 +222,118 @@ export default function StockDashboard() {
               height={500}
             />
           </div>
+
           <div className="description">
             <p>{data.overview.Description}</p>
           </div>
         </>
       )}
+
+      {/* --- Signal and Similar Companies Sidebar --- */}
       <div style={{
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'flex-start',
-  gap: 32,
-  marginTop: 32,
-  width: '100%',
-  paddingLeft: 0,   // Ensures no padding left
-}}>
-  {/* Sidebar */}
-  <div style={{ minWidth: 270 }}>
-          <div className="similar-companies-sidebar">
-    <h3 style={{ fontWeight: 500 }}>
-      Similar Companies by{' '}
-      <select
-        value={similarityType}
-        onChange={(e) => setSimilarityType(e.target.value)}
-        style={{
-          font: 'inherit',
-          fontWeight: 'inherit',
-          fontSize: 'inherit',
-          color: 'inherit',
-          background: 'none',
-          border: 'none',
-          borderBottom: '1px dotted #888',
-          cursor: 'pointer',
-          outline: 'none',
-          padding: '0 2px',
-          margin: 0,
-          appearance: 'none', // removes native arrow in some browsers
-          MozAppearance: 'none',
-          WebkitAppearance: 'none',
-        }}
-      >
-        <option value="description">Description</option>
-        <option value="financials">Financials</option>
-        <option value="price_volume">Price & Volume</option>
-      </select>
-    </h3>
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        gap: 32,
+        marginTop: 32,
+        width: '100%',
+        paddingLeft: 0,
+      }}>
+        <div style={{ flex: 1 }}>
+          <SignalChart data={signalData} signalKey="zscore_signal" title="Z-Score Signals" />
+          <SignalChart data={signalData} signalKey="sma_signal" title="SMA Signals" />
+          <SignalChart data={signalData} signalKey="stoch_signal" title="Stochastic Signals" />
+        </div>
 
-            <ul className="similar-companies-list">
-              {similarCompanies.map(comp => (
-                <React.Fragment key={comp.id}>
-                  <li className="similar-companies-item">
-                    <div className="similar-company-left" onClick={() => setSymbol(comp.id)}>
-                      <img
-                        src={`https://logo.clearbit.com/${comp.id}.com`}
-                        alt={`${comp.id} logo`}
-                        onError={(e) => { e.currentTarget.style.visibility = 'hidden' }}
-                      />
-                      <div>
-                        <strong>{comp.id}</strong>
-                        <div className="similarity-score">
-                          {(comp.score * 100).toFixed(1)}% similar
-                        </div>
-                      </div>
-                    </div>
-                    <div className="similar-company-right" onClick={() => toggleDescription(comp.id)}>
-                      {expandedSymbol === comp.id ? '▼' : '▶'}
-                    </div>
-                  </li>
-                  {expandedSymbol === comp.id && (
-                    <li className="description-expanded">
-                      {getDescription(comp.id)}
-                    </li>
-                  )}
-                </React.Fragment>
-              ))}
-            </ul>
-          </div>
-          </div>
-  <div style={{ flex: 1 }}>
-    <SignalChart data={signalData} signalKey="zscore_signal" title="Z-Score Signals" />
-    <SignalChart data={signalData} signalKey="sma_signal" title="SMA Signals" />
-    <SignalChart data={signalData} signalKey="stoch_signal" title="Stochastic Signals" />
-  </div>
-    </div>
-    </div>
+        <div style={{ minWidth: 300, flex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8, flexWrap: 'wrap' }}>
+            <h3 style={{ margin: 0, fontWeight: 600 }}>
+              Top 10 Companies by{' '}
+              <span style={{ position: 'relative', display: 'inline-block' }}>
+                <select
+                  value={similarityType}
+                  onChange={(e) => setSimilarityType(e.target.value as SimilarityType)}
+                  title="Choose the similarity space to query"
+                  style={{
+                    font: 'inherit',
+                    fontWeight: 'inherit',
+                    lineHeight: 'inherit',
+                    color: 'inherit',
+                    background: 'transparent',
+                    border: 'none',
+                    padding: 0,
+                    margin: 0,
+                    appearance: 'none',
+                    WebkitAppearance: 'none',
+                    MozAppearance: 'none',
+                    textDecoration: 'underline',
+                    cursor: 'pointer',
+                    paddingRight: 16, // room for the ▼
+                  }}
+                >
+                  <option value="description">Description</option>
+                  <option value="financials">Financials</option>
+                  <option value="price-volume">Price-Volume</option>
+                </select>
 
+                {/* custom caret */}
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  aria-hidden="true"
+                  focusable="false"
+                  style={{
+                    position: 'absolute',
+                    right: 2,
+                    top: '50%',
+                    transform: 'translateY(-40%)',
+                    pointerEvents: 'none',
+                    opacity: 0.7,
+                  }}
+                >
+                  <path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                </svg>
+              </span>
+            </h3>
+          </div>
+
+          {similarCompanies.map((comp: any) => (
+            <div key={comp.id} style={{ marginBottom: 16, border: '1px solid #eee', padding: 12, borderRadius: 8 }}>
+              <div
+                style={{ cursor: 'pointer', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 8 }}
+                onClick={() => toggleDescription(comp.id)}
+                title="Click to expand/collapse"
+              >
+                {/* Logo slot */}
+                <div style={{ width: 22, height: 22, borderRadius: 4, overflow: 'hidden', flex: '0 0 22px' }}>
+                  {comp.logoUrl ? (
+                    <img
+                      src={comp.logoUrl}
+                      alt={`${comp.id} logo`}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+                      loading="lazy"
+                    />
+                  ) : null}
+                </div>
+
+                <span>{comp.id}</span>
+                <span style={{ fontSize: 14, color: '#999', marginLeft: 'auto' }}>→</span>
+              </div>
+
+              {expandedSymbol === comp.id && (
+                <div style={{ marginTop: 8, fontSize: 13 }}>
+                  {comp.description || 'No description found.'}
+                </div>
+              )}
+
+              <div style={{ fontSize: 12, color: '#666', marginTop: 6 }}>
+                Similarity: {typeof comp.score === 'number' ? comp.score.toFixed(3) : comp.score}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }

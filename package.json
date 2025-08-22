@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@pinecone-database/pinecone": "^6.1.2",
     "apexcharts": "^4.7.0",
     "aws-sdk": "^2.1692.0",
     "d3": "^7.9.0",
