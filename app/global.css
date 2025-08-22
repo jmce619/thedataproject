@@ -527,3 +527,117 @@ body {
   line-height: 1.4;
 }
 
+/* Side-by-side cards for Claims section without Tailwind */
+.claims-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.page-container {
+  max-width: 1200px; /* tweak width */
+  margin: 0 auto;    /* center horizontally */
+  padding: 3rem 2rem; /* top/bottom, left/right */
+}
+.page-container > section {
+  margin-bottom: 4rem; /* consistent spacing between sections */
+}
+/* --- Premiums Table neat formatting --- */
+.premiums-table-wrapper {
+  max-height: 420px;          /* scroll if tall */
+  overflow: auto;
+  border: 1px solid #e5e7eb;  /* light border */
+  border-radius: 12px;
+}
+
+.premiums-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12px;            /* compact */
+  line-height: 1.25;
+}
+
+.premiums-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f9fafb;        /* subtle header bg */
+  color: #374151;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.premiums-table .sticky-col {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: #fff;           /* keep readable when scrolled */
+  min-width: 140px;
+  text-align: left;
+}
+
+.premiums-table tbody td,
+.premiums-table tbody th {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: nowrap;
+}
+
+.premiums-table tbody tr.odd td {
+  background: #fafafa;
+}
+
+.premiums-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.premiums-table .state-cell {
+  font-weight: 600;
+  color: #111827;
+}
+.pc-two-col {
+  display: grid;
+  grid-template-columns: 1fr; /* stack on mobile */
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .pc-two-col {
+    grid-template-columns: 1fr 1fr; /* side-by-side on md+ */
+  }
+}
+
+/* Optional: a consistent card style if you want to reuse */
+.pc-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Two-up row for Premiums + Denial-by-Provider --- */
+.pc-two-col {
+  display: grid;
+  grid-template-columns: 1fr; /* stack on mobile */
+  gap: 2rem;
+  align-items: stretch;       /* make both columns equal height */
+}
+@media (min-width: 768px) {
+  .pc-two-col {
+    grid-template-columns: 1fr 1fr; /* side-by-side on md+ */
+  }
+}
+
+.pc-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
