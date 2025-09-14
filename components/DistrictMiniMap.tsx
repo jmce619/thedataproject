@@ -4,16 +4,12 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { FeatureCollection, Feature, Geometry, GeoJsonProperties } from 'geojson';
 import type { Path, Layer, PathOptions, StyleFunction } from 'leaflet';
-
 import 'leaflet/dist/leaflet.css';
 
-// Client-only react-leaflet
 const MapContainer = dynamic(() => import('react-leaflet').then(m => m.MapContainer), { ssr: false });
 const GeoJSON = dynamic(() => import('react-leaflet').then(m => m.GeoJSON), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(m => m.TileLayer), { ssr: false });
 
-
-// --- columns we know we have ---
 const femaleVars = [
   'Female Under 5 years','Female 5 to 9 years','Female 10 to 14 years','Female 15 to 17 years',
   'Female 18 and 19 years','Female 20 years','Female 21 years','Female 22 to 24 years',
@@ -31,7 +27,6 @@ const maleVars = [
   'Male 75 to 79 years','Male 80 to 84 years','Male 85 years and over'
 ];
 
-// Race/ethnicity set — tweak as needed
 const raceVars = [
   'White alone',
   'Black or African American alone',
@@ -51,7 +46,6 @@ function sumProps(props: Record<string, any>, keys: string[]) {
   return s;
 }
 
-// Bin age labels for a compact pyramid
 const AGE_BINS = ['0–17', '18–24', '25–34', '35–44', '45–54', '55–64', '65–74', '75+'] as const;
 type AgeBin = typeof AGE_BINS[number];
 
@@ -83,7 +77,6 @@ function aggregateAgeBins(props: Record<string, any>) {
   return bins;
 }
 
-// Tiny pyramid as inline SVG
 function pyramidSVG(bins: Record<AgeBin, { male: number; female: number }>, width = 240, height = 160) {
   const W = width, H = height, cx = W / 2, pad = 6;
   const n = AGE_BINS.length;
@@ -120,7 +113,6 @@ function pyramidSVG(bins: Record<AgeBin, { male: number; female: number }>, widt
   `;
 }
 
-// Tiny vertical bar chart for race/ethnicity (top 5)
 function raceBarsSVG(props: Record<string, any>, totalPop: number, width = 240, height = 120) {
   const pairs = raceVars.map(k => [k, Number(props[k]) || 0] as const);
   const top = pairs.sort((a, b) => b[1] - a[1]).slice(0, 5);
@@ -163,6 +155,8 @@ function raceBarsSVG(props: Record<string, any>, totalPop: number, width = 240, 
   `;
 }
 
+type FC = FeatureCollection<Geometry, GeoJsonProperties>;
+
 export default function DistrictMiniMap({
   dataUrl = '/data/demography.geojson',
   selectedGeoId,
@@ -172,7 +166,7 @@ export default function DistrictMiniMap({
   selectedGeoId?: string | null;
   onSelectGeoId?: (geoid: string) => void;
 }) {
-  const [fc, setFc] = useState<FeatureCollection | null>(null);
+  const [fc, setFc] = useState<FC | null>(null);
   const [error, setError] = useState<string | null>(null);
   const layerRef = useRef<Map<string, Layer>>(new Map());
 
@@ -182,7 +176,7 @@ export default function DistrictMiniMap({
       try {
         const res = await fetch(dataUrl);
         if (!res.ok) throw new Error(`Failed to load ${dataUrl} (${res.status})`);
-        const json = (await res.json()) as FeatureCollection;
+        const json = (await res.json()) as FC;
         if (!cancelled) setFc(json);
       } catch (e: any) {
         if (!cancelled) setError(e?.message || 'Failed to load districts');
@@ -198,110 +192,100 @@ export default function DistrictMiniMap({
     zoomControl: true,
   }), []);
 
-// replace your current `style` with:
-// style — make feature optional and annotate with StyleFunction
-const style: StyleFunction<GeoJsonProperties> = (feature) => {
-  if (!feature) return {}; // safe default PathOptions
+  const style: StyleFunction<GeoJsonProperties> = (feature): PathOptions => {
+    if (!feature) return {};
+    const props = (feature.properties ?? {}) as Record<string, any>;
+    const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
+    const isSel = !!selectedGeoId && gid === selectedGeoId;
 
-  const props = (feature.properties ?? {}) as Record<string, any>;
-  const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
-  const isSel = !!selectedGeoId && gid === selectedGeoId;
+    const femaleTotal = sumProps(props, femaleVars);
+    const maleTotal = sumProps(props, maleVars);
+    const totalPop = femaleTotal + maleTotal;
 
-  const femaleTotal = sumProps(props, femaleVars);
-  const maleTotal = sumProps(props, maleVars);
-  const totalPop = femaleTotal + maleTotal;
+    const minPop = 5000;
+    const maxPop = 1500000;
+    const t = Math.max(0, Math.min(1, (totalPop - minPop) / (maxPop - minPop)));
 
-  const minPop = 5000;
-  const maxPop = 1500000;
-  const t = Math.max(0, Math.min(1, (totalPop - minPop) / (maxPop - minPop)));
+    const interpolateColor = (start: string, end: string, t: number) => {
+      const hex = (s: string) => parseInt(s, 16);
+      const r = Math.round((1 - t) * hex(start.slice(1, 3)) + t * hex(end.slice(1, 3)));
+      const g = Math.round((1 - t) * hex(start.slice(3, 5)) + t * hex(end.slice(3, 5)));
+      const b = Math.round((1 - t) * hex(start.slice(5, 7)) + t * hex(end.slice(5, 7)));
+      return `rgb(${r}, ${g}, ${b})`;
+    };
 
-  const interpolateColor = (start: string, end: string, t: number) => {
-    const hex = (s: string) => parseInt(s, 16);
-    const r = Math.round((1 - t) * hex(start.slice(1, 3)) + t * hex(end.slice(1, 3)));
-    const g = Math.round((1 - t) * hex(start.slice(3, 5)) + t * hex(end.slice(3, 5)));
-    const b = Math.round((1 - t) * hex(start.slice(5, 7)) + t * hex(end.slice(5, 7)));
-    return `rgb(${r}, ${g}, ${b})`;
+    const fillColor = interpolateColor('#FEF3C7', '#b35c10ff', t);
+
+    return {
+      fillColor,
+      fillOpacity: isSel ? 0.75 : 0.6,
+      color: isSel ? '#1F2937' : '#374151',
+      weight: isSel ? 2 : 0.5,
+    };
   };
-
-  const fillColor = interpolateColor('#FEF3C7', '#b35c10ff', t);
-
-  return {
-    fillColor,
-    fillOpacity: isSel ? 0.75 : 0.6,
-    color: isSel ? '#1F2937' : '#374151',
-    weight: isSel ? 2 : 0.5,
-  } satisfies PathOptions;
-};
-
-
-
 
   if (error) return <div className="text-red-600 text-sm">{error}</div>;
   if (!fc) return <div className="text-gray-500 text-sm">Loading districts…</div>;
 
   return (
-    <MapContainer
-      {...(mapOptions as any)}
-      className="leaflet-container rounded-xl overflow-hidden shadow"
-    >
+    <MapContainer {...(mapOptions as any)} className="leaflet-container rounded-xl overflow-hidden shadow">
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="" />
-        <GeoJSON
-    data={fc}
-    style={style}
-    onEachFeature={(feature, layer) => {
-        if (!feature) return; // ← important guard for TS
+      <GeoJSON
+        data={fc as FC}
+        style={style}
+        onEachFeature={(feature, layer) => {
+          if (!feature) return;
 
-        const props = (feature.properties ?? {}) as Record<string, any>;
-        const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
-        if (gid) layerRef.current.set(gid, layer);
+          const props = (feature.properties ?? {}) as any;
+          const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
+          if (gid) layerRef.current.set(gid, layer);
 
-        const name = props.NAMELSAD ?? props.NAME ?? 'District';
-        const femaleTotal = sumProps(props, femaleVars);
-        const maleTotal = sumProps(props, maleVars);
-        const total = femaleTotal + maleTotal;
+          const name = props.NAMELSAD ?? props.NAME ?? 'District';
+          const femaleTotal = sumProps(props, femaleVars);
+          const maleTotal = sumProps(props, maleVars);
+          const total = femaleTotal + maleTotal;
 
-        const bins = aggregateAgeBins(props);
-        const pyramid = pyramidSVG(bins, 240, 160);
-        const race = raceBarsSVG(props, total, 240, 120);
+          const bins = aggregateAgeBins(props);
+          const pyramid = pyramidSVG(bins, 240, 160);
+          const race = raceBarsSVG(props, total, 240, 120);
 
-        const tooltipHtml = `
-        <div style="min-width: 520px; max-width: 560px; padding:6px 6px 4px 6px;">
-            <div style="font-weight:600;margin-bottom:4px">${name}</div>
-            <div style="display:flex; gap:8px; align-items:flex-start;">
-            <div style="flex:1;">
-                <div style="font-size:12px;color:#374151;margin:0 0 4px 0">
-                <b>GEOID:</b> ${gid}&nbsp;&nbsp;
-                <b>Pop:</b> ${total.toLocaleString()}&nbsp;&nbsp;
-                <b>F:</b> ${femaleTotal.toLocaleString()}&nbsp;&nbsp;
-                <b>M:</b> ${maleTotal.toLocaleString()}
+          const tooltipHtml = `
+            <div style="min-width: 520px; max-width: 560px; padding:6px 6px 4px 6px;">
+              <div style="font-weight:600;margin-bottom:4px">${name}</div>
+              <div style="display:flex; gap:8px; align-items:flex-start;">
+                <div style="flex:1;">
+                  <div style="font-size:12px;color:#374151;margin:0 0 4px 0">
+                    <b>GEOID:</b> ${gid}&nbsp;&nbsp;
+                    <b>Pop:</b> ${total.toLocaleString()}&nbsp;&nbsp;
+                    <b>F:</b> ${femaleTotal.toLocaleString()}&nbsp;&nbsp;
+                    <b>M:</b> ${maleTotal.toLocaleString()}
+                  </div>
+                  ${pyramid}
                 </div>
-                ${pyramid}
+                <div style="flex:1;">
+                  ${race}
+                </div>
+              </div>
             </div>
-            <div style="flex:1;">
-                ${race}
-            </div>
-            </div>
-        </div>
-        `;
+          `;
 
-        (layer as any).bindTooltip(tooltipHtml, {
-        sticky: true,
-        direction: 'top',
-        opacity: 0.98,
-        className: 'mini-tip',
-        });
+          (layer as any).bindTooltip(tooltipHtml, {
+            sticky: true,
+            direction: 'top',
+            opacity: 0.98,
+            className: 'mini-tip',
+          });
 
-        layer.on({
-        mouseover: () => (layer as Path).setStyle?.({ weight: 2, color: '#111' }),
-        mouseout: () => {
-            const isSel = !!selectedGeoId && gid === selectedGeoId;
-            (layer as Path).setStyle?.({ weight: isSel ? 2 : 0.5, color: isSel ? '#1F2937' : '#374151' });
-        },
-        click: () => { if (gid && onSelectGeoId) onSelectGeoId(gid); }
-        });
-    }}
-    />
-
+          layer.on({
+            mouseover: () => (layer as Path).setStyle?.({ weight: 2, color: '#111' }),
+            mouseout: () => {
+              const isSel = !!selectedGeoId && gid === selectedGeoId;
+              (layer as Path).setStyle?.({ weight: isSel ? 2 : 0.5, color: isSel ? '#1F2937' : '#374151' });
+            },
+            click: () => { if (gid && onSelectGeoId) onSelectGeoId(gid); }
+          });
+        }}
+      />
     </MapContainer>
   );
 }

@@ -2,29 +2,14 @@
 
 import { useState, useEffect, useMemo, ChangeEvent } from 'react';
 import dynamic from 'next/dynamic';
-import type {
-  FeatureCollection,
-  Feature,
-  Geometry,
-  GeoJsonProperties,
-} from 'geojson';
+import type { FeatureCollection, Geometry, GeoJsonProperties } from 'geojson';
 import type { Path, PathOptions, StyleFunction } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import DistrictMiniMap from '../../components/DistrictMiniMap';
 
-// React-Leaflet (client only)
-const MapContainer = dynamic(
-  () => import('react-leaflet').then((m) => m.MapContainer),
-  { ssr: false }
-);
-const GeoJSON = dynamic(
-  () => import('react-leaflet').then((m) => m.GeoJSON),
-  { ssr: false }
-);
-const TileLayer = dynamic(
-  () => import('react-leaflet').then((m) => m.TileLayer),
-  { ssr: false }
-);
+const MapContainer = dynamic(() => import('react-leaflet').then(m => m.MapContainer), { ssr: false });
+const GeoJSON = dynamic(() => import('react-leaflet').then(m => m.GeoJSON), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet').then(m => m.TileLayer), { ssr: false });
 
 type FC = FeatureCollection<Geometry, GeoJsonProperties>;
 
@@ -34,10 +19,8 @@ export default function DistrictResultsPage() {
   const [selectedMap, setSelectedMap] = useState<'house' | 'senate'>('house');
   const [error, setError] = useState<string | null>(null);
   const [selectedGeoId, setSelectedGeoId] = useState<string | null>(null);
-  const [hoveredFeatureProps, setHoveredFeatureProps] =
-    useState<Record<string, any> | null>(null);
+  const [hoveredFeatureProps, setHoveredFeatureProps] = useState<Record<string, any> | null>(null);
 
-  // Load House data
   useEffect(() => {
     async function fetchHouse() {
       try {
@@ -60,7 +43,7 @@ export default function DistrictResultsPage() {
         const features = districts.features.map((feat) => {
           const props = (feat.properties ?? {}) as Record<string, any>;
           const gid = props.GEOID ?? props.geoid ?? props.GEOID20;
-          const win = winners[gid] || {};
+          const win = winners[gid as string] || {};
           return {
             ...feat,
             properties: {
@@ -79,7 +62,6 @@ export default function DistrictResultsPage() {
     fetchHouse();
   }, []);
 
-  // Load Senate data
   useEffect(() => {
     async function fetchSenate() {
       try {
@@ -93,78 +75,50 @@ export default function DistrictResultsPage() {
     fetchSenate();
   }, []);
 
-  // Style functions must accept optional feature and return PathOptions
-  const styleHouse: StyleFunction<GeoJsonProperties> = (feature) => {
-    if (!feature) return {} as PathOptions;
+  const styleHouse: StyleFunction<GeoJsonProperties> = (feature): PathOptions => {
+    if (!feature) return {};
     const props = (feature.properties ?? {}) as any;
 
     const fillColor =
-      props.winnerParty === 'R'
-        ? '#EF4444'
-        : props.winnerParty === 'D'
-        ? '#3B82F6'
-        : '#9CA3AF';
+      props.winnerParty === 'R' ? '#EF4444' :
+      props.winnerParty === 'D' ? '#3B82F6' :
+      '#9CA3AF';
 
-    const fillOpacity = Math.min(
-      0.8,
-      0.35 + (((props.winnerPct ?? 0) as number) / 100) * 0.45
-    );
+    const fillOpacity = Math.min(0.8, 0.35 + (((props.winnerPct ?? 0) as number) / 100) * 0.45);
 
-    return {
-      fillColor,
-      fillOpacity,
-      color: '#222',
-      weight: 0.5,
-    };
+    return { fillColor, fillOpacity, color: '#222', weight: 0.5 };
   };
 
-  const styleSenate: StyleFunction<GeoJsonProperties> = (feature) => {
-    if (!feature) return {} as PathOptions;
+  const styleSenate: StyleFunction<GeoJsonProperties> = (feature): PathOptions => {
+    if (!feature) return {};
     const props = (feature.properties ?? {}) as any;
 
     const fillColor =
-      props.party_simplified === 'REPUBLICAN'
-        ? '#EF4444'
-        : props.party_simplified === 'DEMOCRAT'
-        ? '#3B82F6'
-        : '#9CA3AF';
+      props.party_simplified === 'REPUBLICAN' ? '#EF4444' :
+      props.party_simplified === 'DEMOCRAT' ? '#3B82F6' :
+      '#9CA3AF';
 
-    const fillOpacity = Math.min(
-      0.8,
-      0.35 + (((props.vote_pct ?? 0) as number) / 100) * 0.45
-    );
+    const fillOpacity = Math.min(0.8, 0.35 + (((props.vote_pct ?? 0) as number) / 100) * 0.45);
 
-    return {
-      fillColor,
-      fillOpacity,
-      color: '#222',
-      weight: 0.5,
-    };
+    return { fillColor, fillOpacity, color: '#222', weight: 0.5 };
   };
 
   const currentData = selectedMap === 'house' ? houseData : senateData;
-  const loadingText =
-    selectedMap === 'house' ? 'Loading House map…' : 'Loading Senate map…';
+  const loadingText = selectedMap === 'house' ? 'Loading House map…' : 'Loading Senate map…';
 
-  const mapOptions = useMemo(
-    () => ({
-      center: [37.8, -96] as [number, number],
-      zoom: 4,
-      attributionControl: false,
-      zoomControl: true,
-    }),
-    []
-  );
+  const mapOptions = useMemo(() => ({
+    center: [37.8, -96] as [number, number],
+    zoom: 4,
+    attributionControl: false,
+    zoomControl: true,
+  }), []);
 
   return (
     <div className="page3 w-full px-4 py-6 relative">
-      {/* Dropdown */}
       <div className="flex items-center gap-3 mb-4">
         <select
           value={selectedMap}
-          onChange={(e: ChangeEvent<HTMLSelectElement>) =>
-            setSelectedMap(e.target.value as 'house' | 'senate')
-          }
+          onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedMap(e.target.value as 'house' | 'senate')}
           className="p-2 border rounded"
         >
           <option value="house">US House Results</option>
@@ -173,53 +127,36 @@ export default function DistrictResultsPage() {
         {error && <div className="text-red-600 text-sm">{error}</div>}
       </div>
 
-      {/* Side-by-side maps */}
-      <div className="map-row">
-        {/* LEFT MAP */}
+      <div className="map-row grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           {currentData ? (
-            <MapContainer
-              key={selectedMap}
-              {...(mapOptions as any)}
-              className="leaflet-container rounded-xl overflow-hidden shadow"
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution=""
-              />
+            <MapContainer key={selectedMap} {...(mapOptions as any)} className="leaflet-container rounded-xl overflow-hidden shadow">
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="" />
               <GeoJSON
                 key={selectedMap}
                 data={currentData as FC}
                 style={selectedMap === 'house' ? styleHouse : styleSenate}
                 onEachFeature={(feature, layer) => {
-                  if (!feature) return; // guard for typings that allow undefined
+                  if (!feature) return;
                   const pathLayer = layer as Path;
                   const props = (feature.properties ?? {}) as any;
 
                   layer.on({
                     mouseover: () => {
-                      (pathLayer as any).setStyle?.({
-                        weight: 1.5,
-                        color: '#111',
-                      });
+                      (pathLayer as any).setStyle?.({ weight: 1.5, color: '#111' });
                       setHoveredFeatureProps(props);
                     },
                     mouseout: () => {
-                      (pathLayer as any).setStyle?.({
-                        weight: 0.5,
-                        color: '#222',
-                      });
+                      (pathLayer as any).setStyle?.({ weight: 0.5, color: '#222' });
                       setHoveredFeatureProps(null);
                     },
                     click: () => {
-                      const gid =
-                        props.GEOID ?? props.geoid ?? props.GEOID20 ?? null;
+                      const gid = props.GEOID ?? props.geoid ?? props.GEOID20 ?? null;
                       if (gid) setSelectedGeoId(String(gid));
-                    },
+                    }
                   });
 
-                  const name =
-                    props.NAMELSAD ?? props.NAME ?? props.state ?? 'Area';
+                  const name = props.NAMELSAD ?? props.NAME ?? props.state ?? 'Area';
                   (layer as any).bindTooltip(`${name}`, { sticky: true });
                 }}
               />
@@ -229,44 +166,32 @@ export default function DistrictResultsPage() {
           )}
         </div>
 
-        {/* RIGHT MINI MAP */}
         <div>
           <DistrictMiniMap
             dataUrl="/data/demography.geojson"
             selectedGeoId={selectedGeoId}
             onSelectGeoId={setSelectedGeoId}
           />
+          {/* Or, to show charts instead of the mini map:
+              <DemographyPanel dataUrl="/data/demography.geojson" selectedGeoId={selectedGeoId} />
+          */}
         </div>
       </div>
 
-      {/* Hover info box */}
       {hoveredFeatureProps && (
         <div className="absolute bottom-6 left-6 bg-white rounded-lg shadow-lg p-3 text-sm border border-gray-200 z-20 max-w-sm">
           <div className="font-semibold mb-1">
-            {hoveredFeatureProps.NAMELSAD ||
-              hoveredFeatureProps.NAME ||
-              hoveredFeatureProps.state ||
-              'District'}
+            {hoveredFeatureProps.NAMELSAD || hoveredFeatureProps.NAME || hoveredFeatureProps.state || 'District'}
           </div>
           {selectedMap === 'house' ? (
             <>
-              <div>
-                <b>Party:</b> {hoveredFeatureProps.winnerParty || '—'}
-              </div>
-              <div>
-                <b>Win %:</b>{' '}
-                {hoveredFeatureProps.winnerPct?.toFixed(1) || '—'}%
-              </div>
+              <div><b>Party:</b> {hoveredFeatureProps.winnerParty || '—'}</div>
+              <div><b>Win %:</b> {hoveredFeatureProps.winnerPct?.toFixed(1) || '—'}%</div>
             </>
           ) : (
             <>
-              <div>
-                <b>Party:</b> {hoveredFeatureProps.party_simplified || '—'}
-              </div>
-              <div>
-                <b>Vote %:</b>{' '}
-                {hoveredFeatureProps.vote_pct?.toFixed(1) || '—'}%
-              </div>
+              <div><b>Party:</b> {hoveredFeatureProps.party_simplified || '—'}</div>
+              <div><b>Vote %:</b> {hoveredFeatureProps.vote_pct?.toFixed(1) || '—'}%</div>
             </>
           )}
         </div>

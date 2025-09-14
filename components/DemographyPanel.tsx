@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import type { VisualizationSpec } from 'vega-embed';
 import VegaLiteEmbed from './VegaLiteEmbed';
-type VisualizationSpec = import('vega-lite').TopLevelSpec;
 
-type Feature = { type: 'Feature'; properties: Record<string, any>; geometry: any; };
-type FeatureCollection = { type: 'FeatureCollection'; features: Feature[]; };
+type Feature = { type: 'Feature'; properties: Record<string, any>; geometry: any };
+type FeatureCollection = { type: 'FeatureCollection'; features: Feature[] };
 
 const variables_set_female_age = [
   'Female Under 5 years','Female 5 to 9 years','Female 10 to 14 years','Female 15 to 17 years',
@@ -130,7 +130,7 @@ export default function DemographyPanel({
     data: { values: barData },
     transform: [
       { filter: "datum.gender == 'Other'" },
-      ...(selectedGeoId ? [{ filter: { field: 'GEOID', equal: selectedGeoId } }] : [])
+      ...(selectedGeoId ? [{ filter: { field: 'GEOID', equal: selectedGeoId } }] : []),
     ],
     mark: { type: 'bar' },
     encoding: {
