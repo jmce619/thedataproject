@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="navbar-right">
         <Link href="/about" className="nav-link">About</Link>
         <a
-          href="https://github.com/your-repo"
+          href="https://github.com/jmce619/thedataproject"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-link"
