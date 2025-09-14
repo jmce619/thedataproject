@@ -4,13 +4,38 @@
 /* Nav Bar & Dropdown  */
 /* -------------------- */
 .navbar {
-  position: relative;
   display: flex;
+  justify-content: space-between; /* pushes left and right sections apart */
   align-items: center;
   padding: 0.5rem 1rem;
   background: #fff;
   z-index: 10;
 }
+
+/* Left side */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Right side */
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #1f2937;
+  text-decoration: underline;
+}
+
 .menu-btn {
   background: none;
   border: none;
@@ -670,3 +695,6 @@ body {
 .map-row > div {
   flex: 1;
 }
+.option { display: flex; flex-direction: column; align-items: center; }
+.option-card { display: block; border-radius: 12px; overflow: hidden; }
+
