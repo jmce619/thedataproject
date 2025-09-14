@@ -641,3 +641,21 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.leaflet-tooltip.mini-tip {
+  max-width: none !important; /* Leaflet caps width by default */
+  padding: 8px 10px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+
+.leaflet-tooltip.mini-tip .viz-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.leaflet-tooltip.mini-tip .viz-col {
+  flex: 1 1 auto;
+  min-width: 200px; /* prevents squishing */
+}
