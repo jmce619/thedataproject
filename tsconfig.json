@@ -7,7 +7,7 @@
       "ES2021"
     ],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "node", // or "node16" / "nodenext"
     "jsx": "preserve",
     "allowJs": true,
     "resolveJsonModule": true,
