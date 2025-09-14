@@ -39,7 +39,7 @@ export default function HomePage() {
           />
         </Link>
       </div>
-      <p className="all-captions">Finance – Sports – Politics - HealthCare Insurance</p>
+      <p className="all-captions">Finance – Sports – Politics - HealthCare</p>
     </div>
   )
 }
