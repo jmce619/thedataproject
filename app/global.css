@@ -3,38 +3,7 @@
 /* -------------------- */
 /* Nav Bar & Dropdown  */
 /* -------------------- */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* pushes left and right sections apart */
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: #fff;
-  z-index: 10;
-}
 
-/* Left side */
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
-
-/* Right side */
-.navbar-right {
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-link {
-  font-size: 0.95rem;
-  color: #374151;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-link:hover {
-  color: #1f2937;
-  text-decoration: underline;
-}
 
 .menu-btn {
   background: none;
@@ -53,24 +22,30 @@
 }
 .dropdown {
   position: absolute;
-  top: 100%;
+  top: 100%;               /* appear below navbar */
   left: 0;
   background: #fff;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e5e7eb;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
   margin-top: 4px;
+  z-index: 50;
+  min-width: 200px;
 }
+
 .dropdown a {
   display: block;
   padding: 0.75rem 1rem;
   text-decoration: none;
   color: #333;
+  font-size: 0.95rem;
 }
+
 .dropdown a:hover {
   background: #f5f5f5;
 }
+
 
 /* --------- */
 /* Base      */
@@ -698,3 +673,62 @@ body {
 .option { display: flex; flex-direction: column; align-items: center; }
 .option-card { display: block; border-radius: 12px; overflow: hidden; }
 
+/* Navbar Layout */
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  z-index: 10;
+  border-bottom: 1px solid #e5e7eb; /* subtle bottom line */
+}
+
+/* Right nav links (About / GitHub) */
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Left section (menu + title) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown Menu (mobile only) */
+.dropdown {
+  position: absolute;
+  top: 100%;  /* below navbar */
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown a {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #f3f4f6;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: #f9fafb;
+}
+
+/* Optional bottom border line if using a separate element */
+.navbar-bottom-line {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e5e7eb;
+}

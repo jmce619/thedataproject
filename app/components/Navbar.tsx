@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* Left: Menu and Title */}
+      {/* Left side: Menu and Title */}
       <div className="navbar-left">
         <button
           className="menu-btn"
@@ -23,18 +23,9 @@ export default function Navbar() {
         </button>
         <span className="pipe">|</span>
         <span className="title">The Data Project</span>
-
-        {open && (
-          <div className="dropdown">
-            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-            <Link href="/stock" onClick={() => setOpen(false)}>Stock Searcher</Link>
-            <Link href="/page2" onClick={() => setOpen(false)}>Sports</Link>
-            <Link href="/page3" onClick={() => setOpen(false)}>Politics</Link>
-          </div>
-        )}
       </div>
 
-      {/* Right: About / GitHub */}
+      {/* Right side: About + GitHub (always visible) */}
       <div className="navbar-right">
         <Link href="/about" className="nav-link">About</Link>
         <a
@@ -46,6 +37,19 @@ export default function Navbar() {
           GitHub
         </a>
       </div>
+
+      {/* Dropdown menu – mobile nav links */}
+      {open && (
+        <div className="dropdown">
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/stock" onClick={() => setOpen(false)}>Stock Searcher</Link>
+          <Link href="/page2" onClick={() => setOpen(false)}>Sports</Link>
+          <Link href="/page3" onClick={() => setOpen(false)}>Politics</Link>
+        </div>
+      )}
+
+      {/* Bottom border line */}
+      <div className="navbar-bottom-line" />
     </nav>
   )
 }
