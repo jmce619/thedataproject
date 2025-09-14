@@ -2,14 +2,16 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
-import type { FeatureCollection, Feature } from 'geojson';
-import type { Path, Layer } from 'leaflet';
+import type { FeatureCollection, Feature, Geometry, GeoJsonProperties } from 'geojson';
+import type { Path, Layer, PathOptions, StyleFunction } from 'leaflet';
+
 import 'leaflet/dist/leaflet.css';
 
 // Client-only react-leaflet
 const MapContainer = dynamic(() => import('react-leaflet').then(m => m.MapContainer), { ssr: false });
 const GeoJSON = dynamic(() => import('react-leaflet').then(m => m.GeoJSON), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(m => m.TileLayer), { ssr: false });
+
 
 // --- columns we know we have ---
 const femaleVars = [
@@ -196,20 +198,43 @@ export default function DistrictMiniMap({
     zoomControl: true,
   }), []);
 
-  const style = (feature: Feature) => {
-    const gid = String(
-      (feature.properties as any)?.GEOID ??
-      (feature.properties as any)?.geoid ??
-      (feature.properties as any)?.GEOID20 ?? ''
-    );
-    const isSel = selectedGeoId && gid === selectedGeoId;
-    return {
-      fillColor: isSel ? '#2563EB' : '#9CA3AF',
-      fillOpacity: isSel ? 0.7 : 0.3,
-      color: isSel ? '#1F2937' : '#374151',
-      weight: isSel ? 2 : 0.5,
-    };
+// replace your current `style` with:
+// style — make feature optional and annotate with StyleFunction
+const style: StyleFunction<GeoJsonProperties> = (feature) => {
+  if (!feature) return {}; // safe default PathOptions
+
+  const props = (feature.properties ?? {}) as Record<string, any>;
+  const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
+  const isSel = !!selectedGeoId && gid === selectedGeoId;
+
+  const femaleTotal = sumProps(props, femaleVars);
+  const maleTotal = sumProps(props, maleVars);
+  const totalPop = femaleTotal + maleTotal;
+
+  const minPop = 5000;
+  const maxPop = 1500000;
+  const t = Math.max(0, Math.min(1, (totalPop - minPop) / (maxPop - minPop)));
+
+  const interpolateColor = (start: string, end: string, t: number) => {
+    const hex = (s: string) => parseInt(s, 16);
+    const r = Math.round((1 - t) * hex(start.slice(1, 3)) + t * hex(end.slice(1, 3)));
+    const g = Math.round((1 - t) * hex(start.slice(3, 5)) + t * hex(end.slice(3, 5)));
+    const b = Math.round((1 - t) * hex(start.slice(5, 7)) + t * hex(end.slice(5, 7)));
+    return `rgb(${r}, ${g}, ${b})`;
   };
+
+  const fillColor = interpolateColor('#FEF3C7', '#b35c10ff', t);
+
+  return {
+    fillColor,
+    fillOpacity: isSel ? 0.75 : 0.6,
+    color: isSel ? '#1F2937' : '#374151',
+    weight: isSel ? 2 : 0.5,
+  } satisfies PathOptions;
+};
+
+
+
 
   if (error) return <div className="text-red-600 text-sm">{error}</div>;
   if (!fc) return <div className="text-gray-500 text-sm">Loading districts…</div>;
@@ -220,60 +245,63 @@ export default function DistrictMiniMap({
       className="leaflet-container rounded-xl overflow-hidden shadow"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="" />
-      <GeoJSON
-        data={fc}
-        style={style}
-        onEachFeature={(feature, layer) => {
-          const props = (feature.properties || {}) as any;
-          const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
-          if (gid) layerRef.current.set(gid, layer);
+        <GeoJSON
+    data={fc}
+    style={style}
+    onEachFeature={(feature, layer) => {
+        if (!feature) return; // ← important guard for TS
 
-          const name = props.NAMELSAD ?? props.NAME ?? 'District';
-          const femaleTotal = sumProps(props, femaleVars);
-          const maleTotal = sumProps(props, maleVars);
-          const total = femaleTotal + maleTotal;
+        const props = (feature.properties ?? {}) as Record<string, any>;
+        const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
+        if (gid) layerRef.current.set(gid, layer);
 
-          const bins = aggregateAgeBins(props);
-          const pyramid = pyramidSVG(bins, 240, 160);
-          const race = raceBarsSVG(props, total, 240, 120);
+        const name = props.NAMELSAD ?? props.NAME ?? 'District';
+        const femaleTotal = sumProps(props, femaleVars);
+        const maleTotal = sumProps(props, maleVars);
+        const total = femaleTotal + maleTotal;
 
-          const tooltipHtml = `
-            <div style="min-width: 520px; max-width: 560px; padding:6px 6px 4px 6px;">
-              <div style="font-weight:600;margin-bottom:4px">${name}</div>
-              <div style="display:flex; gap:8px; align-items:flex-start;">
-                <div style="flex:1;">
-                  <div style="font-size:12px;color:#374151;margin:0 0 4px 0">
-                    <b>GEOID:</b> ${gid}&nbsp;&nbsp;
-                    <b>Pop:</b> ${total.toLocaleString()}&nbsp;&nbsp;
-                    <b>F:</b> ${femaleTotal.toLocaleString()}&nbsp;&nbsp;
-                    <b>M:</b> ${maleTotal.toLocaleString()}
-                  </div>
-                  ${pyramid}
+        const bins = aggregateAgeBins(props);
+        const pyramid = pyramidSVG(bins, 240, 160);
+        const race = raceBarsSVG(props, total, 240, 120);
+
+        const tooltipHtml = `
+        <div style="min-width: 520px; max-width: 560px; padding:6px 6px 4px 6px;">
+            <div style="font-weight:600;margin-bottom:4px">${name}</div>
+            <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:12px;color:#374151;margin:0 0 4px 0">
+                <b>GEOID:</b> ${gid}&nbsp;&nbsp;
+                <b>Pop:</b> ${total.toLocaleString()}&nbsp;&nbsp;
+                <b>F:</b> ${femaleTotal.toLocaleString()}&nbsp;&nbsp;
+                <b>M:</b> ${maleTotal.toLocaleString()}
                 </div>
-                <div style="flex:1;">
-                  ${race}
-                </div>
-              </div>
+                ${pyramid}
             </div>
-          `;
+            <div style="flex:1;">
+                ${race}
+            </div>
+            </div>
+        </div>
+        `;
 
-          (layer as any).bindTooltip(tooltipHtml, {
-            sticky: true,
-            direction: 'top',
-            opacity: 0.98,
-            className: 'mini-tip',
-          });
+        (layer as any).bindTooltip(tooltipHtml, {
+        sticky: true,
+        direction: 'top',
+        opacity: 0.98,
+        className: 'mini-tip',
+        });
 
-          layer.on({
-            mouseover: () => (layer as Path).setStyle?.({ weight: 2, color: '#111' }),
-            mouseout: () => {
-              const isSel = selectedGeoId && gid === selectedGeoId;
-              (layer as Path).setStyle?.({ weight: isSel ? 2 : 0.5, color: isSel ? '#1F2937' : '#374151' });
-            },
-            click: () => { if (gid && onSelectGeoId) onSelectGeoId(gid); }
-          });
-        }}
-      />
+        layer.on({
+        mouseover: () => (layer as Path).setStyle?.({ weight: 2, color: '#111' }),
+        mouseout: () => {
+            const isSel = !!selectedGeoId && gid === selectedGeoId;
+            (layer as Path).setStyle?.({ weight: isSel ? 2 : 0.5, color: isSel ? '#1F2937' : '#374151' });
+        },
+        click: () => { if (gid && onSelectGeoId) onSelectGeoId(gid); }
+        });
+    }}
+    />
+
     </MapContainer>
   );
 }
