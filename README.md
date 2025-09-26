@@ -1,6 +1,6 @@
-# 📘 Project Overview
+# 📘 The Data Project
 
-This repository contains data-driven analytics and semantic search systems covering multiple domains:
+The data project is web app that contains data analytics and semantic search systems covering multiple domains:
 
 - **📈 Stock Analytics and Similarity Search**
 - **🏀 Sports Data Insights**
@@ -33,25 +33,12 @@ Each domain is individually documented below.
 ### Data Sources
 - **Alpha Vantage API**: Company descriptions, financial metrics, and historical stock prices.
 
-### Data Processing
-- Quarterly updates: Company descriptions, core financial metrics.
-- Monthly updates: Selected financial indicators.
-- Daily updates: Stock price and volume data.
+![Alt text](/company_flowchart.png "Title")
+
 
 ### Semantic Search Architecture
 
-```mermaid
-flowchart TD
-    AV["📡 Alpha Vantage API"]
-    Airflow["🔄 Airflow Scheduler"]
-    Storage["☁️ Cloud Storage (JSON snapshots)"]
-    Embed["🧠 Embedding Generation"]
-    Pinecone["🌲 Pinecone Vector DB"]
-    NextAPI["🚀 Next.js API"]
-    Frontend["🌐 React Frontend"]
-    
-    AV --> Airflow --> Storage --> Embed --> Pinecone --> NextAPI --> Frontend
-```
+
 
 ## 🏀 Sports Data Insights
 
