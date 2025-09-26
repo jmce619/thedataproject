@@ -14,18 +14,13 @@ Each domain is individually documented below.
 ## 📖 Table of Contents
 
 - [📈 Stock Analytics and Similarity Search](#-stock-analytics-and-similarity-search)
-  - [Data Sources](#data-sources)
-  - [Data Processing](#data-processing)
-  - [Semantic Search Architecture](#semantic-search-architecture)
+
 - [🏀 Sports Data Insights](#-sports-data-insights)
-  - [Data Sources](#sports-data-sources)
-  - [Analysis and Visualizations](#sports-analysis-and-visualizations)
+
 - [🌍 Geographic Data and Visualizations](#-geographic-data-and-visualizations)
-  - [Geographic Data Sources](#geographic-data-sources)
-  - [Mapping and Visualizations](#mapping-and-visualizations)
+
 - [🏥 Healthcare Insurance Data Processing](#-healthcare-insurance-data-processing)
-  - [Data Sources](#healthcare-data-sources)
-  - [Claims and Data Extraction](#claims-and-data-extraction)
+
 ---
 
 ## 📈 Stock Analytics and Similarity Search
@@ -35,8 +30,8 @@ Each domain is individually documented below.
 
 ![Alt text](/company_flowchart.png "Title")
 
+Stock prices, quarterly financials, and company descriptions are ingested from Alpha Vantage via scheduled Airflow jobs. Company descriptions and financials are transformed into embeddings in Python via Hugging Face and stored in Pinecone, enabling similarity search across public companies. Various trading signals (Z-score, moving averages, and RSI) are calculated on the share price in a daily scheduled Airflow job and then is archived in Google Cloud Storage (GCS) as json objects. The Next.js application serves as the front end, pulling data from Pinecone for related-company insights and from GCS for historical signals and the backtested results.
 
-### Semantic Search Architecture
 
 
 
