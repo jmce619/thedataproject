@@ -37,5 +37,15 @@ Stock prices, quarterly financials, and company descriptions are ingested from A
 
 ## 🏀 Sports Data Insights
 
+### Data Sources
+- **NBA API**: Player stats, game stats, team stats, and schedules.
+
+
 Individual player statistics, Game score/schedule, and team statistics are ingested using NBA API in a managed Airflow insantance (MWAA) and stored in Amazon Redshift. The data is aggregated and expanded on in DBT, sent to the front end for consumption.
 ![Alt text](/NBA_flowchart.png "Title")
+
+## 🌎 Demographic Data
+
+### Data Sources
+- **Census.gov**: Regional shapefiles and demographic data.
+
