@@ -10,7 +10,7 @@ const robotoMono = Roboto_Mono({
 const cards = [
   { href: '/stock',  src: '/images/page1.png', alt: 'Finance',              label: 'Finance' },
   { href: '/page2',  src: '/images/page2.png', alt: 'Sports',               label: 'Sports' },
-  { href: '/page3',  src: '/images/page3.png', alt: 'Politics',             label: 'Politics' },
+  { href: '/page3',  src: '/images/page3.png', alt: 'Demographic',             label: 'Demographic' },
   { href: '/page4',  src: '/images/page4.png', alt: 'HealthCare Insurance', label: 'HealthCare' },
 ]
 

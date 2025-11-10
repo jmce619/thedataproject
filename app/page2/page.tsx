@@ -35,73 +35,164 @@ type Game = {
   game_id: string
   date: string
   time: string
-  visitor_team: string
-  home_team: string
+  visitor_team: string   // may be full name or nickname or tricode
+  home_team: string      // may be full name or nickname or tricode
   arena: string
   broadcaster: string
   live_period: number
   live_period_bcast: string
 }
 
-type StandingRow = {
-  teamId: number
-  teamTricode: string
-  teamName: string
-  win: number
-  loss: number
-  winPct: number
-  gb: string
-  confRank: number
+type ConfRow = {
+  rank: number
+  team: string        // e.g. "Boston Celtics"
+  tricode: string     // e.g. "BOS"
+  wins: number
+  losses: number
+  pct: number
+  gb: string | number
+  conf_record?: string
+}
+type StandingsPayload = {
+  season: string
+  east: ConfRow[]
+  west: ConfRow[]
 }
 
-type StandingsByConf = {
-  east: StandingRow[]
-  west: StandingRow[]
+type AnyRow = Record<string, any>
+
+/* ===================== Team Logo Resolution ===================== */
+
+/** Variants that sometimes appear in feeds */
+const ALT_ABBREV: Record<string, string[]> = {
+  PHX: ['PHO'],
+  PHO: ['PHX'],
+  BKN: ['BRK'],
+  BRK: ['BKN'],
+  CHA: ['CHO'],
+  CHO: ['CHA'],
+  WAS: ['WSH'],
+  WSH: ['WAS'],
+  GSW: ['GS'],
+  SAS: ['SA'],
+  NYK: ['NY'],
 }
 
-type TeamStat = {
-  TEAM_ID: number
-  TEAM_NAME: string
-  TEAM_ABBREVIATION: string
-  GP: number | null
-  W: number | null
-  L: number | null
-  W_PCT: number | null
-  MIN: number | null
-  PTS: number | null
-  REB: number | null
-  AST: number | null
-  TOV: number | null
-  STL: number | null
-  BLK: number | null
-  FG_PCT: number | null
-  FG3_PCT: number | null
-  FT_PCT: number | null
-  OFF_RATING?: number | null
-  DEF_RATING?: number | null
-  NET_RATING?: number | null
-  PACE?: number | null
-  AST_RATIO?: number | null
-  OREB_PCT?: number | null
-  DREB_PCT?: number | null
-  REB_PCT?: number | null
-  TM_TOV_PCT?: number | null
-  EFG_PCT?: number | null
-  TS_PCT?: number | null
-  PIE?: number | null
-  FTA_RATE?: number | null
-  TOV_PCT?: number | null
-  E_OFF_RATING?: number | null
-  E_DEF_RATING?: number | null
-  E_NET_RATING?: number | null
-  OPP_EFG_PCT?: number | null
+/** Map common full names and nicknames → tricodes (uppercase) */
+const NAME_TO_TRICODE: Record<string, string> = {
+  // East
+  'ATLANTA HAWKS': 'ATL', HAWKS: 'ATL',
+  'BOSTON CELTICS': 'BOS', CELTICS: 'BOS',
+  'BROOKLYN NETS': 'BKN', NETS: 'BKN',
+  'CHARLOTTE HORNETS': 'CHA', HORNETS: 'CHA',
+  'CHICAGO BULLS': 'CHI', BULLS: 'CHI',
+  'CLEVELAND CAVALIERS': 'CLE', CAVALIERS: 'CLE', CAVS: 'CLE',
+  'DETROIT PISTONS': 'DET', PISTONS: 'DET',
+  'INDIANA PACERS': 'IND', PACERS: 'IND',
+  'MIAMI HEAT': 'MIA', HEAT: 'MIA',
+  'MILWAUKEE BUCKS': 'MIL', BUCKS: 'MIL',
+  'NEW YORK KNICKS': 'NYK', KNICKS: 'NYK',
+  'ORLANDO MAGIC': 'ORL', MAGIC: 'ORL',
+  'PHILADELPHIA 76ERS': 'PHI', '76ERS': 'PHI', SIXERS: 'PHI',
+  'TORONTO RAPTORS': 'TOR', RAPTORS: 'TOR',
+  'WASHINGTON WIZARDS': 'WAS', WIZARDS: 'WAS',
+
+  // West
+  'DALLAS MAVERICKS': 'DAL', MAVERICKS: 'DAL', MAVS: 'DAL',
+  'DENVER NUGGETS': 'DEN', NUGGETS: 'DEN', NUGS: 'DEN',
+  'GOLDEN STATE WARRIORS': 'GSW', WARRIORS: 'GSW', DUBS: 'GSW',
+  'HOUSTON ROCKETS': 'HOU', ROCKETS: 'HOU',
+  'LA CLIPPERS': 'LAC', 'LOS ANGELES CLIPPERS': 'LAC', CLIPPERS: 'LAC',
+  'LOS ANGELES LAKERS': 'LAL', 'LA LAKERS': 'LAL', LAKERS: 'LAL',
+  'MEMPHIS GRIZZLIES': 'MEM', GRIZZLIES: 'MEM', GRIZZ: 'MEM',
+  'MINNESOTA TIMBERWOLVES': 'MIN', TIMBERWOLVES: 'MIN', WOLVES: 'MIN',
+  'NEW ORLEANS PELICANS': 'NOP', PELICANS: 'NOP', PELS: 'NOP',
+  'OKLAHOMA CITY THUNDER': 'OKC', THUNDER: 'OKC',
+  'PHOENIX SUNS': 'PHX', SUNS: 'PHX',
+  'PORTLAND TRAIL BLAZERS': 'POR', 'TRAIL BLAZERS': 'POR', BLAZERS: 'POR',
+  'SACRAMENTO KINGS': 'SAC', KINGS: 'SAC',
+  'SAN ANTONIO SPURS': 'SAS', SPURS: 'SAS',
+  'UTAH JAZZ': 'UTA', JAZZ: 'UTA',
 }
 
-type Rankings = {
-  [metric: string]: { team_abbr: string; team_name: string; value: number }[]
+/** Normalize a team string for name lookup */
+function normName(s: string) {
+  return s.replace(/[^A-Za-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim().toUpperCase()
 }
 
-/* ===================== Component ===================== */
+/** Resolve any input (tricode/full name/nickname) to a canonical tricode (uppercase) */
+function resolveToTricode(input: string | undefined | null, fallback?: string): string | null {
+  if (!input && !fallback) return null
+  const raw = (input ?? fallback ?? '').trim()
+  if (!raw) return null
+
+  // If already looks like a tricode (3 letters), trust it
+  const maybeTri = raw.toUpperCase()
+  if (/^[A-Z]{3}$/.test(maybeTri)) return maybeTri
+
+  // Try direct name/nickname map
+  const key = normName(raw)
+  if (NAME_TO_TRICODE[key]) return NAME_TO_TRICODE[key]
+
+  // Sometimes feeds provide just the city ("BOSTON" → BOS, "WASHINGTON" → WAS)
+  // Quick city-only guesses for common ambiguous cases
+  const CITY_TO_TRI: Record<string, string> = {
+    ATLANTA: 'ATL', BOSTON: 'BOS', BROOKLYN: 'BKN', CHARLOTTE: 'CHA',
+    CHICAGO: 'CHI', CLEVELAND: 'CLE', DETROIT: 'DET', INDIANA: 'IND',
+    MIAMI: 'MIA', MILWAUKEE: 'MIL', 'NEW YORK': 'NYK', ORLANDO: 'ORL',
+    PHILADELPHIA: 'PHI', TORONTO: 'TOR', WASHINGTON: 'WAS',
+    DALLAS: 'DAL', DENVER: 'DEN', HOUSTON: 'HOU', MEMPHIS: 'MEM',
+    MINNESOTA: 'MIN', PHOENIX: 'PHX', PORTLAND: 'POR', SACRAMENTO: 'SAC',
+    'SAN ANTONIO': 'SAS', UTAH: 'UTA', OKLAHOMA: 'OKC', 'OKLAHOMA CITY': 'OKC',
+    'GOLDEN STATE': 'GSW', 'LOS ANGELES': 'LAL', 'LA': 'LAL',
+  }
+  if (CITY_TO_TRI[key]) return CITY_TO_TRI[key]
+
+  return null
+}
+
+/** Given any codeOrName, return a list of tricode candidates (incl. aliases) */
+function tricodeCandidates(codeOrName: string): string[] {
+  const tri = resolveToTricode(codeOrName)
+  if (!tri) return []
+  const alts = ALT_ABBREV[tri] ?? []
+  const cands = [tri, ...alts]
+  return [...new Set(cands.map(c => c.toUpperCase()))]
+}
+
+/** Logo component: always tries /images/nba_logos/TRI.png (with alias fallbacks) */
+function TeamLogo({
+  codeOrName,
+  size = 20,
+  className,
+  altText,
+}: {
+  codeOrName: string
+  size?: number
+  className?: string
+  altText?: string
+}) {
+  const cands = tricodeCandidates(codeOrName)
+  const [idx, setIdx] = useState(0)
+
+  const src =
+    idx < cands.length
+      ? `/images/nba_logos/${cands[idx]}.png`
+      : '/images/nba_logos/NBA.png'
+
+  return (
+    <Image
+      src={src}
+      alt={altText ?? `${codeOrName} logo`}
+      width={size}
+      height={size}
+      className={className}
+      onError={() => setIdx(i => (i + 1 <= cands.length ? i + 1 : i))}
+    />
+  )
+}
+
+/* ===================== Page ===================== */
 
 export default function SportsPage() {
   const svgRef = useRef<SVGSVGElement>(null)
@@ -110,30 +201,29 @@ export default function SportsPage() {
   const [allShots, setAllShots] = useState<ShotData[]>([])
   const [statsMap, setStatsMap] = useState<Record<string, PlayerStats>>({})
   const [upcomingGames, setUpcomingGames] = useState<Game[]>([])
-  const [standings, setStandings] = useState<StandingsByConf | null>(null)
+  const [standings, setStandings] = useState<StandingsPayload | null>(null)
+
+  // Team metrics
+  const [teamStats, setTeamStats] = useState<AnyRow[]>([])
+
+  // UI state
+  const [player, setPlayer] = useState('')
   const [confTab, setConfTab] = useState<'east' | 'west'>('east')
 
-  // NEW: team stats + rankings
-  const [teamStats, setTeamStats] = useState<TeamStat[]>([])
-  const [rankings, setRankings] = useState<Rankings>({})
-  const [gridMetric, setGridMetric] = useState<'PTS' | 'OFF_RATING' | 'DEF_RATING' | 'NET_RATING' | 'EFG_PCT' | 'TS_PCT'>('PTS')
-  const [rankingMetric, setRankingMetric] = useState<string>('OFF_RATING')
+  // Sorting state for metrics
+  const [sortKey, setSortKey] = useState<string | null>(null)
+  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
 
-  const [player, setPlayer] = useState('')
-
-  /* ----------------- Data loads ----------------- */
+  /* -------- Load data files -------- */
   useEffect(() => {
     fetch('/data/all_shot_data.json').then(r => r.json()).then(setAllShots).catch(console.error)
     fetch('/data/player_stats.json').then(r => r.json()).then(setStatsMap).catch(console.error)
     fetch('/data/upcoming_games.json').then(r => r.json()).then(setUpcomingGames).catch(console.error)
     fetch('/data/standings_by_conf.json').then(r => r.json()).then(setStandings).catch(console.error)
-
-    // NEW fetches
     fetch('/data/team_stats.json').then(r => r.json()).then(setTeamStats).catch(console.error)
-    fetch('/data/league_rankings.json').then(r => r.json()).then(setRankings).catch(console.error)
   }, [])
 
-  /* ----------------- Players list ----------------- */
+  /* -------- Players dropdown -------- */
   const players = useMemo(() => {
     const shotNames = new Set(allShots.map(s => s.player_name))
     return Object.keys(statsMap).filter(name => shotNames.has(name)).sort()
@@ -143,10 +233,11 @@ export default function SportsPage() {
     if (players.length) setPlayer(players.includes('Stephen Curry') ? 'Stephen Curry' : players[0])
   }, [players])
 
-  /* ----------------- Upcoming games (>= today) ----------------- */
+  /* -------- Upcoming (today or later) -------- */
   const visibleGames = useMemo(() => {
     if (!upcomingGames?.length) return []
-    const today = new Date(); today.setHours(0, 0, 0, 0)
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
     return upcomingGames
       .filter(g => {
         const d = new Date(g.date)
@@ -156,37 +247,52 @@ export default function SportsPage() {
       .sort((a, b) => +new Date(a.date) - +new Date(b.date))
   }, [upcomingGames])
 
-  /* ----------------- Shot chart render ----------------- */
+  /* -------- Draw hexbin shot chart -------- */
   useEffect(() => {
     if (!player) return
     const data = allShots.filter(s => s.player_name === player)
-    const totalW = 600, totalH = 560
+    const totalW = 720, totalH = 600
     const margin = { top: 20, right: 20, bottom: 20, left: 20 }
     const w = totalW - margin.left - margin.right
     const h = totalH - margin.top - margin.bottom
+
     const svgEl = d3.select(svgRef.current)
     svgEl.selectAll('*').remove()
-    const svg = svgEl.attr('viewBox', `0 0 ${totalW} ${totalH}`)
-      .append('g').attr('transform', `translate(${margin.left},${margin.top})`)
 
-    // Court
+    const svg = svgEl
+      .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left},${margin.top})`)
+
+    // Half-court sketch
     svg.append('rect')
       .attr('x', w/2 - 80).attr('y', h - 190)
       .attr('width', 160).attr('height', 190)
       .attr('fill','none').attr('stroke','#555').attr('stroke-width',1.5)
+
     svg.append('line')
       .attr('x1',0).attr('y1',h).attr('x2',w).attr('y2',h)
       .attr('stroke','#555').attr('stroke-width',1.5)
 
-    // Hexbin
-    const hb = makeHexbin<ShotData>().radius(20).x(d => w/2 + d.x).y(d => h - d.y)
+    const hb = makeHexbin<ShotData>()
+      .radius(20)
+      .x(d => w/2 + d.x)
+      .y(d => h - d.y)
+
     const bins = hb(data)
-    const maxCount = d3.max(bins, b => b.length) || 1
-    const radiusScale = d3.scaleSqrt().domain([0, maxCount]).range([5, hb.radius()])
-    const colorScale = d3.scaleSequential().domain([0,1])
+    const maxCount = d3.max(bins, b => b.length) ?? 1
+
+    const radiusScale = d3.scaleSqrt()
+      .domain([0, maxCount]).range([5, hb.radius()])
+
+    const colorScale = d3.scaleSequential()
+      .domain([0,1])
       .interpolator(t => d3.interpolateRgb('#add8e6','#ff0000')(t))
 
-    svg.append('g').selectAll('path').data(bins).enter()
+    svg.append('g')
+      .selectAll('path')
+      .data(bins)
+      .enter()
       .append('path')
       .attr('d', d => hb.hexagon(radiusScale(d.length)))
       .attr('transform', d => `translate(${d.x},${d.y})`)
@@ -196,9 +302,9 @@ export default function SportsPage() {
         return colorScale(att ? made/att : 0)
       })
       .attr('stroke','#333').attr('stroke-width',0.2)
-      .on('mouseover',(ev,d) => {
-        const att = d.reduce((s,p) => s + p.shot_attempted, 0)
-        const made = d.reduce((s,p) => s + p.shot_made, 0)
+      .on('mouseover',(ev, d: any) => {
+        const att = d.reduce((s: number,p: ShotData) => s + p.shot_attempted, 0)
+        const made = d.reduce((s: number,p: ShotData) => s + p.shot_made, 0)
         const pct = att ? Math.round((made/att)*100) : 0
         const rect = containerRef.current!.getBoundingClientRect()
         d3.select('#tooltip')
@@ -212,33 +318,71 @@ export default function SportsPage() {
 
   const stats = statsMap[player]
 
-  /* ----------------- Helpers ----------------- */
-  const teamLogoSrc = (abbr: string) => `/images/nba_logos/${abbr}.png`
-
-  const confRows = useMemo(() => {
-    if (!standings) return []
-    return (confTab === 'east' ? standings.east : standings.west) ?? []
-  }, [standings, confTab])
-
-  // Team Stats grid data
-  const gridData = useMemo(() => {
+  /* -------- Team Metrics columns (robust to missing keys) -------- */
+  const statColumns = useMemo(() => {
     if (!teamStats?.length) return []
-    const metric = gridMetric
-    const rows = teamStats
-      .filter(t => t[metric as keyof TeamStat] !== null && t.TEAM_ABBREVIATION)
-      .map(t => ({
-        abbr: t.TEAM_ABBREVIATION,
-        name: t.TEAM_NAME,
-        val: (t[metric as keyof TeamStat] as number) ?? 0
-      }))
-    const max = Math.max(...rows.map(r => Number(r.val || 0)), 1)
-    return rows
-      .sort((a, b) => Number(b.val) - Number(a.val))
-      .map((r, i) => ({ ...r, rank: i + 1, pct: (Number(r.val) / max) * 100 }))
-  }, [teamStats, gridMetric])
+    const preferred = [
+      'TEAM_NAME','GP','W','L','W_PCT',
+      'PTS','REB','AST','TOV','STL','BLK',
+      'FG_PCT','FG3_PCT','FT_PCT',
+      'OFF_RATING','DEF_RATING','NET_RATING','PACE',
+      'EFG_PCT','TS_PCT','PIE'
+    ]
+    const keys = new Set<string>()
+    teamStats.forEach(r => Object.keys(r).forEach(k => keys.add(k)))
+    const ordered = preferred.filter(k => keys.has(k))
+    const leftovers = [...keys].filter(k => !ordered.includes(k) && k !== 'TEAM_ID')
+    return [...ordered, ...leftovers]
+  }, [teamStats])
 
-  const rankingOptions = useMemo(() => Object.keys(rankings || {}), [rankings])
-  const rankingList = useMemo(() => (rankings?.[rankingMetric] || []).slice(0, 10), [rankings, rankingMetric])
+  /* -------- Inline bar min/max for a few key cols -------- */
+  const barCols = new Set(['PTS','REB','AST','OFF_RATING','DEF_RATING','NET_RATING'])
+  const statMinMax = useMemo(() => {
+    const mm: Record<string, {min:number, max:number}> = {}
+    statColumns.forEach(col => {
+      if (!barCols.has(col)) return
+      let min = Number.POSITIVE_INFINITY
+      let max = Number.NEGATIVE_INFINITY
+      teamStats.forEach(r => {
+        const v = r[col]
+        if (typeof v === 'number' && !isNaN(v)) {
+          if (v < min) min = v
+          if (v > max) max = v
+        }
+      })
+      if (min !== Number.POSITIVE_INFINITY && max !== Number.NEGATIVE_INFINITY) {
+        mm[col] = {min, max}
+      }
+    })
+    return mm
+  }, [teamStats, statColumns])
+
+  /* -------- Sorting helpers -------- */
+  function isNumberLike(v: any): boolean {
+    return typeof v === 'number' || (typeof v === 'string' && v.trim() !== '' && !isNaN(Number(v)))
+  }
+  function compare(a: any, b: any, dir: 'asc'|'desc') {
+    const av = a ?? ''
+    const bv = b ?? ''
+    const na = isNumberLike(av) ? Number(av) : null
+    const nb = isNumberLike(bv) ? Number(bv) : null
+    let res = 0
+    if (na !== null && nb !== null) res = na - nb
+    else res = String(av).localeCompare(String(bv))
+    return dir === 'asc' ? res : -res
+  }
+  function handleSort(col: string) {
+    if (sortKey === col) setSortDir(prev => (prev === 'asc' ? 'desc' : 'asc'))
+    else { setSortKey(col); setSortDir('asc') }
+  }
+
+  const sortedStats = useMemo(() => {
+    if (!teamStats?.length) return []
+    if (!sortKey) return teamStats
+    const copy = [...teamStats]
+    copy.sort((r1, r2) => compare(r1[sortKey], r2[sortKey], sortDir))
+    return copy
+  }, [teamStats, sortKey, sortDir])
 
   /* ===================== Render ===================== */
 
@@ -259,17 +403,31 @@ export default function SportsPage() {
                   })}{' '}
                   <span className="game-time">{g.time}</span>
                 </time>
+
                 <div className="game-teams">
                   <div className="team visitor">
-                    <Image src={teamLogoSrc(g.visitor_team)} alt={`${g.visitor_team} logo`} width={24} height={24} className="team-logo" />
+                    <TeamLogo
+                      codeOrName={g.visitor_team}
+                      size={24}
+                      className="team-logo"
+                      altText={`${g.visitor_team} logo`}
+                    />
                     <span>{g.visitor_team}</span>
                   </div>
+
                   <span className="vs">vs</span>
+
                   <div className="team home">
-                    <Image src={teamLogoSrc(g.home_team)} alt={`${g.home_team} logo`} width={24} height={24} className="team-logo" />
+                    <TeamLogo
+                      codeOrName={g.home_team}
+                      size={24}
+                      className="team-logo"
+                      altText={`${g.home_team} logo`}
+                    />
                     <span>{g.home_team}</span>
                   </div>
                 </div>
+
                 <div className="game-records">
                   <small>{g.arena}</small>
                 </div>
@@ -279,167 +437,198 @@ export default function SportsPage() {
         </div>
       </section>
 
-      {/* ---------- Main: Player Sidebar + Shot Chart + Standings ---------- */}
-      <div className="content-wrapper">
-        <div className="main-content">
-          {/* Sidebar */}
-          <aside className="player-sidebar">
-            {stats ? (
-              <>
-                <h2>{stats.DISPLAY_FIRST_LAST}</h2>
-                <dl className="stats-list">
-                  <dt>Team:</dt><dd>{stats.TEAM_ABBREVIATION}</dd>
-                  <dt>Pos:</dt><dd>{stats.POSITION}</dd>
-                  <dt>Height:</dt><dd>{stats.HEIGHT}</dd>
-                  <dt>Weight:</dt><dd>{stats.WEIGHT}</dd>
-                  <dt>Season:</dt><dd>{stats.SEASON}</dd>
-                  <dt>GP:</dt><dd>{stats.GP}</dd>
-                  <dt>PTS:</dt><dd>{stats.PTS}</dd>
-                  <dt>REB:</dt><dd>{stats.REB}</dd>
-                  <dt>AST:</dt><dd>{stats.AST}</dd>
-                  <dt>FG%:</dt><dd>{stats.FG_PCT.toFixed(1)}%</dd>
-                  <dt>3P%:</dt><dd>{stats.FG3_PCT.toFixed(1)}%</dd>
-                  <dt>FT%:</dt><dd>{stats.FT_PCT.toFixed(1)}%</dd>
-                </dl>
-              </>
-            ) : (
-              <p>No stats available.</p>
-            )}
-          </aside>
+      {/* ---------- Main 3-column content (sidebar | chart | standings) ---------- */}
+      <div className="content-wrapper three-col wide-standings">
+        {/* Sidebar: Player quick stats */}
+        <aside className="player-sidebar">
+          {stats ? (
+            <>
+              <h2>{stats.DISPLAY_FIRST_LAST}</h2>
+              <dl className="stats-list">
+                <dt>Team:</dt><dd>{stats.TEAM_ABBREVIATION}</dd>
+                <dt>Pos:</dt><dd>{stats.POSITION}</dd>
+                <dt>Height:</dt><dd>{stats.HEIGHT}</dd>
+                <dt>Weight:</dt><dd>{stats.WEIGHT}</dd>
+                <dt>Season:</dt><dd>{stats.SEASON}</dd>
+                <dt>GP:</dt><dd>{stats.GP}</dd>
+                <dt>PTS:</dt><dd>{stats.PTS}</dd>
+                <dt>REB:</dt><dd>{stats.REB}</dd>
+                <dt>AST:</dt><dd>{stats.AST}</dd>
+                <dt>FG%:</dt><dd>{stats.FG_PCT.toFixed(1)}%</dd>
+                <dt>3P%:</dt><dd>{stats.FG3_PCT.toFixed(1)}%</dd>
+                <dt>FT%:</dt><dd>{stats.FT_PCT.toFixed(1)}%</dd>
+              </dl>
+            </>
+          ) : (
+            <p>No stats available.</p>
+          )}
+        </aside>
 
-          {/* Shot chart */}
-          <div className="chart-column chart-column--large">
-            <div className="sports-selector">
-              <label htmlFor="player-select">Player:</label>
-              <select id="player-select" value={player} onChange={e => setPlayer(e.target.value)}>
-                {players.map(pn => (<option key={pn} value={pn}>{pn}</option>))}
-              </select>
-            </div>
-            <div ref={containerRef} className="chart-container">
-              <svg ref={svgRef} className="shot-chart" />
-              <div id="tooltip" className="tooltip"></div>
+        {/* Shot chart */}
+        <div className="chart-column">
+          <div className="sports-selector">
+            <label htmlFor="player-select">Player:</label>
+            <select
+              id="player-select"
+              value={player}
+              onChange={e => setPlayer(e.target.value)}
+            >
+              {players.map(pn => (
+                <option key={pn} value={pn}>{pn}</option>
+              ))}
+            </select>
+          </div>
+
+          <div ref={containerRef} className="chart-container">
+            <svg ref={svgRef} className="shot-chart" />
+            <div id="tooltip" className="tooltip"></div>
+          </div>
+        </div>
+
+        {/* Standings on the right */}
+        <aside className="standings-panel">
+          <div className="standings-header">
+            <h3>Standings</h3>
+            <div className="standings-tabs">
+              <button
+                type="button"
+                className={confTab === 'east' ? 'active' : ''}
+                aria-pressed={confTab === 'east'}
+                onClick={() => setConfTab('east')}
+              >
+                Eastern
+              </button>
+              <button
+                type="button"
+                className={confTab === 'west' ? 'active' : ''}
+                aria-pressed={confTab === 'west'}
+                onClick={() => setConfTab('west')}
+              >
+                Western
+              </button>
             </div>
           </div>
 
-          {/* Standings */}
-          <aside className="standings-panel">
-            <div className="standings-header">
-              <h3>Standings</h3>
-              <div className="conf-tabs">
-                <button className={confTab === 'east' ? 'active' : ''} onClick={() => setConfTab('east')}>East</button>
-                <button className={confTab === 'west' ? 'active' : ''} onClick={() => setConfTab('west')}>West</button>
+          {!standings ? (
+            <div className="standings-loading">Loading…</div>
+          ) : (
+            <>
+              <div className="standings-meta">
+                <small>Season: {standings.season}</small>
               </div>
-            </div>
-            <div className="standings-table-wrapper">
-              <table className="standings-table">
+
+              <div className="standings-table-wrap">
+                <table className="standings-table">
+                  <thead>
+                    <tr>
+                      <th>Team</th>
+                      <th>W</th>
+                      <th>L</th>
+                      <th>Pct</th>
+                      <th>GB</th>
+                      <th>Conf</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(confTab === 'east' ? standings.east : standings.west).map(row => (
+                      <tr key={`${row.rank}-${row.tricode}`}>
+                        <td className="standings-teamcell">
+                          <TeamLogo
+                            codeOrName={row.tricode || row.team}
+                            size={20}
+                            className="team-logo sm"
+                            altText={`${row.team} logo`}
+                          />
+                          <span className="team-name">{row.team}</span>
+                          <span className="team-tri">({row.tricode})</span>
+                        </td>
+                        <td className="num">{row.wins}</td>
+                        <td className="num">{row.losses}</td>
+                        <td className="num">{row.pct.toFixed(3)}</td>
+                        <td className="num">{row.gb}</td>
+                        <td>{row.conf_record ?? '-'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </aside>
+      </div>
+
+      {/* ---------- Team Metrics (beneath main grid; width matches shot chart) ---------- */}
+      <section className="metrics-panel">
+        <div className="standings-header">
+          <h3>Team Metrics</h3>
+        </div>
+
+        <div className="metrics-width-proxy">
+          {!teamStats?.length ? (
+            <div className="standings-loading">Loading…</div>
+          ) : (
+            <div className="standings-table-wrap pretty-table">
+              <table className="standings-table metrics-table">
                 <thead>
                   <tr>
-                    <th>#</th>
-                    <th>Team</th>
-                    <th>W</th>
-                    <th>L</th>
-                    <th>Win%</th>
-                    <th>GB</th>
+                    {statColumns.map(col => {
+                      const active = sortKey === col
+                      const arrow = active ? (sortDir === 'asc' ? ' ▲' : ' ▼') : ''
+                      return (
+                        <th
+                          key={col}
+                          role="button"
+                          tabIndex={0}
+                          aria-sort={active ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}
+                          onClick={() => handleSort(col)}
+                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleSort(col) }}
+                          title="Click to sort"
+                          className={/^(W_PCT|FG_PCT|FG3_PCT|FT_PCT|EFG_PCT|TS_PCT)$/.test(col) ? 'num' : undefined}
+                        >
+                          {col.replace(/_/g, ' ')}{arrow}
+                        </th>
+                      )
+                    })}
                   </tr>
                 </thead>
                 <tbody>
-                  {(confRows || []).map(row => (
-                    <tr key={row.teamId}>
-                      <td>{row.confRank}</td>
-                      <td className="team-cell">
-                        <Image
-                          src={teamLogoSrc(row.teamTricode)}
-                          alt={`${row.teamTricode} logo`}
-                          width={20} height={20}
-                          className="team-logo"
-                        />
-                        <span>{row.teamName}</span>
-                      </td>
-                      <td>{row.win}</td>
-                      <td>{row.loss}</td>
-                      <td>{(row.winPct * 100).toFixed(1)}%</td>
-                      <td>{row.gb}</td>
+                  {sortedStats.map((row, i) => (
+                    <tr key={`${row.TEAM_ID ?? row.TEAM_NAME}-${i}`}>
+                      {statColumns.map(col => {
+                        const v = row[col]
+                        const isNum = typeof v === 'number' && !isNaN(v)
+
+                        // number formatting
+                        let disp: string | number = v ?? ''
+                        if (isNum) {
+                          if (/PCT$/.test(col)) disp = (v * 100).toFixed(1) + '%'
+                          else if (/_RATING$/.test(col)) disp = v.toFixed(1)
+                          else disp = Number(v.toFixed(1))
+                        }
+
+                        // inline bar on selected numeric cols
+                        const showBar = isNum && (['PTS','REB','AST','OFF_RATING','DEF_RATING','NET_RATING'] as const).includes(col as any)
+                        if (showBar) {
+                          const mm = statMinMax[col]!
+                          const pct = mm && mm.max > mm.min ? ((v - mm.min) / (mm.max - mm.min)) * 100 : 0
+                          return (
+                            <td key={col} className="num barcell">
+                              <div className="barwrap" title={`${col.replace(/_/g,' ')}: ${disp}`}>
+                                <span className="bar" style={{ width: `${pct}%` }} />
+                                <span className="val">{disp}</span>
+                              </div>
+                            </td>
+                          )
+                        }
+
+                        return <td key={col} className={isNum ? 'num' : undefined}>{disp}</td>
+                      })}
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </aside>
-        </div>
-      </div>
-
-      {/* ---------- NEW: Team Stats + League Rankings (beneath main) ---------- */}
-      <section className="lower-panels">
-        {/* Team Stats Grid */}
-        <div className="team-stats-card">
-          <div className="card-header">
-            <h3>Team Stats</h3>
-            <div className="metric-select">
-              <label>Metric:</label>
-              <select value={gridMetric} onChange={e => setGridMetric(e.target.value as any)}>
-                <option value="PTS">PTS (per game)</option>
-                <option value="OFF_RATING">OffRtg</option>
-                <option value="DEF_RATING">DefRtg (lower better)</option>
-                <option value="NET_RATING">NetRtg</option>
-                <option value="EFG_PCT">eFG%</option>
-                <option value="TS_PCT">TS%</option>
-              </select>
-            </div>
-          </div>
-          <div className="team-stats-grid">
-            {gridData.slice(0, 24).map(row => (
-              <div className="team-stat-row" key={row.abbr}>
-                <div className="team-id">
-                  <span className="rank-badge">{row.rank}</span>
-                  <Image
-                    src={teamLogoSrc(row.abbr)}
-                    alt={`${row.abbr} logo`}
-                    width={24}
-                    height={24}
-                    className="team-logo"
-                  />
-                  <span className="team-name">{row.abbr}</span>
-                </div>
-                <div className="bar">
-                  <div className="bar-fill" style={{ width: `${row.pct}%` }} />
-                </div>
-                <div className="value">
-                  {typeof row.val === 'number' ? row.val.toFixed(gridMetric.endsWith('_PCT') ? 3 : 1) : row.val}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* League Rankings */}
-        <div className="league-rankings-card">
-          <div className="card-header">
-            <h3>League Rankings</h3>
-            <div className="metric-select">
-              <label>Metric:</label>
-              <select value={rankingMetric} onChange={e => setRankingMetric(e.target.value)}>
-                {rankingOptions.map(m => (
-                  <option key={m} value={m}>{m}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <ol className="rankings-list">
-            {rankingList.map((r, idx) => (
-              <li key={r.team_abbr + idx} className="ranking-item">
-                <span className="rank-index">{idx + 1}</span>
-                <Image
-                  src={teamLogoSrc(r.team_abbr)}
-                  alt={`${r.team_abbr} logo`}
-                  width={20}
-                  height={20}
-                  className="team-logo"
-                />
-                <span className="rank-team">{r.team_abbr}</span>
-                <span className="rank-value">{typeof r.value === 'number' ? r.value : String(r.value)}</span>
-              </li>
-            ))}
-          </ol>
+          )}
         </div>
       </section>
     </div>
