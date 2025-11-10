@@ -1130,7 +1130,6 @@ body {
   padding: 6px 8px;
 }
 
-/* Team stats grid */
 .team-stats-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1316,3 +1315,18 @@ body {
   overflow-x: auto;
 }
 
+:root {
+  --standings-max-h: 380px; /* e.g., 360px, 480px, 60vh, etc. */
+}
+.standings-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;           /* <- Important when inside a flex/grid parent */
+}
+
+.standings-panel .standings-table-wrap {
+  max-height: var(--standings-max-h);
+  overflow: auto;
+  /* helps sticky <th> work inside the scroll container */
+  position: relative;
+}
