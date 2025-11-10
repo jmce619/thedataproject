@@ -1,11 +1,11 @@
-# 📘 The Data Project
+# What is The Data Project
 
-The data project is web app that contains data analytics and semantic search systems covering multiple domains:
+The Data Project is an open-source, data-driven platform that brings together interactive dashboards and visualizations across a wide range of topics—from finance and markets to sports, politics, and more. Each page is designed to make complex information engaging and intuitive, letting users explore patterns, compare metrics, and discover insights in real time.
 
-- **📈 Stock Analytics and Similarity Search**
-- **🏀 Sports Data Insights**
-- **🌍 Geographic Data and Visualizations**
-- **🏥 Healthcare Insurance Data Processing**
+- ** Stock Analytics and Similarity Search**
+- ** Sports Data Insights**
+- ** Geographic Data and Visualizations**
+- ** Healthcare Insurance Data Processing**
 
 Each domain is individually documented below.
 
@@ -13,17 +13,17 @@ Each domain is individually documented below.
 
 ## 📖 Table of Contents
 
-- [📈 Stock Analytics and Similarity Search](#-stock-analytics-and-similarity-search)
+- [ Stock Analytics and Similarity Search](#-stock-analytics-and-similarity-search)
 
-- [🏀 Sports Data Insights](#-sports-data-insights)
+- [ Sports Data Insights](#-sports-data-insights)
 
-- [🌍 Geographic Data and Visualizations](#-geographic-data-and-visualizations)
+- [ Demographic Data and Visualizations](#-geographic-data-and-visualizations)
 
-- [🏥 Healthcare Insurance Data Processing](#-healthcare-insurance-data-processing)
+- [ Healthcare Insurance Data Processing](#-healthcare-insurance-data-processing)
 
 ---
 
-## 📈 Stock Analytics and Similarity Search
+##  Stock Analytics and Similarity Search
 
 ### Data Sources
 - **Alpha Vantage API**: Company descriptions, financial metrics, and historical stock prices.
@@ -35,7 +35,7 @@ Stock prices, quarterly financials, and company descriptions are ingested from A
 
 
 
-## 🏀 Sports Data Insights
+##  Sports Data Insights
 
 ### Data Sources
 - **NBA API**: Player stats, game stats, team stats, and schedules.
@@ -44,7 +44,7 @@ Stock prices, quarterly financials, and company descriptions are ingested from A
 Individual player statistics, Game score/schedule, and team statistics are ingested using NBA API in a managed Airflow insantance (MWAA) and stored in Amazon Redshift. The data is aggregated and expanded on in DBT, sent to the front end for consumption.
 ![Alt text](/NBA_flowchart.png "Title")
 
-## 🌎 Demographic Data
+##  Demographic Data
 
 ### Data Sources
 - **Census.gov**: Regional shapefiles and demographic data.

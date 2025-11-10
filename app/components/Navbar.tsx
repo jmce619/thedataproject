@@ -42,9 +42,10 @@ export default function Navbar() {
       {open && (
         <div className="dropdown">
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link href="/stock" onClick={() => setOpen(false)}>Stock Searcher</Link>
+          <Link href="/stock" onClick={() => setOpen(false)}>Finance</Link>
           <Link href="/page2" onClick={() => setOpen(false)}>Sports</Link>
-          <Link href="/page3" onClick={() => setOpen(false)}>Politics</Link>
+          <Link href="/page3" onClick={() => setOpen(false)}>Demographic</Link>
+          <Link href="/page4" onClick={() => setOpen(false)}>HealthCare</Link>
         </div>
       )}
 
