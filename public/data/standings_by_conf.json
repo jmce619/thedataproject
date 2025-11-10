@@ -1,0 +1,338 @@
+{
+  "east": [
+    {
+      "rank": 999,
+      "team": "Pistons",
+      "city": "Detroit",
+      "tricode": "",
+      "wins": 8,
+      "losses": 2,
+      "pct": 0.8,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Cavaliers",
+      "city": "Cleveland",
+      "tricode": "",
+      "wins": 7,
+      "losses": 3,
+      "pct": 0.7,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Knicks",
+      "city": "New York",
+      "tricode": "",
+      "wins": 6,
+      "losses": 3,
+      "pct": 0.667,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Bulls",
+      "city": "Chicago",
+      "tricode": "",
+      "wins": 6,
+      "losses": 3,
+      "pct": 0.667,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Heat",
+      "city": "Miami",
+      "tricode": "",
+      "wins": 6,
+      "losses": 4,
+      "pct": 0.6,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Bucks",
+      "city": "Milwaukee",
+      "tricode": "",
+      "wins": 6,
+      "losses": 4,
+      "pct": 0.6,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "76ers",
+      "city": "Philadelphia",
+      "tricode": "",
+      "wins": 6,
+      "losses": 4,
+      "pct": 0.6,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Raptors",
+      "city": "Toronto",
+      "tricode": "",
+      "wins": 5,
+      "losses": 5,
+      "pct": 0.5,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Hawks",
+      "city": "Atlanta",
+      "tricode": "",
+      "wins": 5,
+      "losses": 5,
+      "pct": 0.5,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Celtics",
+      "city": "Boston",
+      "tricode": "",
+      "wins": 5,
+      "losses": 6,
+      "pct": 0.455,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Magic",
+      "city": "Orlando",
+      "tricode": "",
+      "wins": 4,
+      "losses": 6,
+      "pct": 0.4,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Hornets",
+      "city": "Charlotte",
+      "tricode": "",
+      "wins": 3,
+      "losses": 6,
+      "pct": 0.333,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Nets",
+      "city": "Brooklyn",
+      "tricode": "",
+      "wins": 1,
+      "losses": 9,
+      "pct": 0.1,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Pacers",
+      "city": "Indiana",
+      "tricode": "",
+      "wins": 1,
+      "losses": 9,
+      "pct": 0.1,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Wizards",
+      "city": "Washington",
+      "tricode": "",
+      "wins": 1,
+      "losses": 9,
+      "pct": 0.1,
+      "gb": "-",
+      "conf_record": null
+    }
+  ],
+  "west": [
+    {
+      "rank": 999,
+      "team": "Thunder",
+      "city": "Oklahoma City",
+      "tricode": "",
+      "wins": 10,
+      "losses": 1,
+      "pct": 0.909,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Spurs",
+      "city": "San Antonio",
+      "tricode": "",
+      "wins": 7,
+      "losses": 2,
+      "pct": 0.778,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Nuggets",
+      "city": "Denver",
+      "tricode": "",
+      "wins": 7,
+      "losses": 2,
+      "pct": 0.778,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Lakers",
+      "city": "Los Angeles",
+      "tricode": "",
+      "wins": 7,
+      "losses": 3,
+      "pct": 0.7,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Rockets",
+      "city": "Houston",
+      "tricode": "",
+      "wins": 6,
+      "losses": 3,
+      "pct": 0.667,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Timberwolves",
+      "city": "Minnesota",
+      "tricode": "",
+      "wins": 6,
+      "losses": 4,
+      "pct": 0.6,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Trail Blazers",
+      "city": "Portland",
+      "tricode": "",
+      "wins": 5,
+      "losses": 4,
+      "pct": 0.556,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Warriors",
+      "city": "Golden State",
+      "tricode": "",
+      "wins": 6,
+      "losses": 5,
+      "pct": 0.545,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Suns",
+      "city": "Phoenix",
+      "tricode": "",
+      "wins": 5,
+      "losses": 5,
+      "pct": 0.5,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Grizzlies",
+      "city": "Memphis",
+      "tricode": "",
+      "wins": 4,
+      "losses": 7,
+      "pct": 0.364,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Jazz",
+      "city": "Utah",
+      "tricode": "",
+      "wins": 3,
+      "losses": 6,
+      "pct": 0.333,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Clippers",
+      "city": "LA",
+      "tricode": "",
+      "wins": 3,
+      "losses": 6,
+      "pct": 0.333,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Kings",
+      "city": "Sacramento",
+      "tricode": "",
+      "wins": 3,
+      "losses": 7,
+      "pct": 0.3,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Mavericks",
+      "city": "Dallas",
+      "tricode": "",
+      "wins": 3,
+      "losses": 7,
+      "pct": 0.3,
+      "gb": "-",
+      "conf_record": null
+    },
+    {
+      "rank": 999,
+      "team": "Pelicans",
+      "city": "New Orleans",
+      "tricode": "",
+      "wins": 2,
+      "losses": 7,
+      "pct": 0.222,
+      "gb": "-",
+      "conf_record": null
+    }
+  ],
+  "season": "2025-26",
+  "last_updated_utc": "2025-11-10T07:10:39Z"
+}

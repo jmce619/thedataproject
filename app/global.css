@@ -745,3 +745,467 @@ body {
   color: #1f2937;
   text-decoration: underline;
 }
+/* Keep the bar at the top and scrollable horizontally */
+.upcoming-games-bar {
+  position: sticky;         /* or fixed if you want it always visible */
+  top: 0;
+  z-index: 10;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  overflow: hidden;
+  width: 100%;
+}
+
+.upcoming-games-bar h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.games-scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  padding-bottom: 8px;
+}
+
+.games-scroller::-webkit-scrollbar {
+  height: 6px;
+}
+.games-scroller::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.games-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.game-card {
+  flex: 0 0 auto;
+  width: 220px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+.game-date {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.game-time { font-weight: 500; opacity: 0.8; }
+.game-teams { display: flex; align-items: center; gap: 8px; }
+.team { display: flex; align-items: center; gap: 6px; }
+.team-logo { border-radius: 4px; }
+.vs { font-weight: 700; opacity: 0.7; }
+.game-records small { color: #555; }
+.no-games { color: #666; font-size: 0.95rem; padding: 8px 0; }
+
+/* Layout for rest of page */
+.content-wrapper {
+  padding-top: 8px;
+}
+.sports-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+.player-sidebar,
+.chart-column {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  padding: 12px;
+}
+.player-sidebar h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+.stats-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 12px;
+  margin: 0;
+}
+.stats-list dt { color: #555; }
+.sports-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.chart-container { position: relative; width: 100%; height: auto; }
+.shot-chart { width: 100%; height: auto; }
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+@media (max-width: 900px) {
+  .main-content { grid-template-columns: 1fr; }
+}
+/* Three-column main layout */
+.content-wrapper.three-col {
+  display: grid;
+  grid-template-columns: 260px 1fr 360px; /* sidebar | chart | standings */
+  gap: 16px;
+  align-items: start;
+  margin-top: 12px; /* space below the top games bar */
+}
+
+/* Keep sections from stretching page width */
+.player-sidebar,
+.chart-column,
+.standings-panel {
+  min-width: 0; /* important for grid overflow handling */
+}
+
+/* Shot chart container */
+.chart-container {
+  width: 100%;
+  max-width: 780px;
+  overflow: hidden;
+}
+
+/* Standings panel */
+.standings-panel {
+  background: var(--panel-bg, #fff);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 12px;
+  max-height: 720px;
+  overflow: auto;           /* scroll if tall */
+  position: sticky;         /* optional: keep visible */
+  top: 96px;                /* adjust depending on your top bar height */
+}
+
+.standings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.standings-tabs button {
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #f6f6f6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+.standings-tabs button.active {
+  background: #e8f1ff;
+  border-color: #a8c5ff;
+  font-weight: 600;
+}
+
+.standings-table-wrap {
+  overflow-x: auto;
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.standings-table th,
+.standings-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  text-align: right;
+  white-space: nowrap;
+}
+.standings-table th:first-child,
+.standings-table td:first-child {
+  text-align: center;
+}
+.standings-teamcell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left !important;
+}
+.team-logo.sm {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.team-name {
+  font-weight: 600;
+}
+.team-tri {
+  color: #666;
+  font-size: 0.85em;
+}
+
+/* Top upcoming games bar stays tidy */
+.upcoming-games-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--page-bg, #fff);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.games-scroller {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.game-card {
+  flex: 0 0 auto;
+  min-width: 240px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+}
+.game-teams {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Expand third column so Standings aligns better with the top bar width */
+.content-wrapper.three-col.wide-standings {
+  display: grid;
+  grid-template-columns: 240px 1fr 520px; /* sidebar | chart | wider standings */
+  gap: 16px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+/* Ensure columns don’t overflow */
+.player-sidebar,
+.chart-column,
+.standings-panel { min-width: 0; }
+
+/* Make chart area flexible but not too narrow */
+.chart-container { width: 100%; max-width: 820px; }
+
+/* Standings visuals */
+.standings-panel {
+  background: var(--panel-bg, #fff);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 12px;
+  max-height: 720px;
+  overflow: auto;
+  position: sticky;
+  top: 96px;
+}
+
+/* Table */
+.standings-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.standings-table th, .standings-table td {
+  padding: 6px 8px; border-bottom: 1px solid rgba(0,0,0,0.06); text-align: right; white-space: nowrap;
+}
+.standings-table th:first-child, .standings-table td:first-child { text-align: center; }
+.standings-teamcell { display: flex; align-items: center; gap: 8px; text-align: left !important; }
+.team-logo.sm { width: 20px; height: 20px; object-fit: contain; }
+.team-name { font-weight: 600; }
+.team-tri { color: #666; font-size: 0.85em; }
+
+/* Top upcoming bar (unchanged, included for coherence) */
+.upcoming-games-bar { position: sticky; top: 0; z-index: 5; background: var(--page-bg, #fff); padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.games-scroller { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; }
+.game-card { flex: 0 0 auto; min-width: 240px; border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 8px 10px; background: #fff; }
+.game-teams { display: flex; align-items: center; gap: 8px; }
+
+/* Main three-column layout */
+.content-wrapper.three-col.wide-standings {
+  display: grid;
+  grid-template-columns: 140px 1.3fr 0.9fr;  /* Sidebar | Chart+Stats | Standings */
+  gap: 10px;
+  align-items: start;
+  margin-top: 8px;
+  width: 80%;
+}
+
+/* Sidebar slightly wider for balance */
+.player-sidebar {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 0.95rem;
+  max-height: 720px;
+  overflow-y: auto;
+}
+
+/* Make the middle chart column more dominant */
+.chart-column {
+  flex: 1;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 620px;      /* ensures chart has more room */
+  max-width: 780px;      /* prevents stretching too far on wide screens */
+}
+
+/* Expand the chart container */
+.chart-container {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+/* Make SVG fill available width */
+.shot-chart {
+  width: 100%;
+  height: auto;
+}
+
+/* Standings panel — keep tidy, not too dominant */
+.standings-panel {
+  background: var(--panel-bg, #fff);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 12px;
+  max-height: 720px;
+  overflow: auto;
+  position: sticky;
+  top: 96px;
+  min-width: 360px;
+  max-width: 480px;
+}
+
+/* Lower panels container */
+.lower-panels {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+  margin: 16px 12px 32px;
+}
+
+/* Cards */
+.team-stats-card, .league-rankings-card {
+  background: #0f1115;
+  border: 1px solid #1d2230;
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+.metric-select {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.metric-select select {
+  background: #121722;
+  border: 1px solid #263048;
+  color: #e6edf3;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+/* Team stats grid */
+.team-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  max-height: 520px;
+  overflow: auto;
+  padding-right: 4px;
+}
+.team-stat-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 70px;
+  align-items: center;
+  gap: 10px;
+}
+.team-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rank-badge {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #20283a;
+  color: #a7b3c6;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.team-stat-row .bar {
+  height: 8px;
+  border-radius: 999px;
+  background: #1b2233;
+  overflow: hidden;
+}
+.team-stat-row .bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #5ab0ff, #ff7373);
+}
+.team-stat-row .value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #dbe5f5;
+}
+
+/* Rankings list */
+.rankings-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: rk;
+  display: grid;
+  gap: 8px;
+}
+.ranking-item {
+  display: grid;
+  grid-template-columns: 24px 22px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  border-bottom: 1px dashed #1e2638;
+}
+.ranking-item:last-child {
+  border-bottom: none;
+}
+.rank-index {
+  color: #9fb0c8;
+  text-align: right;
+}
+.rank-team {
+  color: #e8eef8;
+  letter-spacing: 0.3px;
+}
+.rank-value {
+  font-variant-numeric: tabular-nums;
+  color: #c7d4ea;
+}

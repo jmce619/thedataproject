@@ -1,0 +1,1374 @@
+{
+  "OFF_RATING": [
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 121.7
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 121.6
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 121.1
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 120.3
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 120.1
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 118.1
+    },
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 118.0
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 117.5
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 117.2
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 116.4
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 116.3
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 116.3
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 115.9
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 115.8
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 115.5
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 115.1
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 114.9
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 114.9
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 114.0
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 113.9
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 113.6
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 112.9
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 111.9
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 111.3
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 110.6
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 109.1
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 108.4
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 105.8
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 103.7
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 102.8
+    }
+  ],
+  "DEF_RATING": [
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 104.5
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 108.1
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 109.5
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 109.9
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 110.5
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 110.8
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 111.4
+    },
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 112.1
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 112.2
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 112.5
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 112.5
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 112.7
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 113.8
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 114.1
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 114.2
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 114.2
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 114.7
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 115.4
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 115.4
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 115.5
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 116.1
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 116.1
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 116.1
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 117.0
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 117.2
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 119.0
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 119.9
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 120.4
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 122.1
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 126.6
+    }
+  ],
+  "NET_RATING": [
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 13.5
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 13.0
+    },
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 9.6
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 9.1
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 7.3
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 5.6
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 5.4
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 4.9
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 4.8
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 4.1
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 2.6
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 2.5
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 2.4
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 2.1
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 1.5
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 1.2
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 0.2
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 0.2
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": -0.2
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": -0.5
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": -1.4
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": -4.8
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": -5.4
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": -6.2
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": -8.0
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": -8.2
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": -11.5
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": -12.0
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": -15.3
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": -16.3
+    }
+  ],
+  "PACE": [
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 106.95
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 106.11
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 104.21
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 103.22
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 103.15
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 103.06
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 102.95
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 102.9
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 102.82
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 102.5
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 102.17
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 102.1
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 102.0
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 101.8
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 101.44
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 101.44
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 101.1
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 100.95
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 100.9
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 100.86
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 100.6
+    },
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 100.16
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 100.16
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 99.57
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 99.28
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 99.24
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 98.95
+    },
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 98.61
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 97.0
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 96.61
+    }
+  ],
+  "EFG_PCT": [
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 0.58
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 0.57
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 0.57
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 0.57
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 0.57
+    },
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 0.54
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 0.54
+    },
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 0.54
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 0.54
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 0.53
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 0.53
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 0.52
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 0.52
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 0.52
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 0.51
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 0.5
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 0.5
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 0.5
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 0.46
+    }
+  ],
+  "TS_PCT": [
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 0.63
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 0.62
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 0.62
+    },
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 0.61
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 0.61
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 0.61
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 0.61
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 0.6
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 0.6
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 0.6
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 0.59
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 0.58
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 0.58
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 0.57
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 0.57
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 0.54
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 0.5
+    }
+  ],
+  "PIE": [
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 0.58
+    },
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 0.58
+    },
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 0.56
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 0.55
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 0.54
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 0.54
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 0.53
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 0.53
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 0.52
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 0.52
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 0.52
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 0.51
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 0.51
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 0.51
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 0.51
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 0.5
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 0.5
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 0.5
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 0.5
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 0.49
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 0.49
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 0.48
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 0.48
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 0.48
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 0.47
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 0.46
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 0.43
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 0.43
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 0.41
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 0.4
+    }
+  ],
+  "REB_PCT": [
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 0.562
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 0.545
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 0.543
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 0.537
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 0.533
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 0.523
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 0.517
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 0.515
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 0.514
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 0.511
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 0.507
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 0.507
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 0.507
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 0.504
+    },
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 0.499
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 0.496
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 0.495
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 0.492
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 0.492
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 0.492
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 0.483
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 0.482
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 0.476
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 0.474
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 0.474
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 0.473
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 0.473
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 0.472
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 0.471
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 0.463
+    }
+  ],
+  "TM_TOV_PCT": [
+    {
+      "team_abbr": "OKC",
+      "team_name": "Oklahoma City Thunder",
+      "value": 0.113
+    },
+    {
+      "team_abbr": "BOS",
+      "team_name": "Boston Celtics",
+      "value": 0.118
+    },
+    {
+      "team_abbr": "IND",
+      "team_name": "Indiana Pacers",
+      "value": 0.138
+    },
+    {
+      "team_abbr": "MIA",
+      "team_name": "Miami Heat",
+      "value": 0.139
+    },
+    {
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Bucks",
+      "value": 0.139
+    },
+    {
+      "team_abbr": "DEN",
+      "team_name": "Denver Nuggets",
+      "value": 0.139
+    },
+    {
+      "team_abbr": "TOR",
+      "team_name": "Toronto Raptors",
+      "value": 0.14
+    },
+    {
+      "team_abbr": "NYK",
+      "team_name": "New York Knicks",
+      "value": 0.141
+    },
+    {
+      "team_abbr": "SAC",
+      "team_name": "Sacramento Kings",
+      "value": 0.141
+    },
+    {
+      "team_abbr": "MEM",
+      "team_name": "Memphis Grizzlies",
+      "value": 0.142
+    },
+    {
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Hawks",
+      "value": 0.143
+    },
+    {
+      "team_abbr": "NOP",
+      "team_name": "New Orleans Pelicans",
+      "value": 0.145
+    },
+    {
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Cavaliers",
+      "value": 0.145
+    },
+    {
+      "team_abbr": "DET",
+      "team_name": "Detroit Pistons",
+      "value": 0.147
+    },
+    {
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia 76ers",
+      "value": 0.149
+    },
+    {
+      "team_abbr": "CHI",
+      "team_name": "Chicago Bulls",
+      "value": 0.152
+    },
+    {
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Timberwolves",
+      "value": 0.153
+    },
+    {
+      "team_abbr": "DAL",
+      "team_name": "Dallas Mavericks",
+      "value": 0.157
+    },
+    {
+      "team_abbr": "GSW",
+      "team_name": "Golden State Warriors",
+      "value": 0.158
+    },
+    {
+      "team_abbr": "SAS",
+      "team_name": "San Antonio Spurs",
+      "value": 0.162
+    },
+    {
+      "team_abbr": "CHA",
+      "team_name": "Charlotte Hornets",
+      "value": 0.164
+    },
+    {
+      "team_abbr": "ORL",
+      "team_name": "Orlando Magic",
+      "value": 0.165
+    },
+    {
+      "team_abbr": "POR",
+      "team_name": "Portland Trail Blazers",
+      "value": 0.165
+    },
+    {
+      "team_abbr": "BKN",
+      "team_name": "Brooklyn Nets",
+      "value": 0.165
+    },
+    {
+      "team_abbr": "PHX",
+      "team_name": "Phoenix Suns",
+      "value": 0.166
+    },
+    {
+      "team_abbr": "WAS",
+      "team_name": "Washington Wizards",
+      "value": 0.169
+    },
+    {
+      "team_abbr": "LAL",
+      "team_name": "Los Angeles Lakers",
+      "value": 0.169
+    },
+    {
+      "team_abbr": "UTA",
+      "team_name": "Utah Jazz",
+      "value": 0.171
+    },
+    {
+      "team_abbr": "HOU",
+      "team_name": "Houston Rockets",
+      "value": 0.174
+    },
+    {
+      "team_abbr": "LAC",
+      "team_name": "Los Angeles Clippers",
+      "value": 0.175
+    }
+  ],
+  "TOV_PCT": [],
+  "E_OFF_RATING": [],
+  "E_DEF_RATING": [],
+  "E_NET_RATING": []
+}
