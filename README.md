@@ -1,11 +1,11 @@
-# What is The Data Project
+# What is The Data Project ?
 
 The Data Project is an open-source, data-driven platform that brings together interactive dashboards and visualizations across a wide range of topics—from finance and markets to sports, politics, and more. Each page is designed to make complex information engaging and intuitive, letting users explore patterns, compare metrics, and discover insights in real time.
 
-- ** Stock Analytics and Similarity Search**
-- ** Sports Data Insights**
-- ** Geographic Data and Visualizations**
-- ** Healthcare Insurance Data Processing**
+-  Stock Analytics and Similarity Search
+-  Sports Data Insights
+-  Geographic Data and Visualizations
+-  Healthcare Insurance Data Processing
 
 Each domain is individually documented below.
 

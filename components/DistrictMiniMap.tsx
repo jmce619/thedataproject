@@ -155,16 +155,30 @@ function raceBarsSVG(props: Record<string, any>, totalPop: number, width = 240, 
   `;
 }
 
+export type MiniMapDetails = {
+  gid: string;
+  name: string;
+  total: number;
+  femaleTotal: number;
+  maleTotal: number;
+  pyramidSVG: string;
+  raceSVG: string;
+  html: string;      // full block ready for dangerouslySetInnerHTML
+  rawProps: Record<string, any>;
+};
+
 type FC = FeatureCollection<Geometry, GeoJsonProperties>;
 
 export default function DistrictMiniMap({
   dataUrl = '/data/demography.geojson',
   selectedGeoId,
   onSelectGeoId,
+  onSelectDetails, // NEW
 }: {
   dataUrl?: string;
   selectedGeoId?: string | null;
   onSelectGeoId?: (geoid: string) => void;
+  onSelectDetails?: (details: MiniMapDetails) => void; // NEW
 }) {
   const [fc, setFc] = useState<FC | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -195,7 +209,7 @@ export default function DistrictMiniMap({
   const style: StyleFunction<GeoJsonProperties> = (feature): PathOptions => {
     if (!feature) return {};
     const props = (feature.properties ?? {}) as Record<string, any>;
-    const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
+    const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? props.STATEFP ?? props.STUSPS ?? '');
     const isSel = !!selectedGeoId && gid === selectedGeoId;
 
     const femaleTotal = sumProps(props, femaleVars);
@@ -214,7 +228,7 @@ export default function DistrictMiniMap({
       return `rgb(${r}, ${g}, ${b})`;
     };
 
-    const fillColor = interpolateColor('#FEF3C7', '#b35c10ff', t);
+    const fillColor = interpolateColor('#FEF3C7', '#b35c10', t);
 
     return {
       fillColor,
@@ -228,7 +242,7 @@ export default function DistrictMiniMap({
   if (!fc) return <div className="text-gray-500 text-sm">Loading districts…</div>;
 
   return (
-    <MapContainer {...(mapOptions as any)} className="leaflet-container rounded-xl overflow-hidden shadow">
+    <MapContainer {...(mapOptions as any)} className="leaflet-container rounded-xl overflow-hidden shadow" style={{ height: 420 }}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="" />
       <GeoJSON
         data={fc as FC}
@@ -237,7 +251,7 @@ export default function DistrictMiniMap({
           if (!feature) return;
 
           const props = (feature.properties ?? {}) as any;
-          const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? '');
+          const gid = String(props.GEOID ?? props.geoid ?? props.GEOID20 ?? props.STATEFP ?? props.STUSPS ?? '');
           if (gid) layerRef.current.set(gid, layer);
 
           const name = props.NAMELSAD ?? props.NAME ?? 'District';
@@ -282,7 +296,41 @@ export default function DistrictMiniMap({
               const isSel = !!selectedGeoId && gid === selectedGeoId;
               (layer as Path).setStyle?.({ weight: isSel ? 2 : 0.5, color: isSel ? '#1F2937' : '#374151' });
             },
-            click: () => { if (gid && onSelectGeoId) onSelectGeoId(gid); }
+            click: () => {
+              if (gid && onSelectGeoId) onSelectGeoId(gid);
+
+              // NEW: send same charts to parent so it can render beneath the map
+              if (onSelectDetails) {
+                const html = `
+                  <div class="mini-detail">
+                    <div style="font-weight:600;margin-bottom:6px">${name}</div>
+                    <div style="display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+                      <div style="flex:1; min-width:260px;">
+                        <div style="font-size:12px;color:#374151;margin:0 0 6px 0">
+                          <b>GEOID:</b> ${gid}&nbsp;&nbsp;
+                          <b>Pop:</b> ${total.toLocaleString()}&nbsp;&nbsp;
+                          <b>F:</b> ${femaleTotal.toLocaleString()}&nbsp;&nbsp;
+                          <b>M:</b> ${maleTotal.toLocaleString()}
+                        </div>
+                        ${pyramid}
+                      </div>
+                      <div style="flex:1; min-width:260px;">
+                        ${race}
+                      </div>
+                    </div>
+                  </div>
+                `;
+
+                onSelectDetails({
+                  gid, name, total,
+                  femaleTotal, maleTotal,
+                  pyramidSVG: pyramid,
+                  raceSVG: race,
+                  html,
+                  rawProps: props
+                });
+              }
+            }
           });
         }}
       />
